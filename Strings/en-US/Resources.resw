@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="au" xml:space="preserve">
+    <value>Australia</value>
+  </data>
+  <data name="avbv.Content" xml:space="preserve">
+    <value>BV / av Converter</value>
+  </data>
+  <data name="avbv_text.Text" xml:space="preserve">
+    <value>BV / av Converter</value>
+    <comment>avbv</comment>
+  </data>
+  <data name="bing_wp.Content" xml:space="preserve">
+    <value>Bing Daily Wallpapers</value>
+  </data>
+  <data name="calc.Content" xml:space="preserve">
+    <value>Free Calculator</value>
+  </data>
+  <data name="calc_error.Message" xml:space="preserve">
+    <value>Please check spelling / syntax / DIV0 / expression length.</value>
+  </data>
+  <data name="caution_flyout_text.Text" xml:space="preserve">
+    <value>Available at most 100 times per day, all users altogether.</value>
+  </data>
+  <data name="change_size.Text" xml:space="preserve">
+    <value>Change Size</value>
+  </data>
+  <data name="cmd.Content" xml:space="preserve">
+    <value>Command Prompt</value>
+  </data>
+  <data name="cmdInput.PlaceholderText" xml:space="preserve">
+    <value>Enter your command here...</value>
+  </data>
+  <data name="cmdOutput.PlaceholderText" xml:space="preserve">
+    <value>Output will be shown here</value>
+  </data>
+  <data name="cmd_title.Text" xml:space="preserve">
+    <value>Command Prompt</value>
+    <comment>cmd</comment>
+  </data>
+  <data name="cn" xml:space="preserve">
+    <value>China</value>
+    <comment>Regions</comment>
+  </data>
+  <data name="custom_apikey_switch.Header" xml:space="preserve">
+    <value>Custom apikey</value>
+  </data>
+  <data name="custom_apikey_switch.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="custom_apikey_switch.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="custom_mkt_switch.Header" xml:space="preserve">
+    <value>Custom Region</value>
+  </data>
+  <data name="de" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="decimal_slider.Header" xml:space="preserve">
+    <value>Decimal Accuracy</value>
+  </data>
+  <data name="degree_switch.Header" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="degree_switch.OffContent" xml:space="preserve">
+    <value>RAD</value>
+  </data>
+  <data name="degree_switch.OnContent" xml:space="preserve">
+    <value>DEG</value>
+  </data>
+  <data name="detcalc.Content" xml:space="preserve">
+    <value>Determinant Calculator</value>
+  </data>
+  <data name="detcalc_title_text.Text" xml:space="preserve">
+    <value>Determinant Calculator</value>
+  </data>
+  <data name="display_theme_text.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="edit_settingsVal_hypertext.Content" xml:space="preserve">
+    <value>Quickly edit settings value</value>
+  </data>
+  <data name="english_switch.Header" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="eq_form.PlaceholderText" xml:space="preserve">
+    <value>Enter your expression here...</value>
+  </data>
+  <data name="error100" xml:space="preserve">
+    <value>Please send us feedback or wait for fixing.</value>
+    <comment>到时候再填坑</comment>
+  </data>
+  <data name="error110" xml:space="preserve">
+    <value>API temporarily closed, keep an eye on the Notice.</value>
+  </data>
+  <data name="error120" xml:space="preserve">
+    <value>An IP Whitelist is set, which doesn't contain the requested IP. Help: https://www.tianapi.com/article/81</value>
+  </data>
+  <data name="error130" xml:space="preserve">
+    <value>API was limited because it is requested too many times in one minute.</value>
+  </data>
+  <data name="error140" xml:space="preserve">
+    <value>Please check if the API was disabled by the user or the official.</value>
+  </data>
+  <data name="error150" xml:space="preserve">
+    <value>API usage expired. View in API List. Help: https://www.tianapi.com/apiview/43</value>
+  </data>
+  <data name="error160" xml:space="preserve">
+    <value>Please apply for the API first. Help: https://www.tianapi.com/article/104</value>
+  </data>
+  <data name="error170" xml:space="preserve">
+    <value>A Referer Whitelist is set, which doesn't contain the requested referer. Help: https://www.tianapi.com/article/121</value>
+  </data>
+  <data name="error230" xml:space="preserve">
+    <value>Please check if apikey was wrong. Help: https://www.tianapi.com/article/28</value>
+  </data>
+  <data name="error240" xml:space="preserve">
+    <value>Please check if the key parameter was transported, e.g. if an variable was valuated.</value>
+  </data>
+  <data name="error250" xml:space="preserve">
+    <value>Error requesting or converting data, please ensure the input is correct or retry.</value>
+  </data>
+  <data name="error260" xml:space="preserve">
+    <value>Please check if the parameter is empty.</value>
+  </data>
+  <data name="error270" xml:space="preserve">
+    <value>Data is needed for the API. Help: https://www.tianapi.com/apiview/95</value>
+  </data>
+  <data name="error280" xml:space="preserve">
+    <value>Required parameter(s) absent, please check. Help: https://www.tianapi.com/apiview/95</value>
+  </data>
+  <data name="error290" xml:space="preserve">
+    <value>Too many characters. Help: https://www.tianapi.com/apiview/95</value>
+  </data>
+  <data name="func_const_list.Content" xml:space="preserve">
+    <value>sqr  -  Square root  -  sqr9=3
+sin  -  Sine  -  sin45=0.707
+cos  -  Cosine  -  co45=0.707
+tan  -  Tangent  -  tan45=1
+cot  -  Cotangent  -  cot45=1
+abs  -  Absolute  -  abs(-10)=10
+cei  -  Ceiling  -  cei4.3=5
+flo  -  Floor  -  flo4.7=4
+log  -  logarithm  -  log[10,100]=2
+
+E  -  Euler's number  -  2.7182818...
+p  -  Pi  -  3.1415926...</value>
+  </data>
+  <data name="func_const_list.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="func_const_list.Title" xml:space="preserve">
+    <value>Available Functions &amp; Constants</value>
+  </data>
+  <data name="info_textblock.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="info_textbox.PlaceholderText" xml:space="preserve">
+    <value>Success or failure info will be shown here</value>
+  </data>
+  <data name="ip_request.Content" xml:space="preserve">
+    <value>IP Request</value>
+  </data>
+  <data name="ip_request_result.PlaceholderText" xml:space="preserve">
+    <value>Full return value will be shown here in JSON, including region and carrier</value>
+  </data>
+  <data name="ip_request_textblock.Text" xml:space="preserve">
+    <value>IP Addr.</value>
+  </data>
+  <data name="ip_request_textbox.PlaceholderText" xml:space="preserve">
+    <value>Enter an IP here, say, 220.181.38.251</value>
+  </data>
+  <data name="ip_request_title_text.Text" xml:space="preserve">
+    <value>IP Request</value>
+    <comment>ip_request</comment>
+  </data>
+  <data name="ip_res_error" xml:space="preserve">
+    <value>Error occured. </value>
+  </data>
+  <data name="ip_res_success" xml:space="preserve">
+    <value>Succeeded.</value>
+  </data>
+  <data name="ip_textblock.Text" xml:space="preserve">
+    <value>IP Addr.</value>
+  </data>
+  <data name="ip_textbox.PlaceholderText" xml:space="preserve">
+    <value>IP address(es) analyzed from the output will be shown here.</value>
+  </data>
+  <data name="ip_url.Content" xml:space="preserve">
+    <value>Domain Analyzer</value>
+  </data>
+  <data name="ip_url_title_text.Text" xml:space="preserve">
+    <value>Domain Analyzer</value>
+    <comment>ip_url</comment>
+  </data>
+  <data name="jp" xml:space="preserve">
+    <value>Japan</value>
+  </data>
+  <data name="mkt_au.Text" xml:space="preserve">
+    <value>Australia</value>
+  </data>
+  <data name="mkt_cn.Text" xml:space="preserve">
+    <value>China</value>
+    <comment>Regions</comment>
+  </data>
+  <data name="mkt_de.Text" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="mkt_jp.Text" xml:space="preserve">
+    <value>Japan</value>
+  </data>
+  <data name="mkt_nz.Text" xml:space="preserve">
+    <value>New Zealand</value>
+  </data>
+  <data name="mkt_uk.Text" xml:space="preserve">
+    <value>United Kingdom</value>
+  </data>
+  <data name="mkt_us.Text" xml:space="preserve">
+    <value>United States</value>
+  </data>
+  <data name="number_region.Content" xml:space="preserve">
+    <value>Number Region</value>
+  </data>
+  <data name="number_title_text.Text" xml:space="preserve">
+    <value>Phone Number Region</value>
+    <comment>number region</comment>
+  </data>
+  <data name="num_textblock.Text" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="num_textbox.PlaceholderText" xml:space="preserve">
+    <value>Enter a Chinese phone number here, say, 13967880048</value>
+  </data>
+  <data name="nz" xml:space="preserve">
+    <value>New Zealand</value>
+  </data>
+  <data name="panemode_ddb_text.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="panemode_textblock.Text" xml:space="preserve">
+    <value>Navigation Pane Placement</value>
+  </data>
+  <data name="pane_left.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="pane_top.Text" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="quick_edit_box.Text" xml:space="preserve">
+    <value>Saved.</value>
+    <comment>等搞完其他的再弄</comment>
+  </data>
+  <data name="rb_dark.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="rb_default.Content" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="rb_light.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="refresh_wallpaper.Content" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="reset_all_btn.Text" xml:space="preserve">
+    <value>Reset All</value>
+  </data>
+  <data name="reset_confirm.Content" xml:space="preserve">
+    <value>All your settings will be resetted to default.</value>
+  </data>
+  <data name="reset_confirm.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="reset_confirm.SecondaryButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="reset_confirm.Title" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="restart_for_effect_text_1.Text" xml:space="preserve">
+    <value>Restart the app to take effect.</value>
+  </data>
+  <data name="result.PlaceholderText" xml:space="preserve">
+    <value>Full return value will be shown here in JSON</value>
+  </data>
+  <data name="res_textblock.Text" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="save_image.Text" xml:space="preserve">
+    <value>Save Image</value>
+  </data>
+  <data name="settings.Content" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="settings_subt_bing.Text" xml:space="preserve">
+    <value>Bing Daily Wallpapers</value>
+  </data>
+  <data name="settings_subt_domain.Text" xml:space="preserve">
+    <value>Domain Analyzer / IP Request</value>
+  </data>
+  <data name="settings_subt_freecalc.Text" xml:space="preserve">
+    <value>Free Calculator</value>
+  </data>
+  <data name="settings_subt_general.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="settings_title_text.Text" xml:space="preserve">
+    <value>Settings</value>
+    <comment>settings</comment>
+  </data>
+  <data name="show_func_btn.Content" xml:space="preserve">
+    <value>Show Available Functions &amp; Constants</value>
+  </data>
+  <data name="text1.Text" xml:space="preserve">
+    <value>Welcome to Utilities by Hyy!</value>
+    <comment>utilities_Home</comment>
+  </data>
+  <data name="text2.Text" xml:space="preserve">
+    <value>Pick one on the left!</value>
+  </data>
+  <data name="tianapi_error" xml:space="preserve">
+    <value>Error. Please check your Firewall and network connection.</value>
+  </data>
+  <data name="tianapi_loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="tianapi_phone_argError" xml:space="preserve">
+    <value>Error. Please check if the phone number is valid.</value>
+  </data>
+  <data name="tip1.ActionButtonContent" xml:space="preserve">
+    <value>Get Started!</value>
+  </data>
+  <data name="tip1.CloseButtonContent" xml:space="preserve">
+    <value>No Thanks.</value>
+  </data>
+  <data name="tip1.Subtitle" xml:space="preserve">
+    <value>This will take you to a quick tour through all the features of FreeCalc by Horace. Press 'x' on any tip to quit.</value>
+  </data>
+  <data name="tip1.Title" xml:space="preserve">
+    <value>Welcome to FreeCalc!</value>
+    <comment>freecalc</comment>
+  </data>
+  <data name="tip16.Subtitle" xml:space="preserve">
+    <value>Now you've completed the whole tutorial. Enjoy FreeCalc by Horace! Explore Settings for more features!</value>
+  </data>
+  <data name="tip16.Title" xml:space="preserve">
+    <value>Congratulations!</value>
+  </data>
+  <data name="tip2.ActionButtonContent" xml:space="preserve">
+    <value>Example</value>
+  </data>
+  <data name="tip2.Subtitle" xml:space="preserve">
+    <value>FreeCalc supports basic expressions. Try entering an expression containing +-*/^() and press enter.</value>
+  </data>
+  <data name="tip2.Title" xml:space="preserve">
+    <value>Basic Calculation</value>
+  </data>
+  <data name="tip3.Subtitle" xml:space="preserve">
+    <value>If you've selected(focused on) the expression box, just press enter. If not, clicking the tick icon on the right does the same thing.</value>
+  </data>
+  <data name="tip3.Title" xml:space="preserve">
+    <value>Now submit</value>
+  </data>
+  <data name="tip4.Subtitle" xml:space="preserve">
+    <value>Just tap on the result text box, and the result will be autofilled to your expression box.</value>
+  </data>
+  <data name="tip4.Title" xml:space="preserve">
+    <value>Result autofill</value>
+  </data>
+  <data name="tip5.ActionButtonContent" xml:space="preserve">
+    <value>See function list</value>
+  </data>
+  <data name="tip5.CloseButtonContent" xml:space="preserve">
+    <value>Example</value>
+  </data>
+  <data name="tip5.Subtitle" xml:space="preserve">
+    <value>FreeCalc supports multiple functions, try 'em out!</value>
+  </data>
+  <data name="tip5.Title" xml:space="preserve">
+    <value>Meet functions</value>
+  </data>
+  <data name="tip6.Subtitle" xml:space="preserve">
+    <value>Submit again to see the result.</value>
+  </data>
+  <data name="tip6.Title" xml:space="preserve">
+    <value>Now submit</value>
+  </data>
+  <data name="tip7.ActionButtonContent" xml:space="preserve">
+    <value>Example</value>
+  </data>
+  <data name="tip7.Subtitle" xml:space="preserve">
+    <value>The Log function should not contain any spaces. When any of the two expressions is more than a simple number, a pair of braces should be added.</value>
+  </data>
+  <data name="tip7.Title" xml:space="preserve">
+    <value>Keep in mind...</value>
+  </data>
+  <data name="tip8.ActionButtonContent" xml:space="preserve">
+    <value>Example</value>
+  </data>
+  <data name="tip8.Subtitle" xml:space="preserve">
+    <value>Two constants are available in FreeCalc currently, e and Pi. Enter 'E' for e, 'p' for Pi.</value>
+  </data>
+  <data name="tip8.Title" xml:space="preserve">
+    <value>Meet constants</value>
+  </data>
+  <data name="tip9.Subtitle" xml:space="preserve">
+    <value>Submit again to see the result.</value>
+  </data>
+  <data name="tip9.Title" xml:space="preserve">
+    <value>Now submit</value>
+  </data>
+  <data name="toppane" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="uk" xml:space="preserve">
+    <value>United Kingdom</value>
+  </data>
+  <data name="url_textblock.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="url_textbox.PlaceholderText" xml:space="preserve">
+    <value>Enter a URL here, say, baidu.com</value>
+  </data>
+  <data name="us" xml:space="preserve">
+    <value>United States</value>
+  </data>
+  <data name="utilities_home.Content" xml:space="preserve">
+    <value>Home</value>
+    <comment>HomePage</comment>
+  </data>
+  <data name="wallpaper_failed.Message" xml:space="preserve">
+    <value>Please check your Firewall and network connection.</value>
+  </data>
+  <data name="wallpaper_loading.Text" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="warning.Content" xml:space="preserve">
+    <value>Please don't switch between pages or the app might crash!</value>
+  </data>
+  <data name="warning.PrimaryButtonText" xml:space="preserve">
+    <value>Got it</value>
+  </data>
+  <data name="warning.SecondaryButtonText" xml:space="preserve">
+    <value>Show me</value>
+  </data>
+  <data name="warning.Title" xml:space="preserve">
+    <value>Warning...</value>
+  </data>
+  <data name="warning_again_hypertext.Content" xml:space="preserve">
+    <value>Show warnings</value>
+  </data>
+  <data name="welcome.Content" xml:space="preserve">
+    <value>Welcome to Utilities by Hyy V2.0.0！
+
+FreeCalc - Combine basic and advanced calculations
+BV / av Converter - Shuffle through BV / av numbers and URL
+Domain Analyzer - Extract key informations from a URL
+IP Request - Extract key informations from an IP address
+Phone Number Region - Extract key informations from a Chinese phone number
+Command Prompt - Nothing useful but looks advanced :)</value>
+  </data>
+  <data name="welcome.PrimaryButtonText" xml:space="preserve">
+    <value>Woo-hoo!!</value>
+  </data>
+  <data name="welcome.Title" xml:space="preserve">
+    <value>About this update:</value>
+  </data>
+  <data name="welcome_again_btn.Text" xml:space="preserve">
+    <value>Show Update Logs</value>
+  </data>
+  <data name="wp_res_text.Text" xml:space="preserve">
+    <value>Resolution</value>
+  </data>
+  <data name="wp_title_text.Text" xml:space="preserve">
+    <value>Bing Daily Wallpapers</value>
+    <comment>bing_wp</comment>
+  </data>
+</root>

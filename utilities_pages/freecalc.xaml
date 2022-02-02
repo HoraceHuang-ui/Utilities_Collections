@@ -1,0 +1,158 @@
+﻿<Page
+    x:Class="Utilities_Fix.utilities_pages.freecalc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Utilities_Fix.utilities_pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid Loaded="Grid_Loaded">
+        <controls:TeachingTip x:Name="tip1" x:Uid="tip1"                    
+	        Target="{x:Bind help}"
+            ActionButtonClick="tip1_ActionButtonClick"
+            Closed="tip1_Closed"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph=""/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip2_basicCalc" x:Uid="tip2"
+            PreferredPlacement="Bottom"
+            PlacementMargin="0,20,0,0"
+            Target="{x:Bind eq_form}"
+            ActionButtonClick="tip2_basicCalc_ActionButtonClick"
+            CloseButtonClick="tip2_basicCalc_CloseButtonClick"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:SymbolIconSource Symbol="Calculator"/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip3_submit" x:Uid="tip3"
+            PreferredPlacement="Bottom"
+            Target="{x:Bind eq_form.QueryIcon}"
+            CloseButtonClick="tip2_basicCalc_CloseButtonClick"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph=""/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip4_AnsFill" x:Uid="tip4"
+            PreferredPlacement="Bottom"
+            PlacementMargin="0,20,0,0"
+            Target="{x:Bind res_form}"
+            CloseButtonClick="tip2_basicCalc_CloseButtonClick"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph=""/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip5_funcs" x:Uid="tip5"
+            PreferredPlacement="Bottom"
+            PlacementMargin="0,20,0,0"
+            Target="{x:Bind eq_form}"
+            CloseButtonClick="tip5_funcs_CloseButtonClick"
+            ActionButtonClick="tip5_funcs_ActionButtonClick"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Times New Roman" FontStyle="Italic" Glyph="f(x)"/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip6_submit" x:Uid="tip6"
+            PreferredPlacement="Bottom"
+            PlacementMargin="0,20,0,0"
+            Target="{x:Bind eq_form.QueryIcon}"
+            CloseButtonClick="tip2_basicCalc_CloseButtonClick"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph=""/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip7_logWarning" x:Uid="tip7"
+            PreferredPlacement="Bottom"
+            PlacementMargin="0,20,0,0"
+            Target="{x:Bind eq_form}"
+            ActionButtonClick="tip7_logWarning_ActionButtonClick"
+            CloseButtonClick="tip2_basicCalc_CloseButtonClick"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph=""/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip8_consts" x:Uid="tip8"
+            PreferredPlacement="Bottom"
+            PlacementMargin="0,20,0,0"
+            Target="{x:Bind eq_form}"
+            ActionButtonClick="tip8_consts_ActionButtonClick"
+            CloseButtonClick="tip2_basicCalc_CloseButtonClick"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Times New Roman" FontStyle="Italic" FontSize="40" Glyph="π"/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip9_submit" x:Uid="tip9"
+            PreferredPlacement="Bottom"
+            PlacementMargin="0,20,0,0"
+            Target="{x:Bind eq_form.QueryIcon}"
+            CloseButtonClick="tip2_basicCalc_CloseButtonClick"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph=""/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip 
+            x:Name="tip16_congrats" x:Uid="tip16"
+            PreferredPlacement="Center"
+            Closed="tip16_congrats_Closed"
+            FontFamily="segoe ui variable display">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Microsoft Yahei UI" FontSize="25" Glyph=":-D"/>
+            </controls:TeachingTip.IconSource>
+            <controls:TeachingTip.HeroContent>
+                <Image x:Name="congratsPic"/>
+            </controls:TeachingTip.HeroContent>
+        </controls:TeachingTip>
+
+        <Button x:Name="help" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Background="#00000000" FontSize="28" Margin="10,10,0,0" Click="help_Click" Content="?"/>
+        <controls:InfoBar x:Name="calc_error" x:Uid="calc_error" Message="Please check spelling / syntax / DIV0 / expression length." VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,150,0,0" Severity="Error"></controls:InfoBar>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*" MaxHeight="100"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Margin="0,0,0,20">
+                <TextBlock FontFamily="segoe ui variable display" HorizontalAlignment="Center" 
+                           VerticalAlignment="Top" FontSize="72">FreeCalc</TextBlock>
+                <TextBlock FontFamily="segoe ui variable display" FontWeight="Light" Margin="0,-10,0,0" 
+                           HorizontalAlignment="Center" Opacity="0.5">By Horace Huang</TextBlock>
+            </StackPanel>
+            <TextBox x:Name="res_form" Grid.Row="1" Translation="305,0,0" Visibility="Collapsed" Opacity="0" 
+                     CornerRadius="5" Margin="5,0,0,0"  GotFocus="res_form_GotFocus" FontSize="20"
+                     PlaceholderText="Ans" Width="200" FontFamily="Consolas" HorizontalAlignment="Center" 
+                     VerticalAlignment="center">
+                <TextBox.OpacityTransition>
+                    <ScalarTransition/>
+                </TextBox.OpacityTransition>
+            </TextBox>
+            <AutoSuggestBox  x:Name="eq_form" PlaceholderText="eq_form" x:Uid="eq_form" TextChanged="eq_form_TextChanged"
+                             Grid.Row="1" Translation="0,0,0" CornerRadius="5" FontSize="20" Width="600" 
+                             FontFamily="Consolas" HorizontalAlignment="center" VerticalAlignment="Center" 
+                             QueryIcon="Accept" QuerySubmitted="eq_form_QuerySubmitted">
+                <AutoSuggestBox.TranslationTransition>
+                    <Vector3Transition/>
+                </AutoSuggestBox.TranslationTransition>
+            </AutoSuggestBox>
+        </Grid>
+    </Grid>
+</Page>

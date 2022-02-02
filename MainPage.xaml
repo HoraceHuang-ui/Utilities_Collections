@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="Utilities_Fix.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Utilities_Fix"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAltMediumLowAcrylicWindowMediumBrush}">
+
+    <Grid Loaded="Grid_Loaded">
+        <NavigationView x:Name="nvView" OpenPaneLength="250" IsBackButtonVisible="Collapsed" 
+                        PaneDisplayMode="Left" CompactPaneLength="43" FontFamily="segoe ui variable display" 
+                        SelectionChanged="nvView_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Home" x:Name="utilities_home" x:Uid="utilities_home"
+                     FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Icon="Calculator" x:Name="calc" x:Uid="calc"
+                     FontFamily="segoe ui variable display"/>
+                <NavigationViewItem x:Name="detcalc" FontFamily="segoe ui variable display" x:Uid="detcalc">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph=""/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Icon="Shuffle" x:Name="avbv" x:Uid="avbv"
+                     FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Icon="Link" x:Name="ip_url"  x:Uid="ip_url"
+                     FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Icon="MapDrive" x:Name="ip_request" x:Uid="ip_request"
+                     FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Icon="Phone" x:Name="number_region"
+                     x:Uid="number_region" FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Icon="Pictures" x:Name="bing_wp" x:Uid="bing_wp"
+                                    FontFamily="segoe ui variable display"/>
+                <NavigationViewItem x:Name="cmd" x:Uid="cmd"
+                     FontFamily="segoe ui variable display">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph=""/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <Frame x:Name="contentFrame" CornerRadius="9"/>
+        </NavigationView>
+    </Grid>
+</Page>

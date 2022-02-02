@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="au" xml:space="preserve">
+    <value>澳大利亚</value>
+  </data>
+  <data name="avbv.Content" xml:space="preserve">
+    <value>BV / av 号转换</value>
+  </data>
+  <data name="avbv_text.Text" xml:space="preserve">
+    <value>BV / av 号转换器</value>
+    <comment>avbv</comment>
+  </data>
+  <data name="bing_wp.Content" xml:space="preserve">
+    <value>必应每日壁纸</value>
+  </data>
+  <data name="calc.Content" xml:space="preserve">
+    <value>自由计算器</value>
+  </data>
+  <data name="calc_error.Message" xml:space="preserve">
+    <value>请检查 拼写/格式/除以0/表达式长度。</value>
+  </data>
+  <data name="caution_flyout_text.Text" xml:space="preserve">
+    <value>所有设备加起来每天只能解析100次噢！</value>
+  </data>
+  <data name="change_size.Text" xml:space="preserve">
+    <value>调整大小</value>
+  </data>
+  <data name="cmd.Content" xml:space="preserve">
+    <value>命令提示符</value>
+  </data>
+  <data name="cmdInput.PlaceholderText" xml:space="preserve">
+    <value>在此输入您的命令……</value>
+  </data>
+  <data name="cmdOutput.PlaceholderText" xml:space="preserve">
+    <value>命令提示符返回结果将在此显示</value>
+  </data>
+  <data name="cmd_title.Text" xml:space="preserve">
+    <value>命令提示符</value>
+    <comment>cmd</comment>
+  </data>
+  <data name="cn" xml:space="preserve">
+    <value>中国</value>
+    <comment>Regions</comment>
+  </data>
+  <data name="custom_apikey_switch.Header" xml:space="preserve">
+    <value>自定义 apikey</value>
+  </data>
+  <data name="custom_apikey_switch.OffContent" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="custom_apikey_switch.OnContent" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="custom_mkt_switch.Header" xml:space="preserve">
+    <value>自定义地区</value>
+  </data>
+  <data name="de" xml:space="preserve">
+    <value>德国</value>
+  </data>
+  <data name="decimal_slider.Header" xml:space="preserve">
+    <value>小数精确位数</value>
+  </data>
+  <data name="degree_switch.Header" xml:space="preserve">
+    <value>模式</value>
+  </data>
+  <data name="degree_switch.OffContent" xml:space="preserve">
+    <value>弧度制</value>
+  </data>
+  <data name="degree_switch.OnContent" xml:space="preserve">
+    <value>角度制</value>
+  </data>
+  <data name="detcalc.Content" xml:space="preserve">
+    <value>行列式计算器</value>
+  </data>
+  <data name="detcalc_title_text.Text" xml:space="preserve">
+    <value>行列式计算器</value>
+  </data>
+  <data name="display_theme_text.Text" xml:space="preserve">
+    <value>显示模式</value>
+  </data>
+  <data name="edit_settingsVal_hypertext.Content" xml:space="preserve">
+    <value>快速编辑设置</value>
+  </data>
+  <data name="english_switch.Header" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="eq_form.PlaceholderText" xml:space="preserve">
+    <value>在此输入算式……</value>
+  </data>
+  <data name="error100" xml:space="preserve">
+    <value>请及时反馈或等待修复。</value>
+    <comment>到时候再填坑</comment>
+  </data>
+  <data name="error110" xml:space="preserve">
+    <value>接口暂时关闭维护中，请注意相关公告。</value>
+  </data>
+  <data name="error120" xml:space="preserve">
+    <value>设置了IP白名单，来源IP不在白名单内。帮助：https://www.tianapi.com/article/81</value>
+  </data>
+  <data name="error130" xml:space="preserve">
+    <value>API超出了分钟调用最大频率，被暂时限制。</value>
+  </data>
+  <data name="error140" xml:space="preserve">
+    <value>请检查接口是否被自行停用或被官方禁用。</value>
+  </data>
+  <data name="error150" xml:space="preserve">
+    <value>接口可用次数不足，请在接口列表查看。帮助：https://www.tianapi.com/apiview/43</value>
+  </data>
+  <data name="error160" xml:space="preserve">
+    <value>请先在对应的接口文档页面申请接口。帮助：https://www.tianapi.com/article/104</value>
+  </data>
+  <data name="error170" xml:space="preserve">
+    <value>设置了Referer白名单，来源Referer不在白名单内。帮助：https://www.tianapi.com/article/121</value>
+  </data>
+  <data name="error230" xml:space="preserve">
+    <value>请检查apikey是否填写错误。帮助：https://www.tianapi.com/article/28</value>
+  </data>
+  <data name="error240" xml:space="preserve">
+    <value>请检查是否传递了key参数，如变量请检查是否赋值。</value>
+  </data>
+  <data name="error250" xml:space="preserve">
+    <value>数据查询或转换失败，请确保输入值正确或重试。</value>
+  </data>
+  <data name="error260" xml:space="preserve">
+    <value>请检查查询参数是否传递了空值。</value>
+  </data>
+  <data name="error270" xml:space="preserve">
+    <value>接口需要传递数据，请参考接口文档的说明。帮助：https://www.tianapi.com/apiview/95</value>
+  </data>
+  <data name="error280" xml:space="preserve">
+    <value>缺少必填的参数，请根据接口文档检查。帮助：https://www.tianapi.com/apiview/95</value>
+  </data>
+  <data name="error290" xml:space="preserve">
+    <value>超出最大字符，请查看对应的接口文档说明。帮助：https://www.tianapi.com/apiview/95</value>
+  </data>
+  <data name="func_const_list.Content" xml:space="preserve">
+    <value>sqr  -  平方根  -  sqr9=3
+sin  -  正弦  -  sin45=0.707
+cos  -  余弦  -  co45=0.707
+tan  -  正切  -  tan45=1
+cot  -  余切  -  cot45=1
+abs  -  绝对值  -  abs(-10)=10
+cei  -  向上取整  -  cei4.3=5
+flo  -  向下取整  -  flo4.7=4
+log  -  对数  -  log[10,100]=2
+
+E  -  自然对数的底数  -  2.7182818...
+p  -  圆周率  -  3.1415926...</value>
+  </data>
+  <data name="func_const_list.PrimaryButtonText" xml:space="preserve">
+    <value>明白</value>
+  </data>
+  <data name="func_const_list.Title" xml:space="preserve">
+    <value>支持的函数与常量</value>
+  </data>
+  <data name="info_textblock.Text" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="info_textbox.PlaceholderText" xml:space="preserve">
+    <value>返回结果成功信息及失败提示将在此显示</value>
+  </data>
+  <data name="ip_request.Content" xml:space="preserve">
+    <value>IP 地址查询</value>
+  </data>
+  <data name="ip_request_result.PlaceholderText" xml:space="preserve">
+    <value>完整返回结果将在此以 JSON 格式显示，包括地区、运营商等</value>
+  </data>
+  <data name="ip_request_textblock.Text" xml:space="preserve">
+    <value>IP 地址</value>
+  </data>
+  <data name="ip_request_textbox.PlaceholderText" xml:space="preserve">
+    <value>在此处输入 IP 地址，如220.181.38.251</value>
+  </data>
+  <data name="ip_request_title_text.Text" xml:space="preserve">
+    <value>IP 地址查询</value>
+    <comment>ip_request</comment>
+  </data>
+  <data name="ip_res_error" xml:space="preserve">
+    <value>失败。</value>
+  </data>
+  <data name="ip_res_success" xml:space="preserve">
+    <value>成功。</value>
+  </data>
+  <data name="ip_textblock.Text" xml:space="preserve">
+    <value>IP 地址</value>
+  </data>
+  <data name="ip_textbox.PlaceholderText" xml:space="preserve">
+    <value>从返回结果中解析到的 IP 地址将在此显示</value>
+  </data>
+  <data name="ip_url.Content" xml:space="preserve">
+    <value>域名解析</value>
+  </data>
+  <data name="ip_url_title_text.Text" xml:space="preserve">
+    <value>域名解析</value>
+    <comment>ip_url</comment>
+  </data>
+  <data name="jp" xml:space="preserve">
+    <value>日本</value>
+  </data>
+  <data name="mkt_au.Text" xml:space="preserve">
+    <value>澳大利亚</value>
+  </data>
+  <data name="mkt_cn.Text" xml:space="preserve">
+    <value>中国</value>
+    <comment>Regions</comment>
+  </data>
+  <data name="mkt_de.Text" xml:space="preserve">
+    <value>德国</value>
+  </data>
+  <data name="mkt_jp.Text" xml:space="preserve">
+    <value>日本</value>
+  </data>
+  <data name="mkt_nz.Text" xml:space="preserve">
+    <value>新西兰</value>
+  </data>
+  <data name="mkt_uk.Text" xml:space="preserve">
+    <value>英国</value>
+  </data>
+  <data name="mkt_us.Text" xml:space="preserve">
+    <value>美国</value>
+  </data>
+  <data name="number_region.Content" xml:space="preserve">
+    <value>号码归属地</value>
+  </data>
+  <data name="number_title_text.Text" xml:space="preserve">
+    <value>手机号码归属地</value>
+    <comment>number region</comment>
+  </data>
+  <data name="num_textblock.Text" xml:space="preserve">
+    <value>号码</value>
+  </data>
+  <data name="num_textbox.PlaceholderText" xml:space="preserve">
+    <value>在此处输入中国手机号，如 13967880048</value>
+  </data>
+  <data name="nz" xml:space="preserve">
+    <value>新西兰</value>
+  </data>
+  <data name="panemode_ddb_text.Text" xml:space="preserve">
+    <value>左侧</value>
+  </data>
+  <data name="panemode_textblock.Text" xml:space="preserve">
+    <value>导航栏位置</value>
+  </data>
+  <data name="pane_left.Text" xml:space="preserve">
+    <value>左侧</value>
+  </data>
+  <data name="pane_top.Text" xml:space="preserve">
+    <value>顶部</value>
+  </data>
+  <data name="quick_edit_box.Text" xml:space="preserve">
+    <value>已保存。</value>
+    <comment>等搞完其他的再弄</comment>
+  </data>
+  <data name="rb_dark.Content" xml:space="preserve">
+    <value>暗色</value>
+  </data>
+  <data name="rb_default.Content" xml:space="preserve">
+    <value>系统默认</value>
+  </data>
+  <data name="rb_light.Content" xml:space="preserve">
+    <value>亮色</value>
+  </data>
+  <data name="refresh_wallpaper.Content" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="reset_all_btn.Text" xml:space="preserve">
+    <value>重置所有设置</value>
+  </data>
+  <data name="reset_confirm.Content" xml:space="preserve">
+    <value>所有设置都将回归默认。</value>
+  </data>
+  <data name="reset_confirm.PrimaryButtonText" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="reset_confirm.SecondaryButtonText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="reset_confirm.Title" xml:space="preserve">
+    <value>确定重置吗？</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Resources" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources.resw;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="restart_for_effect_text_1.Text" xml:space="preserve">
+    <value>重启此应用即可生效</value>
+  </data>
+  <data name="result.PlaceholderText" xml:space="preserve">
+    <value>完整返回结果将在此以 JSON 格式显示，包括存活时间、类型等</value>
+  </data>
+  <data name="res_textblock.Text" xml:space="preserve">
+    <value>返回值</value>
+  </data>
+  <data name="save_image.Text" xml:space="preserve">
+    <value>保存图片</value>
+  </data>
+  <data name="settings.Content" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="settings_subt_bing.Text" xml:space="preserve">
+    <value>必应每日壁纸</value>
+  </data>
+  <data name="settings_subt_domain.Text" xml:space="preserve">
+    <value>域名解析 / IP 地址查询</value>
+  </data>
+  <data name="settings_subt_freecalc.Text" xml:space="preserve">
+    <value>自由计算器</value>
+  </data>
+  <data name="settings_subt_general.Text" xml:space="preserve">
+    <value>通用</value>
+  </data>
+  <data name="settings_title_text.Text" xml:space="preserve">
+    <value>设置</value>
+    <comment>settings</comment>
+  </data>
+  <data name="show_func_btn.Content" xml:space="preserve">
+    <value>查看可用函数及常量列表</value>
+  </data>
+  <data name="text1.Text" xml:space="preserve">
+    <value>欢迎使用 hyy 小工具大杂烩！</value>
+    <comment>utilities_Home</comment>
+  </data>
+  <data name="text2.Text" xml:space="preserve">
+    <value>在左侧导航栏寻找你想要的工具吧！</value>
+  </data>
+  <data name="tianapi_error" xml:space="preserve">
+    <value>失败。请检查您的防火墙设置以及连接情况。</value>
+  </data>
+  <data name="tianapi_loading" xml:space="preserve">
+    <value>加载中…</value>
+  </data>
+  <data name="tianapi_phone_argError" xml:space="preserve">
+    <value>失败。请检查是否输入了合法的手机号码。</value>
+  </data>
+  <data name="tip1.ActionButtonContent" xml:space="preserve">
+    <value>开始吧！</value>
+  </data>
+  <data name="tip1.CloseButtonContent" xml:space="preserve">
+    <value>不用啦！</value>
+  </data>
+  <data name="tip1.Subtitle" xml:space="preserve">
+    <value>这个教程将会带你了解 FreeCalc的所有功能。你可以在任意提示框中点击 'x' 号来退出。</value>
+  </data>
+  <data name="tip1.Title" xml:space="preserve">
+    <value>欢迎来到 FreeCalc！</value>
+    <comment>freecalc</comment>
+  </data>
+  <data name="tip16.Subtitle" xml:space="preserve">
+    <value>现在你已经完成了全部教程，尽情享受 FreeCalc 吧！设置中还有更多惊喜等着你噢！</value>
+  </data>
+  <data name="tip16.Title" xml:space="preserve">
+    <value>恭喜！</value>
+  </data>
+  <data name="tip2.ActionButtonContent" xml:space="preserve">
+    <value>查看示例</value>
+  </data>
+  <data name="tip2.Subtitle" xml:space="preserve">
+    <value>FreeCalc 支持进行基础组合运算。试试看输入一个带有 +-*/^()的算式然后按回车。</value>
+  </data>
+  <data name="tip2.Title" xml:space="preserve">
+    <value>基础运算</value>
+  </data>
+  <data name="tip3.Subtitle" xml:space="preserve">
+    <value>如果运算框呈现不透明纯白色，则直接按回车；若非如此，点击运算框右边的勾来提交。</value>
+  </data>
+  <data name="tip3.Title" xml:space="preserve">
+    <value>现在提交</value>
+  </data>
+  <data name="tip4.Subtitle" xml:space="preserve">
+    <value>只需点击一下答案框，即可快速将答案输入到运算框内。</value>
+  </data>
+  <data name="tip4.Title" xml:space="preserve">
+    <value>答案自动填充</value>
+  </data>
+  <data name="tip5.ActionButtonContent" xml:space="preserve">
+    <value>查看函数列表</value>
+  </data>
+  <data name="tip5.CloseButtonContent" xml:space="preserve">
+    <value>查看示例</value>
+  </data>
+  <data name="tip5.Subtitle" xml:space="preserve">
+    <value>FreeCalc 支持函数运算，来试试吧！</value>
+  </data>
+  <data name="tip5.Title" xml:space="preserve">
+    <value>函数运算</value>
+  </data>
+  <data name="tip6.Subtitle" xml:space="preserve">
+    <value>提交一下来查看结果。</value>
+  </data>
+  <data name="tip6.Title" xml:space="preserve">
+    <value>现在提交</value>
+  </data>
+  <data name="tip7.ActionButtonContent" xml:space="preserve">
+    <value>查看示例</value>
+  </data>
+  <data name="tip7.Subtitle" xml:space="preserve">
+    <value>log 表达式中不能包含任何空格。当两数中的任意一个为表达式而不是单个数时需加上括号。</value>
+  </data>
+  <data name="tip7.Title" xml:space="preserve">
+    <value>请注意……</value>
+  </data>
+  <data name="tip8.ActionButtonContent" xml:space="preserve">
+    <value>查看示例</value>
+  </data>
+  <data name="tip8.Subtitle" xml:space="preserve">
+    <value>FreeCalc 支持两个常量，自然常数 e 和圆周率 π 。输入大写 'E' 代表 e，小写 'p' 代表 π。</value>
+  </data>
+  <data name="tip8.Title" xml:space="preserve">
+    <value>常量运算</value>
+  </data>
+  <data name="tip9.Subtitle" xml:space="preserve">
+    <value>提交一下来查看结果。</value>
+  </data>
+  <data name="tip9.Title" xml:space="preserve">
+    <value>现在提交</value>
+  </data>
+  <data name="toppane" xml:space="preserve">
+    <value>顶部</value>
+  </data>
+  <data name="uk" xml:space="preserve">
+    <value>英国</value>
+  </data>
+  <data name="url_textblock.Text" xml:space="preserve">
+    <value>域名</value>
+  </data>
+  <data name="url_textbox.PlaceholderText" xml:space="preserve">
+    <value>在此处输入域名，如 baidu.com</value>
+  </data>
+  <data name="us" xml:space="preserve">
+    <value>美国</value>
+  </data>
+  <data name="utilities_home.Content" xml:space="preserve">
+    <value>主页</value>
+    <comment>HomePage</comment>
+  </data>
+  <data name="wallpaper_failed.Message" xml:space="preserve">
+    <value>请检查您的防火墙设置以及连接情况。</value>
+  </data>
+  <data name="wallpaper_loading.Text" xml:space="preserve">
+    <value>请稍候…</value>
+  </data>
+  <data name="warning.Content" xml:space="preserve">
+    <value>请在进行上一次页面切换操作后5.5s后再进行下一次操作！
+否则会导致App频繁闪退！
+并且关闭App后5.5s内也不能再次打开App，否则也会闪退！</value>
+  </data>
+  <data name="warning.PrimaryButtonText" xml:space="preserve">
+    <value>我知道了</value>
+  </data>
+  <data name="warning.SecondaryButtonText" xml:space="preserve">
+    <value>啥叫闪退？</value>
+  </data>
+  <data name="warning.Title" xml:space="preserve">
+    <value>警告：</value>
+  </data>
+  <data name="warning_again_hypertext.Content" xml:space="preserve">
+    <value>再次显示警告</value>
+  </data>
+  <data name="welcome.Content" xml:space="preserve">
+    <value>欢迎使用 hyy 小工具大杂烩 V2.0.0！
+
+自由计算器 — 混合使用混合运算、函数、常量，计算器新物种
+BV / av 号转换 — 新老样式及链接互转，帮你刻入新 DNA
+域名解析 — 输入域名即可解析出 IP 等要素，高端网民必备
+IP 地址查询 — 输入 IP 即可解析出地区等要素，钓鱼网站无所遁形
+号码归属地查询 — 什么？你的手机不支持显示归属地？小工具来帮你
+命令提示符 — 没什么用但是好高端的亚子 :)</value>
+  </data>
+  <data name="welcome.PrimaryButtonText" xml:space="preserve">
+    <value>芜湖起飞！！</value>
+  </data>
+  <data name="welcome.Title" xml:space="preserve">
+    <value>本次更新内容：</value>
+  </data>
+  <data name="welcome_again_btn.Text" xml:space="preserve">
+    <value>再次显示更新内容</value>
+  </data>
+  <data name="wp_res_text.Text" xml:space="preserve">
+    <value>分辨率</value>
+  </data>
+  <data name="wp_title_text.Text" xml:space="preserve">
+    <value>必应每日壁纸</value>
+    <comment>bing_wp</comment>
+  </data>
+</root>

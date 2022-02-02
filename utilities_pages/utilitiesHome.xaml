@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="Utilities_Fix.utilities_pages.utilitiesHome"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Utilities_Fix.utilities_pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid>
+        <StackPanel Margin="0,0,0,60" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="text1" FontFamily="segoe UI variable display" x:Name="text1" FontSize="60" x:Uid="text1"/>
+            <TextBlock Text="text2" FontFamily="segoe ui variable display" FontWeight="Light" x:Name="text2" x:Uid="text2"
+                       HorizontalAlignment="Center" FontSize="30" Opacity="0.5"/>
+        </StackPanel>
+    </Grid>
+</Page>

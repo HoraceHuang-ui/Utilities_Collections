@@ -1,0 +1,157 @@
+﻿<Page
+    x:Class="Utilities_Fix.utilities_pages.settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Utilities_Fix.utilities_pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="settings_title_text" x:Uid="settings_title_text" Grid.Row="0" Grid.Column="1" Margin="5,0,0,0" 
+                   FontSize="30" VerticalAlignment="Center" FontWeight="Bold" FontFamily="segoe ui variable display" Text="settings_title_text"/>
+        <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="5,0,0,15">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="settings_subt_general" x:Uid="settings_subt_general" 
+                               FontFamily="segoe ui variable display" FontSize="35" Text="settings_subt_general"/>
+                    <TextBlock x:Name="restart_for_effect_text_1" x:Uid="restart_for_effect_text_1" VerticalAlignment="Bottom"
+                               FontFamily="segoe ui variable display" FontSize="13" FontStyle="Italic" Margin="15,0,0,5" Text="restert_for_effect_text_1"/>
+                </StackPanel>
+                <TextBlock x:Name="display_theme_text" x:Uid="display_theme_text" Margin="0,15,0,0" 
+                           FontFamily="segoe ui variable display" Text="display_theme_text"/>
+                <RadioButton GroupName="theme" x:Name="rb_light" x:Uid="rb_light" Checked="rb_light_Checked" 
+                             Margin="0,5,0,0" FontFamily="segoe ui variable display" Content="rb_light"/>
+                <RadioButton GroupName="theme" x:Name="rb_dark" x:Uid="rb_dark" Checked="rb_dark_Checked" 
+                             FontFamily="segoe ui variable display" Content="rb_dark"/>
+                <RadioButton GroupName="theme" x:Name="rb_default" x:Uid="rb_default" Checked="rb_default_Checked" 
+                             FontFamily="segoe ui variable display" Content="rb_dark"/>
+                <ToggleSwitch x:Name="english_switch" x:Uid="english_switch" Margin="0,15,0,0"
+                              Toggled="english_switch_Toggled" FontFamily="segoe ui variable display"
+                              OnContent="英文" OffContent="Chinese" Header="english_switch"/>
+                <StackPanel >
+                    <TextBlock x:Name="panemode_textblock" VerticalAlignment="Center" x:Uid="panemode_textblock"
+                               Margin="0,15,0,15" FontFamily="segoe ui variable display" Text="Navigation Pane Placement"/>
+                    <DropDownButton x:Name="panemode_ddb" VerticalAlignment="Center" Margin="0,0,0,10" HorizontalContentAlignment="Left" FontFamily="segoe ui variable display" MinWidth="100" CornerRadius="5">
+                        <DropDownButton.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <FontIcon x:Name="panemode_ddb_icon" FontFamily="segoe fluent icons" Glyph=""/>
+                                <TextBlock x:Name="panemode_ddb_text" x:Uid="panemode_ddb_text" FontFamily="segoe ui variable display" Text="Left" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </DropDownButton.Content>
+                        <DropDownButton.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem x:Name="pane_left" x:Uid="pane_left" Text="Left" Click="pane_left_Click">
+                                    <MenuFlyoutItem.Icon>
+                                        <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                                <MenuFlyoutItem x:Name="pane_top" x:Uid="pane_top" Text="Top" Click="pane_top_Click">
+                                    <MenuFlyoutItem.Icon>
+                                        <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                </StackPanel>
+                <Line StrokeThickness="1" X1="-10" X2="170" HorizontalAlignment="Left" Margin="0,10,0,10" Opacity="0.5"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="reset_all_btn" Click="reset_all_btn_Click" Margin="0,10,0,0">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="segoe fluent icons" Text="" VerticalAlignment="Center" FontSize="16"/>
+                                <TextBlock x:Uid="reset_all_btn" FontFamily="segoe ui variable display" Text="reset_all_btn" Margin="8,0,0,0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button x:Name="welcome_again_btn" Click="welcome_again_btn_Click"
+                            Margin="20,10,0,0" FontFamily="segoe ui variable display">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="segoe fluent icons" Text="" VerticalAlignment="Center" Margin="-3,0,0,0" FontSize="16"/>
+                                <TextBlock x:Uid="welcome_again_btn" FontFamily="segoe ui variable display" Text="welcome_again_btn" Margin="5,0,0,0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <!--<HyperlinkButton x:Name="edit_settingsVal_hypertext" x:Uid="edit_settingsVal_hypertext" 
+                                     Margin="10,11,0,0" Click="edit_settingsVal_hypertext_Click" 
+                                     FontFamily="segoe ui variable display" Content="edit_settingsVal_hypertext"/>
+                    <AutoSuggestBox x:Name="quick_edit_box" FontFamily="Consolas" Margin="0,10,0,0" FontWeight="Black" 
+                                    Visibility="Collapsed" QuerySubmitted="quick_edit_box_QuerySubmitted"/>-->
+                </StackPanel>
+                <TextBlock FontSize="15"/>
+
+                <TextBlock x:Name="settings_subt_freecalc" x:Uid="settings_subt_freecalc" 
+                           FontFamily="segoe ui variable display" FontSize="35" Margin="0,20,0,0" Text="settings_subt_freecalc"/>
+                <ToggleSwitch x:Name="degree_switch" x:Uid="degree_switch" Toggled="degree_switch_Toggled" Margin="0,15,0,0"
+                              FontFamily="segoe ui variable display" Header="degree_switch"/>
+                <Slider x:Name="decimal_slider" x:Uid="decimal_slider" ValueChanged="decimal_slider_ValueChanged" 
+                        Value="5" Width="300" Minimum="0" Maximum="15" StepFrequency="1" TickFrequency="2" 
+                        TickPlacement="Outside" HorizontalAlignment="Left" Margin="0,15,0,0"
+                        FontFamily="segoe ui variable display" Header="decimal_slider"/>
+                <Button x:Name="show_func_btn" x:Uid="show_func_btn" Click="show_func_btn_Click" Margin="0,10,0,0" 
+                        FontFamily="segoe ui variable display" Content="show_func_btn"/>
+                <TextBlock FontSize="15"/>
+
+                <TextBlock x:Name="settings_subt_domain" x:Uid="settings_subt_domain" FontFamily="segoe ui variable display"
+                           FontSize="35" Margin="0,20,0,0" Text="settings_subt_domain"/>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleSwitch x:Name="custom_apikey_switch" x:Uid="custom_apikey_switch" 
+                                  Toggled="custom_apikey_switch_Toggled" Margin="0,15,0,0" 
+                                  FontFamily="segoe ui variable display" Header="custom_apikey_switch"/>
+                    <TextBlock x:Name="apikey_textblock" Text="apikey" VerticalAlignment="Bottom" 
+                               Margin="0,0,0,15" FontFamily="segoe ui variable display" Opacity="0.4"/>
+                    <AutoSuggestBox x:Name="custom_apikey_box" Text="a9c1ad156691364ebfe8b3f1ff4eb153" FontFamily="Consolas"
+                                    Margin="10,10,0,5" IsEnabled="False" QuerySubmitted="custom_apikey_box_QuerySubmitted"
+                                    VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <TextBlock FontSize="15"/>
+
+                <TextBlock x:Name="settings_subt_bing" x:Uid="settings_subt_bing" FontFamily="segoe ui variable display"
+                           FontSize="35" Margin="0,20,0,0" Text="settings_subt_bing"/>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleSwitch x:Name="custom_mkt_switch" Header="Custom Region" x:Uid="custom_mkt_switch"
+                                  Toggled="custom_mkt_switch_Toggled" Margin="0,15,0,0" 
+                                  FontFamily="segoe ui variable display"/>
+                    <TextBlock x:Name="mkt_textblock" Text="mkt" VerticalAlignment="Center" 
+                               Margin="0,50,0,15" FontFamily="segoe ui variable display" Opacity="0.4"/>
+                    <DropDownButton x:Name="mkt_ddb" VerticalAlignment="Center" Margin="10,45,0,10" Content="China" HorizontalContentAlignment="Left" IsEnabled="False" FontFamily="segoe ui variable display" MinWidth="100" CornerRadius="5">
+                        <DropDownButton.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem x:Name="cn_mkt" x:Uid="mkt_cn" Click="cn_mkt_Click"/>
+                                <MenuFlyoutItem x:Name="us_mkt" x:Uid="mkt_us" Click="us_mkt_Click"/>
+                                <MenuFlyoutItem x:Name="uk_mkt" x:Uid="mkt_uk" Click="uk_mkt_Click"/>
+                                <MenuFlyoutItem x:Name="nz_mkt" x:Uid="mkt_nz" Click="nz_mkt_Click"/>
+                                <MenuFlyoutItem x:Name="au_mkt" x:Uid="mkt_au" Click="au_mkt_Click"/>
+                                <MenuFlyoutItem x:Name="jp_mkt" x:Uid="mkt_jp" Click="jp_mkt_Click"/>
+                                <MenuFlyoutItem x:Name="de_mkt" x:Uid="mkt_de" Click="de_mkt_Click"/>
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                </StackPanel>
+                <TextBlock x:Name="wp_res_text" x:Uid="wp_res_text" Text="Resolution" Margin="0,15,0,0" 
+                           FontFamily="segoe ui variable display"/>
+                <RadioButton GroupName="res" x:Name="rb_1366" Content="768p HD" Checked="rb_1366_Checked" 
+                             Margin="0,5,0,0" FontFamily="segoe ui variable display"/>
+                <RadioButton GroupName="res" x:Name="rb_1920" Content="1080p FHD" Checked="rb_1920_Checked" 
+                             FontFamily="segoe ui variable display"/>
+                <RadioButton GroupName="res" x:Name="rb_3840" Content="4K UHD" Checked="rb_3840_Checked" 
+                             FontFamily="segoe ui variable display"/>
+
+                <TextBlock FontSize="15"/>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
