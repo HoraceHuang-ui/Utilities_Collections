@@ -76,18 +76,6 @@
             </controls:TeachingTip.IconSource>
         </controls:TeachingTip>
         <controls:TeachingTip 
-            x:Name="tip7_logWarning" x:Uid="tip7"
-            PreferredPlacement="Bottom"
-            PlacementMargin="0,20,0,0"
-            Target="{x:Bind eq_form}"
-            ActionButtonClick="tip7_logWarning_ActionButtonClick"
-            CloseButtonClick="tip2_basicCalc_CloseButtonClick"
-            FontFamily="segoe ui variable display">
-            <controls:TeachingTip.IconSource>
-                <controls:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph=""/>
-            </controls:TeachingTip.IconSource>
-        </controls:TeachingTip>
-        <controls:TeachingTip 
             x:Name="tip8_consts" x:Uid="tip8"
             PreferredPlacement="Bottom"
             PlacementMargin="0,20,0,0"

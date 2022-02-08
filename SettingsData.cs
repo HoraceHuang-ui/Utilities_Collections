@@ -91,7 +91,7 @@ namespace Utilities_Fix
         {
             var deserializer = new DeserializerBuilder().WithNamingConvention(UnderscoredNamingConvention.Instance).Build();
             StorageFolder folder = KnownFolders.DocumentsLibrary;
-            StorageFile file = await folder.CreateFileAsync("utilities\\datav1_1_0.txt", CreationCollisionOption.OpenIfExists);
+            StorageFile file = await folder.CreateFileAsync("utilities\\datav2_6_0.txt", CreationCollisionOption.OpenIfExists);
 
             string yaml_data = await FileIO.ReadTextAsync(file);
             SettingsData sd = deserializer.Deserialize<SettingsData>(yaml_data);
@@ -150,7 +150,7 @@ namespace Utilities_Fix
         public async Task RefreshLocalFileAsync()
         {
             StorageFolder folder = KnownFolders.DocumentsLibrary;
-            StorageFile file = await folder.GetFileAsync("utilities\\datav1_1_0.txt");
+            StorageFile file = await folder.GetFileAsync("utilities\\datav2_6_0.txt");
             var serializer = new SerializerBuilder().WithNamingConvention(UnderscoredNamingConvention.Instance).Build();
             string s = serializer.Serialize(this);
             await FileIO.WriteTextAsync(file, s);

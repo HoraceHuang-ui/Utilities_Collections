@@ -39,9 +39,9 @@ namespace Utilities_Fix.utilities_pages
                 "abs  -  绝对值  -  abs(-10)=10\n" +
                 "cei  -  向上取整  -  cei4.3=5\n" +
                 "flo  -  向下取整  -  flo4.7=4\n" +
-                "log  -  对数  -  log[10,100]=2\n\n" +
+                "log  -  对数  -  log(10,100)=2\n\n" +
                 "E  -  自然对数的底数  -  2.7182818...\n" +
-                "p  -  圆周率  -  3.1415926...",
+                "P  -  圆周率  -  3.1415926...",
             PrimaryButtonText = "明白",
             DefaultButton = ContentDialogButton.Primary,
             FontFamily = new FontFamily("segoe ui variable display")
@@ -59,11 +59,12 @@ namespace Utilities_Fix.utilities_pages
         ContentDialog welcome = new ContentDialog()
         {
             Title = "本次更新内容：",
-            Content = "欢迎使用 hyy 小工具大杂烩 V2.5.0！\n\n" +
+            Content = "欢迎使用 hyy 小工具大杂烩 V2.6.0！\n\n" +
                 "修复了大量闪退问题，程序运行更稳定\n" +
                 "必应每日壁纸会显示加载中，反馈更直观\n" +
                 "更新后现可同步上一版本设置项\n" +
-                "采用 Windows 11 风格图标，好康！\n\n" +
+                "采用 Windows 11 风格图标，好康！\n" +
+                "自由计算器代码完全重写，运算效率更高限制更少！\n\n" +
                 "上一版本 V2.0.0 更新内容：\n" +
                 "自由计算器 — 混合使用混合运算、函数、常量，计算器新物种\n" +
                 "行列式计算器 - 线代考生必备！！！\n" +
@@ -102,9 +103,9 @@ namespace Utilities_Fix.utilities_pages
                     "abs  -  Absolute  -  abs(-10)=10\n" +
                     "cei  -  Ceiling  -  cei4.3=5\n" +
                     "flo  -  Floor  -  flo4.7=4\n" +
-                    "log  -  logarithm  -  log[10,100]=2\n\n" +
+                    "log  -  logarithm  -  log(10,100)=2\n\n" +
                     "E  -  Euler's number  -  2.7182818...\n" +
-                    "p  -  Pi  -  3.1415926...";
+                    "P  -  Pi  -  3.1415926...";
                 func_const_list.PrimaryButtonText = "OK";
 
                 reset_confirm.Title = "Are you sure?";
@@ -113,20 +114,21 @@ namespace Utilities_Fix.utilities_pages
                 reset_confirm.SecondaryButtonText = "Cancel";
 
                 welcome.Title = "What's New:";
-                welcome.Content = "Welcome to Utilities by Hyy V2.5.0！\n\n" +
-                "Fixed lots of force close problems, making the app more stable\n" +
-                "Bing Daily Wallpaper now displays \"Loading...\"\n" +
-                "Your settings from the previous version is now synced\n" +
-                "Added a Windows 11 styled icon!\n\n" +
-                "What's new in previous version V2.0.0:\n" +
-                "FreeCalc - Combine basic and advanced calculations\n" +
-                "Determinant Calculator - A necessity for Linear Algebra students\n" +
-                "BV / av Converter - Shuffle through BV / av numbers and URL\n" +
-                "Domain Analyzer - Extract key informations from a URL\n" +
-                "IP Request - Extract key informations from an IP address\n" +
-                "Phone Number Region - Extract key informations from a Chinese phone number\n" +
-                "Bing Daily Wallpaper - Refresh yourself with daily random sceneries\n" +
-                "Command Prompt - Nothing useful but looks advanced :)";
+                welcome.Content = "Welcome to Utilities by Hyy V2.6.0！\n\n" +
+                    "Fixed lots of force close problems, making the app more stable\n" +
+                    "Bing Daily Wallpaper now displays \"Loading...\"\n" +
+                    "Your settings from the previous version is now synced\n" +
+                    "Added a Windows 11 styled icon!\n" +
+                    "Enjoy a more consistent experience with the brand new FreeCalc!\n\n" +
+                    "What was new in the previous version V2.0.0:\n" +
+                    "FreeCalc - Combine basic and advanced calculations\n" +
+                    "Determinant Calculator - A necessity for Linear Algebra students\n" +
+                    "BV / av Converter - Shuffle through BV / av numbers and URL\n" +
+                    "Domain Analyzer - Extract key informations from a URL\n" +
+                    "IP Request - Extract key informations from an IP address\n" +
+                    "Phone Number Region - Extract key informations from a Chinese phone number\n" +
+                    "Bing Daily Wallpaper - Refresh yourself with daily random sceneries\n" +
+                    "Command Prompt - Nothing useful but looks advanced :)";
                 welcome.PrimaryButtonText = "Woo-Hoo!!";
             }
             if (preferences.pane_top)

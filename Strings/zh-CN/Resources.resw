@@ -507,20 +507,11 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="tip6.Title" xml:space="preserve">
     <value>现在提交</value>
   </data>
-  <data name="tip7.ActionButtonContent" xml:space="preserve">
-    <value>查看示例</value>
-  </data>
-  <data name="tip7.Subtitle" xml:space="preserve">
-    <value>log 表达式中不能包含任何空格。当两数中的任意一个为表达式而不是单个数时需加上括号。</value>
-  </data>
-  <data name="tip7.Title" xml:space="preserve">
-    <value>请注意……</value>
-  </data>
   <data name="tip8.ActionButtonContent" xml:space="preserve">
     <value>查看示例</value>
   </data>
   <data name="tip8.Subtitle" xml:space="preserve">
-    <value>FreeCalc 支持两个常量，自然常数 e 和圆周率 π 。输入大写 'E' 代表 e，小写 'p' 代表 π。</value>
+    <value>FreeCalc 支持两个常量，自然常数 e 和圆周率 π 。输入大写 'E' 代表 e，大写 'P' 代表 π。</value>
   </data>
   <data name="tip8.Title" xml:space="preserve">
     <value>常量运算</value>
@@ -555,39 +546,6 @@ p  -  圆周率  -  3.1415926...</value>
   </data>
   <data name="wallpaper_loading.Text" xml:space="preserve">
     <value>请稍候…</value>
-  </data>
-  <data name="warning.Content" xml:space="preserve">
-    <value>请在进行上一次页面切换操作后5.5s后再进行下一次操作！
-否则会导致App频繁闪退！
-并且关闭App后5.5s内也不能再次打开App，否则也会闪退！</value>
-  </data>
-  <data name="warning.PrimaryButtonText" xml:space="preserve">
-    <value>我知道了</value>
-  </data>
-  <data name="warning.SecondaryButtonText" xml:space="preserve">
-    <value>啥叫闪退？</value>
-  </data>
-  <data name="warning.Title" xml:space="preserve">
-    <value>警告：</value>
-  </data>
-  <data name="warning_again_hypertext.Content" xml:space="preserve">
-    <value>再次显示警告</value>
-  </data>
-  <data name="welcome.Content" xml:space="preserve">
-    <value>欢迎使用 hyy 小工具大杂烩 V2.0.0！
-
-自由计算器 — 混合使用混合运算、函数、常量，计算器新物种
-BV / av 号转换 — 新老样式及链接互转，帮你刻入新 DNA
-域名解析 — 输入域名即可解析出 IP 等要素，高端网民必备
-IP 地址查询 — 输入 IP 即可解析出地区等要素，钓鱼网站无所遁形
-号码归属地查询 — 什么？你的手机不支持显示归属地？小工具来帮你
-命令提示符 — 没什么用但是好高端的亚子 :)</value>
-  </data>
-  <data name="welcome.PrimaryButtonText" xml:space="preserve">
-    <value>芜湖起飞！！</value>
-  </data>
-  <data name="welcome.Title" xml:space="preserve">
-    <value>本次更新内容：</value>
   </data>
   <data name="welcome_again_btn.Text" xml:space="preserve">
     <value>再次显示更新内容</value>

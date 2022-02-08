@@ -503,20 +503,11 @@ p  -  Pi  -  3.1415926...</value>
   <data name="tip6.Title" xml:space="preserve">
     <value>Now submit</value>
   </data>
-  <data name="tip7.ActionButtonContent" xml:space="preserve">
-    <value>Example</value>
-  </data>
-  <data name="tip7.Subtitle" xml:space="preserve">
-    <value>The Log function should not contain any spaces. When any of the two expressions is more than a simple number, a pair of braces should be added.</value>
-  </data>
-  <data name="tip7.Title" xml:space="preserve">
-    <value>Keep in mind...</value>
-  </data>
   <data name="tip8.ActionButtonContent" xml:space="preserve">
     <value>Example</value>
   </data>
   <data name="tip8.Subtitle" xml:space="preserve">
-    <value>Two constants are available in FreeCalc currently, e and Pi. Enter 'E' for e, 'p' for Pi.</value>
+    <value>Two constants are available in FreeCalc so far, e and Pi. Enter 'E' for e, 'P' for Pi.</value>
   </data>
   <data name="tip8.Title" xml:space="preserve">
     <value>Meet constants</value>
@@ -551,37 +542,6 @@ p  -  Pi  -  3.1415926...</value>
   </data>
   <data name="wallpaper_loading.Text" xml:space="preserve">
     <value>Loading...</value>
-  </data>
-  <data name="warning.Content" xml:space="preserve">
-    <value>Please don't switch between pages or the app might crash!</value>
-  </data>
-  <data name="warning.PrimaryButtonText" xml:space="preserve">
-    <value>Got it</value>
-  </data>
-  <data name="warning.SecondaryButtonText" xml:space="preserve">
-    <value>Show me</value>
-  </data>
-  <data name="warning.Title" xml:space="preserve">
-    <value>Warning...</value>
-  </data>
-  <data name="warning_again_hypertext.Content" xml:space="preserve">
-    <value>Show warnings</value>
-  </data>
-  <data name="welcome.Content" xml:space="preserve">
-    <value>Welcome to Utilities by Hyy V2.0.0！
-
-FreeCalc - Combine basic and advanced calculations
-BV / av Converter - Shuffle through BV / av numbers and URL
-Domain Analyzer - Extract key informations from a URL
-IP Request - Extract key informations from an IP address
-Phone Number Region - Extract key informations from a Chinese phone number
-Command Prompt - Nothing useful but looks advanced :)</value>
-  </data>
-  <data name="welcome.PrimaryButtonText" xml:space="preserve">
-    <value>Woo-hoo!!</value>
-  </data>
-  <data name="welcome.Title" xml:space="preserve">
-    <value>About this update:</value>
   </data>
   <data name="welcome_again_btn.Text" xml:space="preserve">
     <value>Show Update Logs</value>
