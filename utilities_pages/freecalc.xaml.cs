@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using System.Threading.Tasks;
+using System.Collections;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -42,7 +43,7 @@ namespace Utilities_Fix.utilities_pages
             "abs  -  绝对值  -  abs(-10)=10\n" +
             "cei  -  向上取整  -  cei4.3=5\n" +
             "flo  -  向下取整  -  flo4.7=4\n" +
-            "log  -  对数  -  log[10,100]=2\n",
+            "log  -  对数  -  log(10,100)=2\n",
             PrimaryButtonText = "明白",
             DefaultButton = ContentDialogButton.Primary
         };
@@ -62,297 +63,222 @@ namespace Utilities_Fix.utilities_pages
             "abs  -   Absolute    -  abs(-10)=10\n" +
             "cei  -     Ceil      -  cei4.3=5\n" +
             "flo  -     Floor     -  flo4.7=4\n" +
-            "log  -     Log       -  log[10,100]=2\n";
+            "log  -     Log       -  log(10,100)=2\n";
             funclist.PrimaryButtonText = "Got it";
         }
 
         bool resVisible = false;
         int tipMode = 0;
-
-        string[] funcs = { "sqr", "sin", "cos", "tan", "cot", "log", "abs", "cei", "flo" };
-        const int sqrDEF = 0;
-        const int sinDEF = 1;
-        const int cosDEF = 2;
-        const int tanDEF = 3;
-        const int cotDEF = 4;
-        const int logDEF = 5;
-        const int absDEF = 6;
-        const int ceiDEF = 7;
-        const int floDEF = 8;
-        const double E = 2.718281828;
-        double Pi = Math.Atan(1) * 4;
         bool deg = false;
 
-        int find_first_of(string str, string arg)
+        /// <param name="eq">Full equation</param>
+        /// <param name="i">Start index</param>
+        private bool IsFunc(string eq, int i)
         {
-            for (int i = 0; i < str.Length; i++)
-            {
-                for (int j = 0; j < arg.Length; j++)
-                {
-                    if (arg[j] == str[i])
-                        return i;
-                }
-            }
-            return -1;
-        }
-        int Sfind(string str, string arg)
-        {
-            for (int i = 0; i < str.Length - arg.Length + 1; i++)
-            {
-                if (str.Substring(i, arg.Length) == arg) return i;
-            }
-            return -1;
-        }
-        int findConst(string s)
-        {
-            int pos;
-            for (int i = 0; i < 6; i++)
-            {
-                pos = find_first_of(s, "Ep");
-                if (pos == -1) continue;
-                else return pos;
-            }
-            return -1;
-        }
-        int findFunc(string s)
-        {
-            int pos;
-            for (int i = 0; i < 9; i++)
-            {
-                pos = Sfind(s, funcs[i]);
-                if (pos == -1) continue;
-                else return pos;
-            }
-            return -1;
-        }
-        double Functions(string a)
-        {
-            int func = 6;
-            string f = a.Substring(0, 3);
-
-            if (f == "sqr") func = sqrDEF;
-            else if (f == "tan") func = tanDEF;
-            else if (f == "cos") func = cosDEF;
-            else if (f == "sin") func = sinDEF;
-            else if (f == "cot") func = cotDEF;
-            else if (f == "log") func = logDEF;
-            else if (f == "abs") func = absDEF;
-            else if (f == "cei") func = ceiDEF;
-            else if (f == "flo") func = floDEF;
-            double num = func == logDEF ? 0 : double.Parse(a.Substring(3, a.Length - 3));
-            switch (func)
-            {
-                case sqrDEF: return Math.Sqrt(num);
-                case tanDEF: return deg ? Math.Tan(num / 180 * Pi) : Math.Tan(num);
-                case sinDEF: return deg ? Math.Sin(num / 180 * Pi) : Math.Sin(num);
-                case cotDEF: return deg ? (Math.Cos(num / 180 * Pi) / Math.Sin(num / 180 * Pi)) : (Math.Cos(num) / Math.Sin(num));
-                case cosDEF: return deg ? Math.Cos(num / 180 * Pi) : Math.Cos(num);
-                case logDEF:
-                    double l, r;
-                    int i, j;
-                    i = Sfind(a, ","); j = a.Length - 1;
-                    l = double.Parse(a.Substring(4, i - 4));
-                    r = double.Parse(a.Substring(i + 1, j - i - 1));
-                    return Math.Log(r) / Math.Log(l);
-                case absDEF: return num > 0 ? num : -num;
-                case ceiDEF:
-                    if ((int)num == num) return num;
-                    else if (num > 0) return (int)num + 1;
-                    else return (int)num;
-                case floDEF:
-                    if ((int)num == num) return num;
-                    else if (num > 0) return (int)num;
-                    else return (int)num - 1;
-                default:
-                    return 0;
-            }
-        }
-        int find(string str, char c)
-        {
-            for (int i = 0; i < str.Length; i++)
-                if (str[i] == c)
-                    return i;
-            return -1;
-        }
-        bool nonOpe(char c)
-        {
-            if ((c <= '9' && c >= '0') || c == '.' || (c <= 'z' && c >= 'a') || c == '[' || c == ']' || c == ',')
-                return true;
+            string[] funcs = { "sqr", "sin", "cos", "tan", "cot", "abs", "cei", "flo" };
+            if (i >= eq.Length) return false;
+            if (eq.Substring(i).Length < 3) return false;
+            eq = eq.Substring(i, 3);
+            if (funcs.Contains(eq)) return true;
             else return false;
         }
-        int findFirstof_2(string source, string args)
+        private int PriorTo(char tk1, char tk2)
         {
-            for (int i = 0; i < source.Length; i++)
-                if (source[i] == args[0] || source[i] == args[1])
-                    return i;
-            return -1;
+            Dictionary<char, int> priority = new Dictionary<char, int>
+            {
+                { '+', 1 },
+                { '-', 1 },
+                { '*', 2 },
+                { '/', 2 },
+                { '^', 3 }
+                // { '(', 4 }
+            };
+            if (!priority.ContainsKey(tk1) || !priority.ContainsKey(tk2))
+                return -2;
+            if (priority[tk1] > priority[tk2])
+                return 1;
+            else if (priority[tk1] < priority[tk2])
+                return -1;
+            else
+                return 0;
+        }
+        private bool IsOp(string op)
+        {
+            return "+-*/^".Contains(op);
+        }
+        private bool IsConst(string tk)
+        {
+            return "EP".Contains(tk);
+        }
+        private bool IsSpecialFunc(string eq, int i)
+        {
+            string[] funcs = { "log" };
+            if (i >= eq.Length) return false;
+            if (eq.Substring(i).Length < 3) return false;
+            eq = eq.Substring(i, 3);
+            if (funcs.Contains(eq)) return true;
+            else return false;
+        }
+        private Stack TransformToRPN(string eq)
+        {
+            Stack s1 = new Stack();
+            Stack s2 = new Stack();
+            for (int i = 0; i < eq.Length; i++)
+            {
+                // Numbers
+                if ((eq[i] <= '9' && eq[i] >= '0') ||
+                    (eq[i] == '-' && (i == 0 || !(eq[i - 1] <= '9' && eq[i - 1] >= '0' || eq[i-1] == ')'))))
+                {
+                    int j;
+                    for (j = i + 1; j < eq.Length && (eq[j] <= '9' && eq[j] >= '0' || eq[j] == '.'); j++) ;
+                    j--;
+                    s2.Push(eq.Substring(i, j - i + 1));
+                    i = j;
+                }
+                // Constants
+                else if (eq[i] == 'E')
+                {
+                    s2.Push("E");
+                }
+                else if (eq[i] == 'P')
+                {
+                    s2.Push("P");
+                }
+                // Functions
+                else if (IsFunc(eq, i))
+                {
+                    s1.Push(eq.Substring(i, 3));
+                    i += 2;
+                }
+                // Special functions
+                else if (IsSpecialFunc(eq, i))
+                {
+                    s1.Push(eq.Substring(i, 3));
+                    i += 2;
+                }
+                // Operators
+                else if (IsOp(eq[i].ToString()))
+                {
+                    if (s1.Count == 0 || (s1.Peek().ToString() == "(" ||
+                        (!IsFunc(s1.Peek().ToString(), 0) && !IsSpecialFunc(s1.Peek().ToString(), 0) && PriorTo(eq[i], s1.Peek().ToString()[0]) >= 0)))
+                    {
+                        s1.Push(eq[i].ToString());
+                    }
+                    else
+                    {
+                        while (s1.Count > 0 && (IsFunc(s1.Peek().ToString(), 0) || IsSpecialFunc(s1.Peek().ToString(), 0) ||
+                            (s1.Peek().ToString() != "(" && PriorTo(s1.Peek().ToString()[0], eq[i]) == 1)))
+                        {
+                            s2.Push(s1.Pop());
+                        }
+                        s1.Push(eq[i].ToString());
+                    }
+                }
+                // Brackets
+                else if (eq[i] == '(')
+                {
+                    s1.Push("(");
+                }
+                else if (eq[i] == ')')
+                {
+                    while (s1.Count > 0 && s1.Peek().ToString() != "(")
+                    {
+                        s2.Push(s1.Pop());
+                    }
+                    s1.Pop();
+                }
+                // spaces, ","
+            }
+            while (s1.Count > 0)
+            {
+                s2.Push(s1.Pop());
+            }
+            return s2;
         }
 
-        string calc(string e1)
+        private string calc(string eq)
         {
-            string e2, res; int i, j, k; string left, right; double num_L, num_R;
-            int brace_count = 0;
-        Check_Again:
-            i = findConst(e1);
-            if (i == -1) goto No_ep;
-            if (e1[i] == 'E')
+            // Transformation
+            Stack s = TransformToRPN(eq_form.Text);
+            string[] tokens = new string[s.Count];
+
+            for (int i = 0; i < tokens.Length; i++)
             {
-                e1 = e1.Remove(i, 1);
-                e1 = e1.Insert(i, "2.718281828459");
+                tokens[tokens.Length - i - 1] = s.Pop().ToString();
             }
-            else
+
+            // Calculation
+            s = new Stack();
+            foreach (string token in tokens)
             {
-                e1 = e1.Remove(i, 1);
-                e1 = e1.Insert(i, Pi.ToString());
+                // Numbers
+                if (token[0] <= '9' && token[0] >= '0' || token[0] == '-' && token.Length > 1)
+                {
+                    s.Push(double.Parse(token));
+                }
+                // Operators
+                else if (IsOp(token))
+                {
+                    double num1 = (double)s.Pop();
+                    double num0 = (double)s.Pop();
+                    switch (token)
+                    {
+                        case "+": s.Push(num0 + num1); break;
+                        case "-": s.Push(num0 - num1); break;
+                        case "*": s.Push(num0 * num1); break;
+                        case "/": s.Push(num0 / num1); break;
+                        case "^": s.Push(Math.Pow(num0, num1)); break;
+                    }
+                }
+                // Constants
+                else if (IsConst(token))
+                {
+                    switch (token)
+                    {
+                        case "E": s.Push(Math.E); break;
+                        case "P": s.Push(Math.PI); break;
+                    }
+                }
+                // Functions
+                else if (IsFunc(token, 0))
+                {
+                    double num = (double)s.Pop();
+                    switch (token)
+                    {
+                        case "sqr": s.Push(Math.Sqrt(num)); break;
+                        case "tan": s.Push(deg ? Math.Tan(num) : Math.Tan(num / 180 * Math.PI)); break;
+                        case "sin": s.Push(deg ? Math.Sin(num) : Math.Sin(num / 180 * Math.PI)); break;
+                        case "cot":
+                            s.Push(deg ? (Math.Cos(num) / Math.Sin(num)) :
+                                (Math.Cos(num / 180 * Math.PI) / Math.Sin(num / 180 * Math.PI))); break;
+                        case "cos": s.Push(deg ? Math.Cos(num) : Math.Cos(num / 180 * Math.PI)); break;
+                        case "abs": s.Push(num > 0 ? num : -num); break;
+                        case "cei":
+                            if ((int)num == num) s.Push(num);
+                            else if (num > 0) s.Push((double)((int)num + 1));
+                            else s.Push((double)((int)num));
+                            break;
+                        case "flo":
+                            if ((int)num == num) s.Push(num);
+                            else if (num > 0) s.Push((double)((int)num));
+                            else s.Push((double)((int)num - 1));
+                            break;
+                    }
+                }
+                // Special functions
+                else if (IsSpecialFunc(token, 0))
+                {
+                    switch (token)
+                    {
+                        case "log":
+                            double num0 = (double)s.Pop();
+                            double num1 = (double)s.Pop();
+                            s.Push(Math.Log(num0) / Math.Log(num1));
+                            break;
+                    }
+                }
             }
-            goto Check_Again;
-        No_ep:
-            j = find(e1, '(');
-            if (j == -1) goto NoKH;
-            for (i = j + 1; brace_count != -1; i++)
-            {
-                if (e1[i] == '(') brace_count += 1;
-                if (e1[i] == ')') brace_count -= 1;
-            }
-            k = i - 1;
-            e2 = e1.Substring(j + 1, k - j - 1);
-            res = calc(e2);
-            e1 = e1.Remove(j, k - j + 1);
-            e1 = e1.Insert(j, res);
-            goto No_ep;
-        NoKH:
-            i = findFunc(e1);
-            if (i == -1) goto NoFunc;
-            brace_count = 0;          //此处brace_count用来标记是否有负号，有为1
-            if (e1[i + 3] == '-') brace_count = 1;
-            for (j = i; ; j++)
-            {
-                if (j == i + 3 && brace_count == 1) continue;
-                if (j >= e1.Length || !nonOpe(e1[j])) break;
-            }
-            e2 = e1.Substring(i, j - i);
-            res = Functions(e2).ToString();
-            e1 = e1.Remove(i, j - i);
-            e1 = e1.Insert(i, res);
-            goto NoKH;
-        NoFunc:
-            i = find(e1, '^');
-            if (i == -1) goto NoPW;
-            //getnum!!!在这儿！！！！！
-            for (j = i - 1; ; j--) if (j < 0 || !nonOpe(e1[j]))
-                {
-                    if (j < 0)
-                        break;
-                    if (j == 0)
-                    {
-                        j -= 1;
-                        break;
-                    }
-                    if (e1[j] == '-' && !nonOpe(e1[j - 1]))
-                    {
-                        j -= 1;
-                        break;
-                    }
-                    if (e1[j] != '-' || (e1[j] == '-' && nonOpe(e1[j - 1])))
-                        break;
-                }
-            for (k = i + 1; ; k++)
-                if (k >= e1.Length || !nonOpe(e1[k]))
-                {
-                    if (k < e1.Length && k == i + 1 && e1[k] == '-') ; //符号后紧接减号则为负，跳过符号继续读取
-                    else break;
-                }
-            left = e1.Substring(j + 1, i - j - 1);
-            right = e1.Substring(i + 1, k - i - 1);
-            num_L = double.Parse(left);
-            num_R = double.Parse(right);
-            //以上是getnum！！！
-            res = Math.Pow(num_L, num_R).ToString();
-            e1 = e1.Remove(j + 1, k - j - 1);
-            e1 = e1.Insert(j + 1, res);
-            goto NoFunc;
-        NoPW:
-            i = findFirstof_2(e1, "*/");
-            if (i == -1) goto NoTD;
-            //getnum！！！！
-            for (j = i - 1; ; j--)
-                if (j < 0 || !nonOpe(e1[j]))
-                {
-                    if (j < 0)
-                        break;
-                    if (j == 0)
-                    {
-                        j -= 1;
-                        break;
-                    }
-                    if (e1[j] == '-' && !nonOpe(e1[j - 1]))
-                    {
-                        j -= 1;
-                        break;
-                    }
-                    if (e1[j] != '-' || (e1[j] == '-' && nonOpe(e1[j - 1])))
-                        break;
-                }
-            for (k = i + 1; ; k++)
-                if (k >= e1.Length || !nonOpe(e1[k]))
-                {
-                    if (!(k < e1.Length && k == i + 1 && e1[k] == '-')) break; //符号后紧接减号则为负，跳过符号继续读取
-                }
-            left = e1.Substring(j + 1, i - j - 1);
-            right = e1.Substring(i + 1, k - i - 1);
-            num_L = double.Parse(left);
-            num_R = double.Parse(right);
-            //以上是getnum！！！
-            if (e1[i] == '*') res = (num_L * num_R).ToString();
-            else res = (num_L / num_R).ToString();
-            e1 = e1.Remove(j + 1, k - j - 1);
-            e1 = e1.Insert(j + 1, res);
-            goto NoPW;
-        NoTD:
-            i = findFirstof_2(e1, "+-");
-            if (i == -1) goto NoPM;
-            if (i == 0)
-            {
-                i = findFirstof_2(e1.Substring(1, e1.Length - 1), "+-");
-                i++;
-            }
-            if (i == 0) goto NoPM;
-            //getnum!!!!!!
-            for (j = i - 1; ; j--) if (j < 0 || !nonOpe(e1[j]))
-                {
-                    if (j < 0)
-                        break;
-                    if (j == 0)
-                    {
-                        j -= 1;
-                        break;
-                    }
-                    if (e1[j] == '-' && !nonOpe(e1[j - 1]))
-                    {
-                        j -= 1;
-                        break;
-                    }
-                    if (e1[j] != '-' || (e1[j] == '-' && nonOpe(e1[j - 1])))
-                        break;
-                }
-            for (k = i + 1; ; k++)
-                if (k >= e1.Length || !nonOpe(e1[k]))
-                {
-                    if (!(k < e1.Length && k == i + 1 && e1[k] == '-')) break; //符号后紧接减号则为负，跳过符号继续读取
-                }
-            left = e1.Substring(j + 1, i - j - 1);
-            right = e1.Substring(i + 1, k - i - 1);
-            num_L = double.Parse(left);
-            num_R = double.Parse(right);
-            //以上是getnum！！！
-            if (e1[i] == '+') res = (num_L + num_R).ToString();
-            else res = (num_L - num_R).ToString();
-            e1 = e1.Remove(j + 1, k - j - 1);
-            e1 = e1.Insert(j + 1, res);
-            goto NoTD;
-        NoPM:
-            num_L = double.Parse(e1);   //此处num_L用来精确到指定小数位
-            return Math.Round(num_L, decimal_accuracy).ToString();
+            return s.Pop().ToString();
         }
         public freecalc()
         {
@@ -370,7 +296,7 @@ namespace Utilities_Fix.utilities_pages
                 else if (tip6_submit.IsOpen)
                 {
                     tip6_submit.IsOpen = false;
-                    tip7_logWarning.IsOpen = true;
+                    tip8_consts.IsOpen = true;
                 }
                 else if (tip9_submit.IsOpen)
                 {
@@ -413,8 +339,8 @@ namespace Utilities_Fix.utilities_pages
                 tip16_congrats.IsOpen = true;
                 if (RequestedTheme == ElementTheme.Dark)
                     congratsPic.Source = new BitmapImage(new Uri("ms-appx:///Assets/math_dark.jpg"));
-                else
-                    congratsPic.Source = new BitmapImage(new Uri("ms-appx:///Assets/math_light.png"));
+                else if (RequestedTheme == ElementTheme.Light)
+                    congratsPic.Source = new BitmapImage(new Uri("ms-appx:///Assets/math_light.jpg"));
             }
         }
 
@@ -445,13 +371,6 @@ namespace Utilities_Fix.utilities_pages
                 {
                     tip4_AnsFill.IsOpen = false;
                     tip5_funcs.IsOpen = true;
-                }
-                else if (tip7_logWarning.IsOpen)
-                {
-                    tip7_logWarning.IsOpen = false;
-                    tip8_consts.IsOpen = true;
-                    res_form.Text = "2";
-                    return;
                 }
                 else if (tip8_consts.IsOpen)
                 {
@@ -488,13 +407,14 @@ namespace Utilities_Fix.utilities_pages
         private void tip2_basicCalc_ActionButtonClick(Microsoft.UI.Xaml.Controls.TeachingTip sender, object args)
         {
             eq_form.Text = "(10*(5+3-1)/7)^2";
+            if (tipMode == 6) tipMode++;
             tipMode++;
         }
 
         //tip5 example
         private void tip5_funcs_CloseButtonClick(Microsoft.UI.Xaml.Controls.TeachingTip sender, object args)
         {
-            eq_form.Text = "abs(cos120)+log[10,100]";
+            eq_form.Text = "abs cos120+log(10,100)";
             tip6_submit.IsOpen = true;
         }
         //tip5 list
@@ -503,14 +423,9 @@ namespace Utilities_Fix.utilities_pages
             await funclist.ShowAsync();
         }
 
-        private void tip7_logWarning_ActionButtonClick(Microsoft.UI.Xaml.Controls.TeachingTip sender, object args)
-        {
-            eq_form.Text = "log[(5+5),100]";
-        }
-
         private void tip8_consts_ActionButtonClick(Microsoft.UI.Xaml.Controls.TeachingTip sender, object args)
         {
-            eq_form.Text = "E+p";
+            eq_form.Text = "E+P";
             tipMode = 9;
         }
 
