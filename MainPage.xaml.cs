@@ -126,6 +126,8 @@ namespace Utilities_Fix
                 contentFrame.Navigate(typeof(utilities_pages.number_region));
             else if (args.SelectedItem == cmd)
                 contentFrame.Navigate(typeof(utilities_pages.cmd));
+            else if (args.SelectedItem == text_comparator)
+                contentFrame.Navigate(typeof(utilities_pages.textDiff));
         }
     }
 }

@@ -472,7 +472,7 @@ p  -  圆周率  -  3.1415926...</value>
     <value>查看示例</value>
   </data>
   <data name="tip2.Subtitle" xml:space="preserve">
-    <value>FreeCalc 支持进行基础组合运算。试试看输入一个带有 +-*/^()的算式然后按回车。</value>
+    <value>FreeCalc 支持进行基础组合运算。试试看输入一个带有 +-%*/^()的算式然后按回车。</value>
   </data>
   <data name="tip2.Title" xml:space="preserve">
     <value>基础运算</value>

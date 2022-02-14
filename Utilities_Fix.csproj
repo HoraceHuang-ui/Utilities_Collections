@@ -160,6 +160,9 @@
     <Compile Include="utilities_pages\settings.xaml.cs">
       <DependentUpon>settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="utilities_pages\textDiff.xaml.cs">
+      <DependentUpon>textDiff.xaml</DependentUpon>
+    </Compile>
     <Compile Include="utilities_pages\utilitiesHome.xaml.cs">
       <DependentUpon>utilitiesHome.xaml</DependentUpon>
     </Compile>
@@ -267,6 +270,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="utilities_pages\settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="utilities_pages\textDiff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

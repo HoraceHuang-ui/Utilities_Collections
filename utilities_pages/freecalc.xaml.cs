@@ -88,9 +88,10 @@ namespace Utilities_Fix.utilities_pages
             {
                 { '+', 1 },
                 { '-', 1 },
-                { '*', 2 },
-                { '/', 2 },
-                { '^', 3 }
+                { '%', 2 },
+                { '*', 3 },
+                { '/', 3 },
+                { '^', 4 }
                 // { '(', 4 }
             };
             if (!priority.ContainsKey(tk1) || !priority.ContainsKey(tk2))
@@ -104,11 +105,11 @@ namespace Utilities_Fix.utilities_pages
         }
         private bool IsOp(string op)
         {
-            return "+-*/^".Contains(op);
+            return "+-%*/^".Contains(op);
         }
-        private bool IsConst(string tk)
+        private bool IsConst(string eq, int i)
         {
-            return "EP".Contains(tk);
+            return "EP".Contains(eq.Substring(i, 1));
         }
         private bool IsSpecialFunc(string eq, int i)
         {
@@ -127,7 +128,7 @@ namespace Utilities_Fix.utilities_pages
             {
                 // Numbers
                 if ((eq[i] <= '9' && eq[i] >= '0') ||
-                    (eq[i] == '-' && (i == 0 || !(eq[i - 1] <= '9' && eq[i - 1] >= '0' || eq[i-1] == ')'))))
+                    (eq[i] == '-' && (i == 0 || !(eq[i - 1] <= '9' && eq[i - 1] >= '0' || eq[i - 1] == ')'))))
                 {
                     int j;
                     for (j = i + 1; j < eq.Length && (eq[j] <= '9' && eq[j] >= '0' || eq[j] == '.'); j++) ;
@@ -159,15 +160,18 @@ namespace Utilities_Fix.utilities_pages
                 // Operators
                 else if (IsOp(eq[i].ToString()))
                 {
-                    if (s1.Count == 0 || (s1.Peek().ToString() == "(" ||
-                        (!IsFunc(s1.Peek().ToString(), 0) && !IsSpecialFunc(s1.Peek().ToString(), 0) && PriorTo(eq[i], s1.Peek().ToString()[0]) >= 0)))
+                    // Higher priority than previous
+                    if (s1.Count == 0 || s1.Peek().ToString() == "(" ||
+                        (!IsFunc(s1.Peek().ToString(), 0) && !IsSpecialFunc(s1.Peek().ToString(), 0) &&
+                        PriorTo(eq[i], s1.Peek().ToString()[0]) > 0))
                     {
                         s1.Push(eq[i].ToString());
                     }
+                    // Lower or equal priority
                     else
                     {
                         while (s1.Count > 0 && (IsFunc(s1.Peek().ToString(), 0) || IsSpecialFunc(s1.Peek().ToString(), 0) ||
-                            (s1.Peek().ToString() != "(" && PriorTo(s1.Peek().ToString()[0], eq[i]) == 1)))
+                            (s1.Peek().ToString() != "(" && PriorTo(s1.Peek().ToString()[0], eq[i]) >= 0)))
                         {
                             s2.Push(s1.Pop());
                         }
@@ -199,7 +203,7 @@ namespace Utilities_Fix.utilities_pages
         private string calc(string eq)
         {
             // Transformation
-            Stack s = TransformToRPN(eq_form.Text);
+            Stack s = TransformToRPN(eq);
             string[] tokens = new string[s.Count];
 
             for (int i = 0; i < tokens.Length; i++)
@@ -225,13 +229,14 @@ namespace Utilities_Fix.utilities_pages
                     {
                         case "+": s.Push(num0 + num1); break;
                         case "-": s.Push(num0 - num1); break;
+                        case "%": s.Push(num0 % num1); break;
                         case "*": s.Push(num0 * num1); break;
                         case "/": s.Push(num0 / num1); break;
                         case "^": s.Push(Math.Pow(num0, num1)); break;
                     }
                 }
                 // Constants
-                else if (IsConst(token))
+                else if (IsConst(token, 0))
                 {
                     switch (token)
                     {
@@ -256,11 +261,11 @@ namespace Utilities_Fix.utilities_pages
                         case "cei":
                             if ((int)num == num) s.Push(num);
                             else if (num > 0) s.Push((double)((int)num + 1));
-                            else s.Push((double)((int)num));
+                            else s.Push((double)(int)num);
                             break;
                         case "flo":
                             if ((int)num == num) s.Push(num);
-                            else if (num > 0) s.Push((double)((int)num));
+                            else if (num > 0) s.Push((double)(int)num);
                             else s.Push((double)((int)num - 1));
                             break;
                     }
@@ -314,7 +319,16 @@ namespace Utilities_Fix.utilities_pages
             }
             try
             {
-                res_form.Text = calc(eq_form.Text);
+                string s = eq_form.Text;
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (s[i] == ' ')
+                    {
+                        s = s.Remove(i, 1);
+                        i--;
+                    }
+                }
+                res_form.Text = calc(s);
                 eq_form.Translation = new Vector3(-100, 0, 0);
                 res_form.Visibility = Visibility.Visible;
                 res_form.Opacity = 1;

@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="Utilities_Fix.utilities_pages.textDiff"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Utilities_Fix.utilities_pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Text Comparator" FontSize="30" VerticalAlignment="Center"
+                       FontWeight="Bold" FontFamily="segoe ui variable display"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,10">
+            <CheckBox x:Name="ignore_cases" Content="Ignore cases" VerticalAlignment="Bottom" FontFamily="segoe ui variable display"/>
+            <Button x:Name="compare" Click="compare_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontFamily="segoe fluent icons" Text="" FontSize="20"/>
+                    <TextBlock Text="Compare" FontFamily="segoe ui variable display" FontSize="16" Margin="8,0,0,0"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="reset" Click="reset_Click" FontFamily="segoe fluent icons" Content="" FontSize="20" ToolTipService.ToolTip="Reset all"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <RichTextBlock x:Name="left_res" TextWrapping="WrapWholeWords" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20"/>
+            <TextBox x:Name="left_box" TextWrapping="Wrap" Grid.Column="0" AcceptsReturn="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20" CornerRadius="10"/>
+            <RichTextBlock x:Name="right_res" TextWrapping="WrapWholeWords" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20"/>
+            <TextBox x:Name="right_box" TextWrapping="Wrap" Grid.Column="1" AcceptsReturn="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,10,0,10" FontFamily="consolas" FontSize="20" CornerRadius="10"/>
+        </Grid>
+    </Grid>
+</Page>

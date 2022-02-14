@@ -22,16 +22,22 @@
                         <FontIcon FontFamily="Segoe Fluent Icons" Glyph=""/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Icon="Shuffle" x:Name="avbv" x:Uid="avbv"
-                     FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Icon="Pictures" x:Name="bing_wp" x:Uid="bing_wp"
+                                    FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Content="Text Comparator" x:Name="text_comparator"
+                                    FontFamily="segoe ui variable display">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItem Icon="Link" x:Name="ip_url"  x:Uid="ip_url"
                      FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="MapDrive" x:Name="ip_request" x:Uid="ip_request"
                      FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="Phone" x:Name="number_region"
                      x:Uid="number_region" FontFamily="segoe ui variable display"/>
-                <NavigationViewItem Icon="Pictures" x:Name="bing_wp" x:Uid="bing_wp"
-                                    FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Icon="Shuffle" x:Name="avbv" x:Uid="avbv"
+                     FontFamily="segoe ui variable display"/>
                 <NavigationViewItem x:Name="cmd" x:Uid="cmd"
                      FontFamily="segoe ui variable display">
                     <NavigationViewItem.Icon>
