@@ -468,7 +468,7 @@ p  -  Pi  -  3.1415926...</value>
     <value>Example</value>
   </data>
   <data name="tip2.Subtitle" xml:space="preserve">
-    <value>FreeCalc supports basic expressions. Try entering an expression containing +-*/^() and press enter.</value>
+    <value>FreeCalc supports basic expressions. Try entering an expression containing +-%*/^() and press enter.</value>
   </data>
   <data name="tip2.Title" xml:space="preserve">
     <value>Basic Calculation</value>
