@@ -29,7 +29,7 @@ namespace Utilities_Fix.utilities_pages
 
         private void compare_Click(object sender, RoutedEventArgs e)
         {
-
+            title.Text = right_box.TextDocument.ToString();
         }
 
         static string[,] LCS(string str1, string str2)
@@ -65,10 +65,10 @@ namespace Utilities_Fix.utilities_pages
 
         private void reset_Click(object sender, RoutedEventArgs e)
         {
-            left_box.Visibility = Visibility.Visible;
-            right_box.Visibility = Visibility.Visible;
-            left_box.Text = string.Empty;
-            right_box.Text = string.Empty;
+            left_box = new RichEditBox();
+            right_box = new RichEditBox();
+            //left_box.Text = string.Empty;
+            //right_box.Text = string.Empty;
         }
     }
 }

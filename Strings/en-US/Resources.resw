@@ -159,6 +159,12 @@
     <value>China</value>
     <comment>Regions</comment>
   </data>
+  <data name="cnt_textblock.Text" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="cnt_textbox.PlaceholderText" xml:space="preserve">
+    <value>Count of the generated numbers</value>
+  </data>
   <data name="custom_apikey_switch.Header" xml:space="preserve">
     <value>Custom apikey</value>
   </data>
@@ -314,6 +320,18 @@ p  -  Pi  -  3.1415926...</value>
   <data name="jp" xml:space="preserve">
     <value>Japan</value>
   </data>
+  <data name="max_textblock.Text" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="max_textbox.PlaceholderText" xml:space="preserve">
+    <value>Maximum value</value>
+  </data>
+  <data name="min_textblock.Text" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="min_textbox.PlaceholderText" xml:space="preserve">
+    <value>Minimum value</value>
+  </data>
   <data name="mkt_au.Text" xml:space="preserve">
     <value>Australia</value>
   </data>
@@ -336,12 +354,18 @@ p  -  Pi  -  3.1415926...</value>
   <data name="mkt_us.Text" xml:space="preserve">
     <value>United States</value>
   </data>
+  <data name="no_dup.Content" xml:space="preserve">
+    <value>No Duplicates</value>
+  </data>
   <data name="number_region.Content" xml:space="preserve">
     <value>Number Region</value>
   </data>
   <data name="number_title_text.Text" xml:space="preserve">
     <value>Phone Number Region</value>
     <comment>number region</comment>
+  </data>
+  <data name="num_rand.Content" xml:space="preserve">
+    <value>Number Randomizer</value>
   </data>
   <data name="num_textblock.Text" xml:space="preserve">
     <value>Number</value>
@@ -367,6 +391,19 @@ p  -  Pi  -  3.1415926...</value>
   <data name="quick_edit_box.Text" xml:space="preserve">
     <value>Saved.</value>
     <comment>等搞完其他的再弄</comment>
+  </data>
+  <data name="randomizer_title.Text" xml:space="preserve">
+    <value>Number Randomizer</value>
+    <comment>randomizer</comment>
+  </data>
+  <data name="randomize_button.Text" xml:space="preserve">
+    <value>Randomize</value>
+  </data>
+  <data name="rand_res_textblock.Text" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="rand_res_textbox.PlaceholderText" xml:space="preserve">
+    <value>Generated sorted numbers</value>
   </data>
   <data name="rb_dark.Content" xml:space="preserve">
     <value>Dark</value>

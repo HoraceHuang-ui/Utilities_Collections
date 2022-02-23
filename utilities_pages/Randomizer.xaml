@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="Utilities_Fix.utilities_pages.Randomizer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Utilities_Fix.utilities_pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Uid="randomizer_title" Grid.Row="0" Grid.Column="1" Text="Number Randomizer" FontSize="30" VerticalAlignment="Center"
+                       FontWeight="Bold" FontFamily="segoe ui variable display"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,10">
+            <CheckBox x:Uid="no_dup" x:Name="no_dup" Content="No Duplicates" VerticalAlignment="Bottom" FontFamily="segoe ui variable display"/>
+            <Button x:Name="randomize" Click="randomize_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontFamily="segoe fluent icons" Text="" FontSize="20"/>
+                    <TextBlock x:Uid="randomize_button" Text="Randomize" FontFamily="segoe ui variable display" FontSize="16" Margin="8,0,0,0"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="reset" Click="reset_Click" FontFamily="segoe fluent icons" Content="" FontSize="20" ToolTipService.ToolTip="Reset all" Margin="3,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="5,0,5,15" VerticalScrollBarVisibility="Auto" 
+                      HorizontalScrollMode="Disabled">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="29*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="12*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Uid="min_textblock" Text="Min" Grid.Row="0" Grid.Column="0" FontSize="25"
+                           VerticalAlignment="Center" FontFamily="segoe ui variable display"/>
+                <TextBox x:Uid="min_textbox" x:Name="min_textbox" PlaceholderText="Minimum value" Grid.Row="0" Grid.Column="1" Margin="15,0,0,0" 
+                                FontSize="25" HorizontalAlignment="Stretch" FontFamily="consolas"/>
+                <TextBlock x:Uid="max_textblock" Text="Max" Grid.Row="1" Grid.Column="0" FontSize="25" 
+                           VerticalAlignment="Center" FontFamily="segoe ui variable display"/>
+                <TextBox x:Uid="max_textbox" x:Name="max_textbox" PlaceholderText="Maximum value" Grid.Row="1" Grid.Column="1" Margin="15,10,0,10" 
+                         FontSize="25" HorizontalAlignment="Stretch" FontFamily="consolas"/>
+                <TextBlock x:Uid="cnt_textblock" Text="Count" Grid.Row="2" Grid.Column="0" FontSize="25" 
+                           VerticalAlignment="Top" FontFamily="segoe ui variable display"/>
+                <TextBox x:Uid="cnt_textbox" x:Name="cnt_textbox" PlaceholderText="Count of the generated numbers" Grid.Row="2" Grid.Column="1" Margin="15,0,0,10" 
+                         FontSize="25" HorizontalAlignment="Stretch" FontFamily="consolas"/>
+                <TextBlock x:Uid="rand_res_textblock" Text="Result" Grid.Row="3" Grid.Column="0" FontSize="25"
+                           FontFamily="segoe ui variable display"/>
+                <TextBox x:Uid="rand_res_textbox" x:Name="result" PlaceholderText="Randomized numbers" Grid.Row="3" Grid.Column="1" FontSize="25"
+                         HorizontalAlignment="Stretch" Margin="15,0,0,0" FontFamily="consolas" AcceptsReturn="True" TextWrapping="Wrap"
+                         IsReadOnly="True"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

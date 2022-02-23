@@ -24,6 +24,8 @@
                 </NavigationViewItem>
                 <NavigationViewItem Icon="Pictures" x:Name="bing_wp" x:Uid="bing_wp"
                                     FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Icon="Shuffle" x:Name="num_rand" x:Uid="num_rand"
+                                    FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Content="Text Comparator" x:Name="text_comparator"
                                     FontFamily="segoe ui variable display">
                     <NavigationViewItem.Icon>
@@ -36,7 +38,7 @@
                      FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="Phone" x:Name="number_region"
                      x:Uid="number_region" FontFamily="segoe ui variable display"/>
-                <NavigationViewItem Icon="Shuffle" x:Name="avbv" x:Uid="avbv"
+                <NavigationViewItem Icon="Video" x:Name="avbv" x:Uid="avbv"
                      FontFamily="segoe ui variable display"/>
                 <NavigationViewItem x:Name="cmd" x:Uid="cmd"
                      FontFamily="segoe ui variable display">

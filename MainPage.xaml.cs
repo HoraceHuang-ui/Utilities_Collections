@@ -114,6 +114,8 @@ namespace Utilities_Fix
                 contentFrame.Navigate(typeof(utilities_pages.avBV));
             else if (args.SelectedItem == bing_wp)
                 contentFrame.Navigate(typeof(utilities_pages.bing_wp));
+            else if (args.SelectedItem == num_rand)
+                contentFrame.Navigate(typeof(utilities_pages.Randomizer));
             else if (args.SelectedItem == calc)
                 contentFrame.Navigate(typeof(utilities_pages.freecalc));
             else if (args.SelectedItem == detcalc)

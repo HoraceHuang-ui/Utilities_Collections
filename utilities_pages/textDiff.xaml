@@ -18,7 +18,7 @@
             <ColumnDefinition Width="39*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="Text Comparator" FontSize="30" VerticalAlignment="Center"
+        <TextBlock x:Name="title" Grid.Row="0" Grid.Column="1" Text="Text Comparator" FontSize="30" VerticalAlignment="Center"
                        FontWeight="Bold" FontFamily="segoe ui variable display"/>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,10">
             <CheckBox x:Name="ignore_cases" Content="Ignore cases" VerticalAlignment="Bottom" FontFamily="segoe ui variable display"/>
@@ -35,10 +35,10 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <RichTextBlock x:Name="left_res" TextWrapping="WrapWholeWords" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20"/>
-            <TextBox x:Name="left_box" TextWrapping="Wrap" Grid.Column="0" AcceptsReturn="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20" CornerRadius="10"/>
-            <RichTextBlock x:Name="right_res" TextWrapping="WrapWholeWords" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20"/>
-            <TextBox x:Name="right_box" TextWrapping="Wrap" Grid.Column="1" AcceptsReturn="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,10,0,10" FontFamily="consolas" FontSize="20" CornerRadius="10"/>
+            <!--<RichTextBlock x:Name="left_res" TextWrapping="WrapWholeWords" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20"/>-->
+            <RichEditBox x:Name="left_box" TextWrapping="Wrap" Grid.Column="0" AcceptsReturn="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20" CornerRadius="10"/>
+            <!--<RichTextBlock x:Name="right_res" TextWrapping="WrapWholeWords" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,10,10,10" FontFamily="consolas" FontSize="20"/>-->
+            <RichEditBox x:Name="right_box" TextWrapping="Wrap" Grid.Column="1" AcceptsReturn="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,10,0,10" FontFamily="consolas" FontSize="20" CornerRadius="10"/>
         </Grid>
     </Grid>
 </Page>

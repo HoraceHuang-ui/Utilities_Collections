@@ -159,6 +159,12 @@
     <value>中国</value>
     <comment>Regions</comment>
   </data>
+  <data name="cnt_textblock.Text" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="cnt_textbox.PlaceholderText" xml:space="preserve">
+    <value>生成数字数量</value>
+  </data>
   <data name="custom_apikey_switch.Header" xml:space="preserve">
     <value>自定义 apikey</value>
   </data>
@@ -314,6 +320,18 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="jp" xml:space="preserve">
     <value>日本</value>
   </data>
+  <data name="max_textblock.Text" xml:space="preserve">
+    <value>最大</value>
+  </data>
+  <data name="max_textbox.PlaceholderText" xml:space="preserve">
+    <value>最大值</value>
+  </data>
+  <data name="min_textblock.Text" xml:space="preserve">
+    <value>最小</value>
+  </data>
+  <data name="min_textbox.PlaceholderText" xml:space="preserve">
+    <value>最小值</value>
+  </data>
   <data name="mkt_au.Text" xml:space="preserve">
     <value>澳大利亚</value>
   </data>
@@ -336,12 +354,18 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="mkt_us.Text" xml:space="preserve">
     <value>美国</value>
   </data>
+  <data name="no_dup.Content" xml:space="preserve">
+    <value>去除重复</value>
+  </data>
   <data name="number_region.Content" xml:space="preserve">
     <value>号码归属地</value>
   </data>
   <data name="number_title_text.Text" xml:space="preserve">
     <value>手机号码归属地</value>
     <comment>number region</comment>
+  </data>
+  <data name="num_rand.Content" xml:space="preserve">
+    <value>随机数生成器</value>
   </data>
   <data name="num_textblock.Text" xml:space="preserve">
     <value>号码</value>
@@ -367,6 +391,19 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="quick_edit_box.Text" xml:space="preserve">
     <value>已保存。</value>
     <comment>等搞完其他的再弄</comment>
+  </data>
+  <data name="randomizer_title.Text" xml:space="preserve">
+    <value>随机数生成器</value>
+    <comment>randomizer</comment>
+  </data>
+  <data name="randomize_button.Text" xml:space="preserve">
+    <value>生成随机数</value>
+  </data>
+  <data name="rand_res_textblock.Text" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="rand_res_textbox.PlaceholderText" xml:space="preserve">
+    <value>按升序排序</value>
   </data>
   <data name="rb_dark.Content" xml:space="preserve">
     <value>暗色</value>
