@@ -59,21 +59,14 @@ namespace Utilities_Fix.utilities_pages
         ContentDialog welcome = new ContentDialog()
         {
             Title = "本次更新内容：",
-            Content = "欢迎使用 hyy 小工具大杂烩 V2.6.0！\n\n" +
+            Content = "欢迎使用 hyy 小工具大杂烩 V2.7.0！\n\n" +
+                "加入 PPI 计算器，大果粒无处遁形！\n\n" +
+                "上一版本 V2.6.0 更新内容：\n" +
                 "修复了大量闪退问题，程序运行更稳定\n" +
                 "必应每日壁纸会显示加载中，反馈更直观\n" +
                 "更新后现可同步上一版本设置项\n" +
                 "采用 Windows 11 风格图标，好康！\n" +
-                "自由计算器代码完全重写，运算效率更高限制更少！\n\n" +
-                "上一版本 V2.0.0 更新内容：\n" +
-                "自由计算器 — 混合使用混合运算、函数、常量，计算器新物种\n" +
-                "行列式计算器 - 线代考生必备！！！\n" +
-                "BV / av 号转换 — 新老样式及链接互转，帮你刻入新 DNA\n" +
-                "域名解析 — 输入域名即可解析出 IP 等要素，高端网民必备\n" +
-                "IP 地址查询 — 输入 IP 即可解析出地区等要素，钓鱼网站无所遁形\n" +
-                "号码归属地查询 — 什么？你的手机不支持显示归属地？小工具来帮你\n" +
-                "必应每日壁纸 - 新的一天，新的美景，就在必应每日壁纸\n" +
-                "命令提示符 — 没什么用但是好高端的亚子 :)",
+                "自由计算器代码完全重写，运算效率更高限制更少！",
             PrimaryButtonText = "芜湖起飞！!",
             DefaultButton = ContentDialogButton.Primary
         };
@@ -114,21 +107,14 @@ namespace Utilities_Fix.utilities_pages
                 reset_confirm.SecondaryButtonText = "Cancel";
 
                 welcome.Title = "What's New:";
-                welcome.Content = "Welcome to Utilities by Hyy V2.6.0！\n\n" +
-                    "Fixed lots of force close problems, making the app more stable\n" +
-                    "Bing Daily Wallpaper now displays \"Loading...\"\n" +
-                    "Your settings from the previous version is now synced\n" +
-                    "Added a Windows 11 styled icon!\n" +
-                    "Enjoy a more consistent experience with the brand new FreeCalc!\n\n" +
-                    "What was new in the previous version V2.0.0:\n" +
-                    "FreeCalc - Combine basic and advanced calculations\n" +
-                    "Determinant Calculator - A necessity for Linear Algebra students\n" +
-                    "BV / av Converter - Shuffle through BV / av numbers and URL\n" +
-                    "Domain Analyzer - Extract key informations from a URL\n" +
-                    "IP Request - Extract key informations from an IP address\n" +
-                    "Phone Number Region - Extract key informations from a Chinese phone number\n" +
-                    "Bing Daily Wallpaper - Refresh yourself with daily random sceneries\n" +
-                    "Command Prompt - Nothing useful but looks advanced :)";
+                welcome.Content = "Welcome to Utilities by Hyy V2.7.0！\n\n" +
+                "Added a PPI Calculator and sense the sharpness of your screen!\n\n" +
+                "What was new in the previous version V2.6.0:\n" +
+                "Fixed lots of force close problems, making the app more stable\n" +
+                "Bing Daily Wallpaper now displays \"Loading...\"\n" +
+                "Your settings from the previous version is now synced\n" +
+                "Added a Windows 11 styled icon!\n" +
+                "Enjoy a more consistent experience with the brand new FreeCalc!";
                 welcome.PrimaryButtonText = "Woo-Hoo!!";
             }
             if (preferences.pane_top)

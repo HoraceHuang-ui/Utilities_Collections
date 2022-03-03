@@ -283,7 +283,8 @@ namespace Utilities_Fix.utilities_pages
                     }
                 }
             }
-            return s.Pop().ToString();
+            double ret = Math.Round(double.Parse(s.Pop().ToString()), decimal_accuracy);
+            return ret.ToString();
         }
         public freecalc()
         {

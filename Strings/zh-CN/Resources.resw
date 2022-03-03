@@ -198,6 +198,9 @@
   <data name="detcalc_title_text.Text" xml:space="preserve">
     <value>行列式计算器</value>
   </data>
+  <data name="diamond.Text" xml:space="preserve">
+    <value>钻石排列 (83%)</value>
+  </data>
   <data name="display_theme_text.Text" xml:space="preserve">
     <value>显示模式</value>
   </data>
@@ -275,6 +278,9 @@ p  -  圆周率  -  3.1415926...</value>
   </data>
   <data name="func_const_list.Title" xml:space="preserve">
     <value>支持的函数与常量</value>
+  </data>
+  <data name="height.PlaceholderText" xml:space="preserve">
+    <value>高 / px</value>
   </data>
   <data name="info_textblock.Text" xml:space="preserve">
     <value>信息</value>
@@ -388,6 +394,16 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="pane_top.Text" xml:space="preserve">
     <value>顶部</value>
   </data>
+  <data name="PPICalc_title.Text" xml:space="preserve">
+    <value>像素密度计算器</value>
+    <comment>ppi_calc</comment>
+  </data>
+  <data name="PPI_Calc.Content" xml:space="preserve">
+    <value>PPI 计算器</value>
+  </data>
+  <data name="ppi_res.PlaceholderText" xml:space="preserve">
+    <value>像素密度 / PPI</value>
+  </data>
   <data name="quick_edit_box.Text" xml:space="preserve">
     <value>已保存。</value>
     <comment>等搞完其他的再弄</comment>
@@ -436,6 +452,9 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="Resources" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources.resw;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Resources1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources.resw;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="restart_for_effect_text_1.Text" xml:space="preserve">
     <value>重启此应用即可生效</value>
   </data>
@@ -469,6 +488,9 @@ p  -  圆周率  -  3.1415926...</value>
   </data>
   <data name="show_func_btn.Content" xml:space="preserve">
     <value>查看可用函数及常量列表</value>
+  </data>
+  <data name="size.PlaceholderText" xml:space="preserve">
+    <value>对角线尺寸 / 英寸</value>
   </data>
   <data name="text1.Text" xml:space="preserve">
     <value>欢迎使用 hyy 小工具大杂烩！</value>
@@ -587,11 +609,17 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="welcome_again_btn.Text" xml:space="preserve">
     <value>再次显示更新内容</value>
   </data>
+  <data name="width.PlaceholderText" xml:space="preserve">
+    <value>宽 / px</value>
+  </data>
   <data name="wp_res_text.Text" xml:space="preserve">
     <value>分辨率</value>
   </data>
   <data name="wp_title_text.Text" xml:space="preserve">
     <value>必应每日壁纸</value>
     <comment>bing_wp</comment>
+  </data>
+  <data name="zdy.Text" xml:space="preserve">
+    <value>周冬雨排列 (68%)</value>
   </data>
 </root>

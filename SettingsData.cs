@@ -73,13 +73,13 @@ namespace Utilities_Fix
         {
             string yaml = await FileIO.ReadTextAsync(file);
             display_theme = GetDataFrom(yaml, "display_theme")[0] - '0';
-            language_eng = GetDataFrom(yaml, "language") == "1";
-            pane_top = GetDataFrom(yaml, "pane_top") == "1";
-            degree = GetDataFrom(yaml, "degree") == "1";
+            language_eng = GetDataFrom(yaml, "language") == "true";
+            pane_top = GetDataFrom(yaml, "pane_top") == "true";
+            degree = GetDataFrom(yaml, "degree") == "true";
             decimal_accuration = int.Parse(GetDataFrom(yaml, "decimal_accuration"));
-            custom_apikey_switch = GetDataFrom(yaml, "custom_apikey_switch") == "1";
+            custom_apikey_switch = GetDataFrom(yaml, "custom_apikey_switch") == "true";
             apikey = GetDataFrom(yaml, "apikey");
-            custom_mkt_switch = GetDataFrom(yaml, "custom_mkt_switch") == "1";
+            custom_mkt_switch = GetDataFrom(yaml, "custom_mkt_switch") == "true";
             mkt = GetDataFrom(yaml, "mkt");
             resolution = GetDataFrom(yaml, "resolution")[0] - '0';
         }
@@ -91,7 +91,7 @@ namespace Utilities_Fix
         {
             var deserializer = new DeserializerBuilder().WithNamingConvention(UnderscoredNamingConvention.Instance).Build();
             StorageFolder folder = KnownFolders.DocumentsLibrary;
-            StorageFile file = await folder.CreateFileAsync("utilities\\datav2_6_0.txt", CreationCollisionOption.OpenIfExists);
+            StorageFile file = await folder.CreateFileAsync("utilities\\datav2_7_0.txt", CreationCollisionOption.OpenIfExists);
 
             string yaml_data = await FileIO.ReadTextAsync(file);
             SettingsData sd = deserializer.Deserialize<SettingsData>(yaml_data);
@@ -150,7 +150,7 @@ namespace Utilities_Fix
         public async Task RefreshLocalFileAsync()
         {
             StorageFolder folder = KnownFolders.DocumentsLibrary;
-            StorageFile file = await folder.GetFileAsync("utilities\\datav2_6_0.txt");
+            StorageFile file = await folder.GetFileAsync("utilities\\datav2_7_0.txt");
             var serializer = new SerializerBuilder().WithNamingConvention(UnderscoredNamingConvention.Instance).Build();
             string s = serializer.Serialize(this);
             await FileIO.WriteTextAsync(file, s);

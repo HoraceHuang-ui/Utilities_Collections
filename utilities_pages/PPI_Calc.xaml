@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="Utilities_Fix.utilities_pages.PPI_Calc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Utilities_Fix.utilities_pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid Loaded="Grid_Loaded">
+        <StackPanel Margin="0,0,0,60" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="PPI Calculator" x:Uid="PPICalc_title" FontFamily="segoe ui variable display" FontSize="70" 
+                       HorizontalAlignment="Center"/>
+            <TextBlock FontFamily="segoe ui variable display" FontWeight="Light" Margin="0,-10,0,20" 
+                       HorizontalAlignment="Center" Opacity="0.5">By Horace Huang</TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox x:Name="width" x:Uid="width" CornerRadius="5" FontFamily="Consolas" FontSize="17"
+                                Width="250" Margin="0,0,5,0"/>
+                <TextBox x:Name="height" x:Uid="height" CornerRadius="5" FontFamily="Consolas" FontSize="17"
+                                Width="250" Margin="5,0,0,0"/>
+            </StackPanel>
+            <AutoSuggestBox x:Name="size" x:Uid="size" CornerRadius="5" FontFamily="Consolas" FontSize="17"
+                            Width="510" Margin="0,10,0,0" QueryIcon="Accept" QuerySubmitted="size_QuerySubmitted"/>
+            <StackPanel Orientation="Horizontal"  Margin="0,10,0,0" HorizontalAlignment="Stretch">
+                <DropDownButton x:Name="screen_type" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" FontFamily="segoe ui variable display" MinWidth="150" CornerRadius="5" Content="RGB (100%)">
+                    <DropDownButton.Flyout>
+                        <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                            <MenuFlyoutItem x:Name="type_rgb" Text="RGB (100%)" Click="type_rgb_Click"/>
+                            <MenuFlyoutItem x:Name="type_delta" Text="RGB Delta (70%)" Click="type_delta_Click"/> <!-- 70% -->
+                            <MenuFlyoutItem x:Name="type_zdy" x:Uid="zdy" Click="type_zdy_Click"/> <!-- 68% -->
+                            <MenuFlyoutItem x:Name="type_pentile" Text="PenTile (81.6%)" Click="type_pentile_Click"/> <!-- 81.6% -->
+                            <MenuFlyoutItem x:Name="type_diamond" x:Uid="diamond" Click="type_diamond_Click"/> <!-- 83% -->
+                        </MenuFlyout>
+                    </DropDownButton.Flyout>
+                </DropDownButton>
+                <TextBox x:Name="res" x:Uid="ppi_res" CornerRadius="5" FontFamily="Consolas" FontSize="17"
+                          Width="355" Margin="5,0,0,0" IsReadOnly="True"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

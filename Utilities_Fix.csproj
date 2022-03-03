@@ -157,6 +157,9 @@
     <Compile Include="utilities_pages\number_region.xaml.cs">
       <DependentUpon>number_region.xaml</DependentUpon>
     </Compile>
+    <Compile Include="utilities_pages\PPI_Calc.xaml.cs">
+      <DependentUpon>PPI_Calc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="utilities_pages\Randomizer.xaml.cs">
       <DependentUpon>Randomizer.xaml</DependentUpon>
     </Compile>
@@ -269,6 +272,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="utilities_pages\number_region.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="utilities_pages\PPI_Calc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
