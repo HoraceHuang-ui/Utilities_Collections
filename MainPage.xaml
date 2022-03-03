@@ -22,6 +22,11 @@
                         <FontIcon FontFamily="Segoe Fluent Icons" Glyph=""/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem x:Name="PPICalc" FontFamily="segoe ui variable display" Content="PPI Calculator" x:Uid="PPI_Calc">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItem Icon="Pictures" x:Name="bing_wp" x:Uid="bing_wp"
                                     FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="Shuffle" x:Name="num_rand" x:Uid="num_rand"
