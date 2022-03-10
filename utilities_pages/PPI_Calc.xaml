@@ -22,20 +22,33 @@
             </StackPanel>
             <AutoSuggestBox x:Name="size" x:Uid="size" CornerRadius="5" FontFamily="Consolas" FontSize="17"
                             Width="510" Margin="0,10,0,0" QueryIcon="Accept" QuerySubmitted="size_QuerySubmitted"/>
-            <StackPanel Orientation="Horizontal"  Margin="0,10,0,0" HorizontalAlignment="Stretch">
-                <DropDownButton x:Name="screen_type" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" FontFamily="segoe ui variable display" MinWidth="150" CornerRadius="5" Content="RGB (100%)">
-                    <DropDownButton.Flyout>
-                        <MenuFlyout Placement="BottomEdgeAlignedLeft">
-                            <MenuFlyoutItem x:Name="type_rgb" Text="RGB (100%)" Click="type_rgb_Click"/>
-                            <MenuFlyoutItem x:Name="type_delta" Text="RGB Delta (70%)" Click="type_delta_Click"/> <!-- 70% -->
-                            <MenuFlyoutItem x:Name="type_zdy" x:Uid="zdy" Click="type_zdy_Click"/> <!-- 68% -->
-                            <MenuFlyoutItem x:Name="type_pentile" Text="PenTile (81.6%)" Click="type_pentile_Click"/> <!-- 81.6% -->
-                            <MenuFlyoutItem x:Name="type_diamond" x:Uid="diamond" Click="type_diamond_Click"/> <!-- 83% -->
-                        </MenuFlyout>
-                    </DropDownButton.Flyout>
-                </DropDownButton>
+            <StackPanel Orientation="Horizontal"  Margin="0,10,0,0" HorizontalAlignment="Center">
+                <ComboBox x:Name="screen_type" Width="150" SelectedIndex="0" SelectionChanged="screen_type_SelectionChanged">
+                    <x:String>RGB (100%)</x:String>
+                    <x:String>RGB Delta (70%)</x:String>
+                    <x:String>BOE Delta (68%)</x:String>
+                    <x:String>PenTile (81.6%)</x:String>
+                    <x:String>Diamond (83%)</x:String>
+                </ComboBox>
                 <TextBox x:Name="res" x:Uid="ppi_res" CornerRadius="5" FontFamily="Consolas" FontSize="17"
                           Width="355" Margin="5,0,0,0" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0" HorizontalAlignment="Center">
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="R720p_Click">720p</Button>
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="R1080p_Click">1080p</Button>
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="R1440p_Click">1440p</Button>
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="R1644p_Click">1644p</Button>
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="R2160p_Click">2160p</Button>
+                <AppBarSeparator Margin="5,0,5,0"/>
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="B16x10_Click">16:10</Button>
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="B16x9_Click">16:9</Button>
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="B18x9_Click">18:9</Button>
+                <Button CornerRadius="15" FontSize="10" Margin="2" Click="B21x9_Click">21:9</Button>
+                <Button CornerRadius="15" Margin="2" Click="Reset_Click" ToolTipService.ToolTip="Reset">
+                    <Button.Content>
+                        <FontIcon FontFamily="segoe fluent icons" Glyph="" FontSize="13"/>
+                    </Button.Content>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>
