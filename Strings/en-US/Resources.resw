@@ -357,6 +357,15 @@ p  -  Pi  -  3.1415926...</value>
   <data name="mkt_us.Text" xml:space="preserve">
     <value>United States</value>
   </data>
+  <data name="navViewHeader_math.Content" xml:space="preserve">
+    <value>Math</value>
+  </data>
+  <data name="navViewHeader_misc.Content" xml:space="preserve">
+    <value>Misc</value>
+  </data>
+  <data name="navViewHeader_network.Content" xml:space="preserve">
+    <value>Network</value>
+  </data>
   <data name="no_dup.Content" xml:space="preserve">
     <value>No Duplicates</value>
   </data>

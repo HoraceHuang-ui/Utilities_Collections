@@ -357,6 +357,15 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="mkt_us.Text" xml:space="preserve">
     <value>美国</value>
   </data>
+  <data name="navViewHeader_math.Content" xml:space="preserve">
+    <value>数学</value>
+  </data>
+  <data name="navViewHeader_misc.Content" xml:space="preserve">
+    <value>杂项</value>
+  </data>
+  <data name="navViewHeader_network.Content" xml:space="preserve">
+    <value>网络</value>
+  </data>
   <data name="no_dup.Content" xml:space="preserve">
     <value>去除重复</value>
   </data>

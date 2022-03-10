@@ -15,6 +15,7 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="Home" x:Name="utilities_home" x:Uid="utilities_home"
                      FontFamily="segoe ui variable display"/>
+                <NavigationViewItemHeader x:Uid="navViewHeader_math" Content="Math"/>
                 <NavigationViewItem Icon="Calculator" x:Name="calc" x:Uid="calc"
                      FontFamily="segoe ui variable display"/>
                 <NavigationViewItem x:Name="detcalc" FontFamily="segoe ui variable display" x:Uid="detcalc">
@@ -27,24 +28,26 @@
                         <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Icon="Pictures" x:Name="bing_wp" x:Uid="bing_wp"
-                                    FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="Shuffle" x:Name="num_rand" x:Uid="num_rand"
                                     FontFamily="segoe ui variable display"/>
-                <NavigationViewItem Content="Text Comparator" x:Name="text_comparator"
-                                    FontFamily="segoe ui variable display">
-                    <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+                <NavigationViewItemHeader x:Uid="navViewHeader_network" Content="Network"/>
+                <NavigationViewItem Icon="Pictures" x:Name="bing_wp" x:Uid="bing_wp"
+                                    FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="Link" x:Name="ip_url"  x:Uid="ip_url"
                      FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="MapDrive" x:Name="ip_request" x:Uid="ip_request"
                      FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="Phone" x:Name="number_region"
                      x:Uid="number_region" FontFamily="segoe ui variable display"/>
+                <NavigationViewItemHeader x:Uid="navViewHeader_misc" Content="Misc"/>
                 <NavigationViewItem Icon="Video" x:Name="avbv" x:Uid="avbv"
                      FontFamily="segoe ui variable display"/>
+                <NavigationViewItem Content="Text Comparator" x:Name="text_comparator"
+                                    FontFamily="segoe ui variable display">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItem x:Name="cmd" x:Uid="cmd"
                      FontFamily="segoe ui variable display">
                     <NavigationViewItem.Icon>
@@ -52,6 +55,9 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="nav_view_search" AutoMaximizeSuggestionArea="True" TextChanged="nav_view_search_TextChanged" SuggestionChosen="nav_view_search_SuggestionChosen" QuerySubmitted="nav_view_search_QuerySubmitted" AutomationProperties.Name="Search" QueryIcon="Find" FontFamily="segoe ui variable display"/>
+            </NavigationView.AutoSuggestBox>
             <Frame x:Name="contentFrame" CornerRadius="9"/>
         </NavigationView>
     </Grid>
