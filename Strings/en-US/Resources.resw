@@ -198,9 +198,6 @@
   <data name="detcalc_title_text.Text" xml:space="preserve">
     <value>Determinant Calculator</value>
   </data>
-  <data name="diamond.Text" xml:space="preserve">
-    <value>Diamond (83%)</value>
-  </data>
   <data name="display_theme_text.Text" xml:space="preserve">
     <value>Theme</value>
   </data>
@@ -280,7 +277,7 @@ p  -  Pi  -  3.1415926...</value>
     <value>Available Functions &amp; Constants</value>
   </data>
   <data name="height.PlaceholderText" xml:space="preserve">
-    <value>Height / px</value>
+    <value>Vertical res. / px</value>
   </data>
   <data name="info_textblock.Text" xml:space="preserve">
     <value>Info</value>
@@ -399,10 +396,10 @@ p  -  Pi  -  3.1415926...</value>
     <comment>ppi_calc</comment>
   </data>
   <data name="PPI_Calc.Content" xml:space="preserve">
-    <value>PPI Calculator</value>
+    <value>Pixel Density Calculator</value>
   </data>
   <data name="ppi_res.PlaceholderText" xml:space="preserve">
-    <value>Pixels Per Inch</value>
+    <value>Pixel density / ppi</value>
   </data>
   <data name="quick_edit_box.Text" xml:space="preserve">
     <value>Saved.</value>
@@ -483,7 +480,7 @@ p  -  Pi  -  3.1415926...</value>
     <value>Show Available Functions &amp; Constants</value>
   </data>
   <data name="size.PlaceholderText" xml:space="preserve">
-    <value>Diagonal / in</value>
+    <value>Diagonal size / in</value>
   </data>
   <data name="text1.Text" xml:space="preserve">
     <value>Welcome to Utilities by Hyy!</value>
@@ -603,7 +600,7 @@ p  -  Pi  -  3.1415926...</value>
     <value>Show Update Logs</value>
   </data>
   <data name="width.PlaceholderText" xml:space="preserve">
-    <value>Width / px</value>
+    <value>Horizontal res. / px</value>
   </data>
   <data name="wp_res_text.Text" xml:space="preserve">
     <value>Resolution</value>
@@ -611,8 +608,5 @@ p  -  Pi  -  3.1415926...</value>
   <data name="wp_title_text.Text" xml:space="preserve">
     <value>Bing Daily Wallpapers</value>
     <comment>bing_wp</comment>
-  </data>
-  <data name="zdy.Text" xml:space="preserve">
-    <value>BOE Delta (68%)</value>
   </data>
 </root>

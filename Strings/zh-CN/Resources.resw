@@ -198,9 +198,6 @@
   <data name="detcalc_title_text.Text" xml:space="preserve">
     <value>行列式计算器</value>
   </data>
-  <data name="diamond.Text" xml:space="preserve">
-    <value>钻石排列 (83%)</value>
-  </data>
   <data name="display_theme_text.Text" xml:space="preserve">
     <value>显示模式</value>
   </data>
@@ -280,7 +277,7 @@ p  -  圆周率  -  3.1415926...</value>
     <value>支持的函数与常量</value>
   </data>
   <data name="height.PlaceholderText" xml:space="preserve">
-    <value>高 / px</value>
+    <value>纵向分辨率 / px</value>
   </data>
   <data name="info_textblock.Text" xml:space="preserve">
     <value>信息</value>
@@ -399,10 +396,10 @@ p  -  圆周率  -  3.1415926...</value>
     <comment>ppi_calc</comment>
   </data>
   <data name="PPI_Calc.Content" xml:space="preserve">
-    <value>PPI 计算器</value>
+    <value>像素密度计算器</value>
   </data>
   <data name="ppi_res.PlaceholderText" xml:space="preserve">
-    <value>像素密度 / PPI</value>
+    <value>像素密度 / ppi</value>
   </data>
   <data name="quick_edit_box.Text" xml:space="preserve">
     <value>已保存。</value>
@@ -610,7 +607,7 @@ p  -  圆周率  -  3.1415926...</value>
     <value>再次显示更新内容</value>
   </data>
   <data name="width.PlaceholderText" xml:space="preserve">
-    <value>宽 / px</value>
+    <value>横向分辨率 / px</value>
   </data>
   <data name="wp_res_text.Text" xml:space="preserve">
     <value>分辨率</value>
@@ -618,8 +615,5 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="wp_title_text.Text" xml:space="preserve">
     <value>必应每日壁纸</value>
     <comment>bing_wp</comment>
-  </data>
-  <data name="zdy.Text" xml:space="preserve">
-    <value>周冬雨排列 (68%)</value>
   </data>
 </root>

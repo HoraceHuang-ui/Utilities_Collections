@@ -37,6 +37,7 @@ namespace Utilities_Fix.utilities_pages
 
         private void CalcPPI()
         {
+            if (CheckEmpty()) return;
             double w = double.Parse(width.Text);
             double h = double.Parse(height.Text);
             double diag = double.Parse(size.Text);
@@ -48,50 +49,128 @@ namespace Utilities_Fix.utilities_pages
             return width.Text == "" || height.Text == "" || size.Text == "";
         }
 
-        private void type_rgb_Click(object sender, RoutedEventArgs e)
-        {
-            screen_type.Content = "RGB (100%)";
-            discount = 1;
-            if (!CheckEmpty())
-                CalcPPI();
-        }
-
-        private void type_delta_Click(object sender, RoutedEventArgs e)
-        {
-            screen_type.Content = "RGB Delta (70%)";
-            discount = 0.7;
-            if (!CheckEmpty())
-                CalcPPI();
-        }
-
-        private void type_pentile_Click(object sender, RoutedEventArgs e)
-        {
-            screen_type.Content = "PenTile (81.6%)";
-            discount = 0.816;
-            if (!CheckEmpty())
-                CalcPPI();
-        }
-
-        private void type_diamond_Click(object sender, RoutedEventArgs e)
-        {
-            screen_type.Content = settings.language_eng ? "Diamond (83%)" : "钻石排列 (83%)";
-            discount = 0.83;
-            if (!CheckEmpty())
-                CalcPPI();
-        }
-
-        private void type_zdy_Click(object sender, RoutedEventArgs e)
-        {
-            screen_type.Content = settings.language_eng ? "BOE Delta (68%)" : "周冬雨排列 (68%)";
-            discount = 0.68;
-            if (!CheckEmpty())
-                CalcPPI();
-        }
-
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
 
             await settings.GetLocalSettingsAsync();
+        }
+
+        private void screen_type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            const int RGB = 0;
+            const int DELTA = 1;
+            const int ZDY = 2;
+            const int PENTILE = 3;
+            const int DIAMOND = 4;
+
+            switch (screen_type.SelectedIndex)
+            {
+                case RGB: discount = 1; break;
+                case DELTA: discount = 0.7; break;
+                case ZDY: discount = 0.68; break;
+                case PENTILE: discount = 0.816; break;
+                case DIAMOND: discount = 0.83; break;
+                default: discount = 1; break;
+            }
+
+            CalcPPI();
+        }
+
+        private void R720p_Click(object sender, RoutedEventArgs e)
+        {
+            height.Text = "720";
+        }
+        private void R1080p_Click(object sender, RoutedEventArgs e)
+        {
+            height.Text = "1080";
+        }
+        private void R1440p_Click(object sender, RoutedEventArgs e)
+        {
+            height.Text = "1440";
+        }
+        private void R1644p_Click(object sender, RoutedEventArgs e)
+        {
+            height.Text = "1644";
+        }
+        private void R2160p_Click(object sender, RoutedEventArgs e)
+        {
+            height.Text = "2160";
+        }
+        private void B16x10_Click(object sender, RoutedEventArgs e)
+        {
+            if (height.Text != "")
+            {
+                double h = double.Parse(height.Text);
+                width.Text = ((int)(h / 10 * 16)).ToString();
+            }
+            else if (width.Text != "")
+            {
+                double w = double.Parse(width.Text);
+                height.Text = ((int)(w / 16 * 10)).ToString();
+            }
+            CalcPPI();
+        }
+        private void B16x9_Click(object sender, RoutedEventArgs e)
+        {
+            if (height.Text != "")
+            {
+                double h = double.Parse(height.Text);
+                width.Text = ((int)(h / 9 * 16)).ToString();
+            }
+            else if (width.Text != "")
+            {
+                double w = double.Parse(width.Text);
+                height.Text = ((int)(w / 16 * 9)).ToString();
+            }
+            CalcPPI();
+        }
+        private void B18x9_Click(object sender, RoutedEventArgs e)
+        {
+            if (height.Text != "")
+            {
+                double h = double.Parse(height.Text);
+                width.Text = ((int)(h * 2)).ToString();
+            }
+            else if (width.Text != "")
+            {
+                double w = double.Parse(width.Text);
+                height.Text = ((int)(w / 2)).ToString();
+            }
+            CalcPPI();
+        }
+        private void B21x9_Click(object sender, RoutedEventArgs e)
+        {
+            if (height.Text != "")
+            {
+                double h = double.Parse(height.Text);
+                if (h == 1644)
+                {
+                    width.Text = "3840";
+                    CalcPPI();
+                    return;
+                }
+                width.Text = ((int)(h / 9 * 21)).ToString();
+            }
+            else if (width.Text != "")
+            {
+                double w = double.Parse(width.Text);
+                if (w == 3840)
+                {
+                    height.Text = "1644";
+                    CalcPPI();
+                    return;
+                }
+                height.Text = ((int)(w / 21 * 9)).ToString();
+            }
+            CalcPPI();
+        }
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            width.Text = "";
+            height.Text = "";
+            res.Text = "";
+            size.Text = "";
+            screen_type.SelectedIndex = 0;
         }
     }
 }
