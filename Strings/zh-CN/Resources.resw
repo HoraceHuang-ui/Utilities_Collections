@@ -120,12 +120,18 @@
   <data name="au" xml:space="preserve">
     <value>澳大利亚</value>
   </data>
+  <data name="auto_rounding.Header" xml:space="preserve">
+    <value>自动修约</value>
+  </data>
   <data name="avbv.Content" xml:space="preserve">
     <value>BV / av 号转换</value>
   </data>
   <data name="avbv_text.Text" xml:space="preserve">
     <value>BV / av 号转换器</value>
     <comment>avbv</comment>
+  </data>
+  <data name="average_box.PlaceholderText" xml:space="preserve">
+    <value>平均值</value>
   </data>
   <data name="bing_wp.Content" xml:space="preserve">
     <value>必应每日壁纸</value>
@@ -176,6 +182,9 @@
   </data>
   <data name="custom_mkt_switch.Header" xml:space="preserve">
     <value>自定义地区</value>
+  </data>
+  <data name="data_input.PlaceholderText" xml:space="preserve">
+    <value>测量值…</value>
   </data>
   <data name="de" xml:space="preserve">
     <value>德国</value>
@@ -323,6 +332,12 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="jp" xml:space="preserve">
     <value>日本</value>
   </data>
+  <data name="keep_integers.Content" xml:space="preserve">
+    <value>保留整数</value>
+  </data>
+  <data name="keep_integers_tip.Text" xml:space="preserve">
+    <value>每次输入时记忆整数部分</value>
+  </data>
   <data name="max_textblock.Text" xml:space="preserve">
     <value>最大</value>
   </data>
@@ -357,6 +372,15 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="mkt_us.Text" xml:space="preserve">
     <value>美国</value>
   </data>
+  <data name="navViewHeader_math.Content" xml:space="preserve">
+    <value>数学</value>
+  </data>
+  <data name="navViewHeader_misc.Content" xml:space="preserve">
+    <value>杂项</value>
+  </data>
+  <data name="navViewHeader_network.Content" xml:space="preserve">
+    <value>网络</value>
+  </data>
   <data name="no_dup.Content" xml:space="preserve">
     <value>去除重复</value>
   </data>
@@ -390,6 +414,16 @@ p  -  圆周率  -  3.1415926...</value>
   </data>
   <data name="pane_top.Text" xml:space="preserve">
     <value>顶部</value>
+  </data>
+  <data name="physExCalc_title.Text" xml:space="preserve">
+    <value>物理实验计算器</value>
+    <comment>PhysEx Calc</comment>
+  </data>
+  <data name="physex_accuracy.Header" xml:space="preserve">
+    <value>小数精确位数</value>
+  </data>
+  <data name="PhysEx_Calc.Content" xml:space="preserve">
+    <value>物理实验计算器</value>
   </data>
   <data name="PPICalc_title.Text" xml:space="preserve">
     <value>像素密度计算器</value>
@@ -429,6 +463,9 @@ p  -  圆周率  -  3.1415926...</value>
   </data>
   <data name="refresh_wallpaper.Content" xml:space="preserve">
     <value>刷新</value>
+  </data>
+  <data name="relative_uncertainty_box.PlaceholderText" xml:space="preserve">
+    <value>相对不确定度</value>
   </data>
   <data name="reset_all_btn.Text" xml:space="preserve">
     <value>重置所有设置</value>
@@ -478,6 +515,9 @@ p  -  圆周率  -  3.1415926...</value>
   </data>
   <data name="settings_subt_general.Text" xml:space="preserve">
     <value>通用</value>
+  </data>
+  <data name="settings_subt_physex.Text" xml:space="preserve">
+    <value>物理实验计算器</value>
   </data>
   <data name="settings_title_text.Text" xml:space="preserve">
     <value>设置</value>
@@ -583,6 +623,9 @@ p  -  圆周率  -  3.1415926...</value>
   </data>
   <data name="uk" xml:space="preserve">
     <value>英国</value>
+  </data>
+  <data name="uncertainty_box.PlaceholderText" xml:space="preserve">
+    <value>不确定度</value>
   </data>
   <data name="url_textblock.Text" xml:space="preserve">
     <value>域名</value>

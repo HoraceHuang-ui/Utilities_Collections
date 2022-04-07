@@ -123,11 +123,11 @@ namespace Utilities_Fix.utilities_pages
                 panemode_ddb_text.Text = resourceLoader.GetString("toppane");
                 panemode_ddb_icon.Glyph = "";
             }
-            if (preferences.degree)
-                degree_switch.IsOn = false;
-            else
-                degree_switch.IsOn = true;
+            degree_switch.IsOn = preferences.degree;
             decimal_slider.Value = preferences.decimal_accuration;
+            keep_integers_checkbox.IsChecked = preferences.keep_integers;
+            rounding_switch.IsOn = preferences.auto_rounding;
+            physex_decimal_slider.Value = preferences.physex_accuration;
             if (preferences.custom_apikey_switch)
             {
                 custom_apikey_switch.IsOn = true;
@@ -399,5 +399,44 @@ namespace Utilities_Fix.utilities_pages
             panemode_ddb_icon.Glyph = "";
             panemode_ddb_text.Text = pane_top.Text;
         }
+
+        private async void rounding_switch_Toggled(object sender, RoutedEventArgs e)
+        {
+            preferences.auto_rounding = rounding_switch.IsOn;
+            await preferences.RefreshLocalFileAsync();
+            physex_decimal_slider.IsEnabled = !rounding_switch.IsOn;
+        }
+
+        private async void physex_decimal_slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            if (done)
+            {
+                preferences.physex_accuration = (int)physex_decimal_slider.Value;
+                await preferences.RefreshLocalFileAsync();
+            }
+        }
+        private void physex_decimal_slider_Loaded(object sender, RoutedEventArgs e)
+        {
+            physex_decimal_slider.IsEnabled = !rounding_switch.IsOn;
+        }
+
+        private async void keep_integers_checkbox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (done)
+            {
+                preferences.keep_integers = true;
+                await preferences.RefreshLocalFileAsync();
+            }
+        }
+
+        private async void keep_integers_checkbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (done)
+            {
+                preferences.keep_integers = false;
+                await preferences.RefreshLocalFileAsync();
+            }
+        }
+
     }
 }

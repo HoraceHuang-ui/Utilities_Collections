@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Utilities_Fix.utilities_pages.physcalc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Utilities_Fix.utilities_pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid Loaded="Grid_Loaded">
+        <StackPanel Margin="0,0,0,60" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Phys. Ex. Calculator" x:Uid="physExCalc_title" FontFamily="segoe ui variable display" FontSize="70" 
+                       HorizontalAlignment="Center"/>
+            <TextBlock FontFamily="segoe ui variable display" FontWeight="Light" Margin="0,-10,0,20" 
+                       HorizontalAlignment="Center" Opacity="0.5">By Horace Huang</TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="stretch">
+                <ComboBox x:Name="data_trace" IsEnabled="false" SelectionChanged="data_trace_SelectionChanged" Width="120" SelectionChangedTrigger="Always"/>
+                <AutoSuggestBox x:Name="data_input" x:Uid="data_input" Margin="5,0,0,0" Width="465" FontFamily="consolas" PlaceholderText="Input data here" QueryIcon="Accept" QuerySubmitted="data_input_QuerySubmitted"/>
+            </StackPanel>
+            <TextBox x:Name="average_box" x:Uid="average_box" Margin="0,10,0,0" PlaceholderText="Average" FontFamily="consolas"/>
+            <TextBox x:Name="uncertainty_box" x:Uid="uncertainty_box" Margin="0,10,0,0" PlaceholderText="Uncertainty" FontFamily="consolas"/>
+            <TextBox x:Name="relative_uncertainty_box" x:Uid="relative_uncertainty_box" Margin="0,10,0,0" PlaceholderText="Relative uncertainty" FontFamily="consolas"/>
+        </StackPanel>
+    </Grid>
+</Page>

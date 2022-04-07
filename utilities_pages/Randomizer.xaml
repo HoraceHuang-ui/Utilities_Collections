@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock x:Uid="randomizer_title" Grid.Row="0" Grid.Column="1" Text="Number Randomizer" FontSize="30" VerticalAlignment="Center"
                        FontWeight="Bold" FontFamily="segoe ui variable display"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,10">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10">
             <CheckBox x:Uid="no_dup" x:Name="no_dup" Content="No Duplicates" VerticalAlignment="Bottom" FontFamily="segoe ui variable display"/>
             <Button x:Name="randomize" Click="randomize_Click">
                 <StackPanel Orientation="Horizontal">

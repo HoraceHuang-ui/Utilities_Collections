@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Automation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -56,10 +58,11 @@ namespace Utilities_Fix
             DefaultButton = ContentDialogButton.Primary
         };
 
+        SettingsData settingsData = new SettingsData();
+
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             nvView.SelectedItem = utilities_home;
-            SettingsData settingsData = new SettingsData();
             await settingsData.GetLocalSettingsAsync();
 
             if (!settingsData.language_eng)
@@ -107,7 +110,7 @@ namespace Utilities_Fix
             else if (args.SelectedItem == detcalc)
                 contentFrame.Navigate(typeof(utilities_pages.determinant));
             else if (args.SelectedItem == PPICalc)
-                contentFrame.Navigate(typeof (utilities_pages.PPI_Calc));
+                contentFrame.Navigate(typeof(utilities_pages.PPI_Calc));
             else if (args.SelectedItem == ip_url)
                 contentFrame.Navigate(typeof(utilities_pages.IP));
             else if (args.SelectedItem == ip_request)
@@ -118,6 +121,136 @@ namespace Utilities_Fix
                 contentFrame.Navigate(typeof(utilities_pages.cmd));
             else if (args.SelectedItem == text_comparator)
                 contentFrame.Navigate(typeof(utilities_pages.textDiff));
+            else if (args.SelectedItem == PhysCalc)
+                contentFrame.Navigate (typeof(utilities_pages.physcalc));
+        }
+
+        const int HOME = 0;
+        const int FREECALC = 1;
+        const int DETCALC = 2;
+        const int PPICALC = 3;
+        const int PHYSCALC = 4;
+        const int NUMRAND = 5;
+        const int BINGWP = 6;
+        const int DOMAIN = 7;
+        const int IPREQUEST = 8;
+        const int NUMREGION = 9;
+        const int BVAV = 10;
+        const int TEXTCOMP = 11;
+        const int CMD = 12;
+
+        public class SearchItem
+        {
+            public string formal_eng;
+            public string formal_chn;
+            public string[] fuzzy;
+            public int num;
+
+            public SearchItem(int n, string fe, string fc, string[] fz)
+            {
+                num = n;
+                formal_chn = fc;
+                formal_eng = fe;
+                fuzzy = fz.ToArray();
+            }
+        }
+        List<SearchItem> items = new List<SearchItem>()
+        {
+            new SearchItem(0, "Home", "主页", new string[]{"zy"}),
+
+            new SearchItem(1, "Free Calculator", "自由计算器", new string[]{"zyjsq", "freecalc"}),
+            new SearchItem(2, "Determinant Calculator", "行列式计算器", new string[] {"hlsjsq", "detcalc"}),
+            new SearchItem(3, "Pixel Density Calculator", "像素密度计算器", new string[]{"xsmdjsq", "ppicalculator", "ppicalc", "ppijsq"}),
+            new SearchItem(4, "Physics Experiment Calculator", "物理实验计算器", new string[]{"physexcalc", "wlsyjsq"}),
+            new SearchItem(5, "Number Randomizer", "随机数生成器", new string[]{"sjsscq"}),
+
+            new SearchItem(6, "Bing Daily Wallpapers", "必应每日壁纸", new string[]{"bymrbz"}),
+            new SearchItem(7, "Domain Analyzer", "域名解析", new string[]{"ymjx"}),
+            new SearchItem(8, "IP Request", "IP地址查询", new string[]{"ipdzcx", "iprequest"}),
+            new SearchItem(9, "Number Region", "号码归属地", new string[]{"hmgsd"}),
+
+            new SearchItem(10, "BV / av Converter", "BV / av 号转换", new string[]{"bvavhzhq", "avbvhzhq", "bvavzhq", "avbvzhq", "bvavconverter", "avbvconverter"}),
+            new SearchItem(12, "Text Comparator", "文字比较", new string[]{"wzbj", "wenzibijiao"}),
+            new SearchItem(13, "Command Prompt", "命令提示符", new string[]{"cmd", "mltsf"}),
+        };
+
+        private void nav_view_search_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            // Since selecting an item will also change the text,
+            // only listen to changes caused by user entering text.
+            List<string> suitableItems = new List<string>();
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                var splitText = sender.Text.ToLower().Split(" ");
+                foreach (var item in items)
+                {
+                    var found = splitText.All((string key) =>
+                    {
+                        if (item.formal_eng.ToLower().Contains(key) || item.formal_chn.Contains(key))
+                            return true;
+                        foreach (string s in item.fuzzy)
+                            if (s.Contains(key))
+                                return true;
+                        return false;
+                    });
+                    if (found)
+                    {
+                        suitableItems.Add(settingsData.language_eng ? item.formal_eng : item.formal_chn);
+                    }
+                }
+
+                if (suitableItems.Count == 0)
+                {
+                    suitableItems.Add(settingsData.language_eng ? "No results found." : "未找到结果。");
+                }
+                nav_view_search.ItemsSource = suitableItems;
+            }
+        }
+        private void nav_view_search_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            if (nav_view_search.Items[0].ToString() == (settingsData.language_eng ? "No results found." : "未找到结果。"))
+            {
+                nav_view_search = sender;
+                return;
+            }
+            NavigateToSearch(args.SelectedItem.ToString());
+        }
+
+        private void nav_view_search_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            if (args.ChosenSuggestion == null)
+            {
+                if (nav_view_search.Items[0].ToString() == (settingsData.language_eng ? "No results found." : "未找到结果。"))
+                    return;
+                NavigateToSearch(nav_view_search.Items[0].ToString());
+            }
+        }
+
+        private void NavigateToSearch(string pageName)
+        {
+            int i = 0;
+            foreach (SearchItem item in items)
+            {
+                if (pageName == item.formal_eng || pageName == item.formal_chn)
+                    break;
+                i++;
+            }
+            switch (i)
+            {
+                case HOME: contentFrame.Navigate(typeof(utilities_pages.utilitiesHome)); nvView.SelectedItem = utilities_home; break;
+                case FREECALC: contentFrame.Navigate(typeof(utilities_pages.freecalc)); nvView.SelectedItem = calc; break;
+                case DETCALC: contentFrame.Navigate(typeof(utilities_pages.determinant)); nvView.SelectedItem = detcalc; break;
+                case PPICALC: contentFrame.Navigate(typeof(utilities_pages.PPI_Calc)); nvView.SelectedItem = PPICalc; break;
+                case PHYSCALC: contentFrame.Navigate(typeof(utilities_pages.physcalc)); break;
+                case NUMRAND: contentFrame.Navigate(typeof(utilities_pages.Randomizer)); nvView.SelectedItem = num_rand; break;
+                case BINGWP: contentFrame.Navigate(typeof(utilities_pages.bing_wp)); nvView.SelectedItem = bing_wp; break;
+                case DOMAIN: contentFrame.Navigate(typeof(utilities_pages.IP)); nvView.SelectedItem = ip_url; break;
+                case IPREQUEST: contentFrame.Navigate(typeof(utilities_pages.IP_request)); nvView.SelectedItem = ip_request; break;
+                case NUMREGION: contentFrame.Navigate(typeof(utilities_pages.number_region)); nvView.SelectedItem = number_region; break;
+                case BVAV: contentFrame.Navigate(typeof(utilities_pages.avBV)); nvView.SelectedItem = avbv; break;
+                case TEXTCOMP: contentFrame.Navigate(typeof(utilities_pages.textDiff)); nvView.SelectedItem = text_comparator; break;
+                case CMD: contentFrame.Navigate(typeof(utilities_pages.cmd)); nvView.SelectedItem = cmd; break;
+            }
         }
     }
 }
