@@ -40,7 +40,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="5,0,0,0">
             <TextBlock x:Name="wp_title_text" Text="wp_title_text" x:Uid="wp_title_text" FontSize="30" VerticalAlignment="Center"
                        FontWeight="Bold" FontFamily="segoe ui variable display"/>
-            <Button FontFamily="segoe mdl2 assets" Content="" Background="{ThemeResource SystemControlTransparentBrush}" 
+            <Button FontFamily="segoe fluent icons" Content="" Background="{ThemeResource SystemControlTransparentBrush}" 
                     Style="{ThemeResource TextBlockButtonStyle}" Margin="0,0,0,8">
                 <Button.Flyout>
                     <Flyout Placement="Right">

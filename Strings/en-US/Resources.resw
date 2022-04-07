@@ -120,12 +120,18 @@
   <data name="au" xml:space="preserve">
     <value>Australia</value>
   </data>
+  <data name="auto_rounding.Header" xml:space="preserve">
+    <value>Auto Rounding</value>
+  </data>
   <data name="avbv.Content" xml:space="preserve">
     <value>BV / av Converter</value>
   </data>
   <data name="avbv_text.Text" xml:space="preserve">
     <value>BV / av Converter</value>
     <comment>avbv</comment>
+  </data>
+  <data name="average_box.PlaceholderText" xml:space="preserve">
+    <value>Average</value>
   </data>
   <data name="bing_wp.Content" xml:space="preserve">
     <value>Bing Daily Wallpapers</value>
@@ -176,6 +182,9 @@
   </data>
   <data name="custom_mkt_switch.Header" xml:space="preserve">
     <value>Custom Region</value>
+  </data>
+  <data name="data_input.PlaceholderText" xml:space="preserve">
+    <value>Input data here...</value>
   </data>
   <data name="de" xml:space="preserve">
     <value>Germany</value>
@@ -323,6 +332,12 @@ p  -  Pi  -  3.1415926...</value>
   <data name="jp" xml:space="preserve">
     <value>Japan</value>
   </data>
+  <data name="keep_integers.Content" xml:space="preserve">
+    <value>Keep Integers</value>
+  </data>
+  <data name="keep_integers_tip.Text" xml:space="preserve">
+    <value>Keeps the integer part as you input datas.</value>
+  </data>
   <data name="max_textblock.Text" xml:space="preserve">
     <value>Max</value>
   </data>
@@ -400,6 +415,16 @@ p  -  Pi  -  3.1415926...</value>
   <data name="pane_top.Text" xml:space="preserve">
     <value>Top</value>
   </data>
+  <data name="physExCalc_title.Text" xml:space="preserve">
+    <value>Phys. Ex. Calculator</value>
+    <comment>PhysEx Calc</comment>
+  </data>
+  <data name="physex_accuracy.Header" xml:space="preserve">
+    <value>Decimal Accuracy</value>
+  </data>
+  <data name="PhysEx_Calc.Content" xml:space="preserve">
+    <value>Physics Experiment Calculator</value>
+  </data>
   <data name="PPICalc_title.Text" xml:space="preserve">
     <value>PPI Calculator</value>
     <comment>ppi_calc</comment>
@@ -438,6 +463,9 @@ p  -  Pi  -  3.1415926...</value>
   </data>
   <data name="refresh_wallpaper.Content" xml:space="preserve">
     <value>Refresh</value>
+  </data>
+  <data name="relative_uncertainty_box.PlaceholderText" xml:space="preserve">
+    <value>Relative uncertainty</value>
   </data>
   <data name="reset_all_btn.Text" xml:space="preserve">
     <value>Reset All</value>
@@ -480,6 +508,9 @@ p  -  Pi  -  3.1415926...</value>
   </data>
   <data name="settings_subt_general.Text" xml:space="preserve">
     <value>General</value>
+  </data>
+  <data name="settings_subt_physex.Text" xml:space="preserve">
+    <value>Phys. Ex. Calculator</value>
   </data>
   <data name="settings_title_text.Text" xml:space="preserve">
     <value>Settings</value>
@@ -585,6 +616,9 @@ p  -  Pi  -  3.1415926...</value>
   </data>
   <data name="uk" xml:space="preserve">
     <value>United Kingdom</value>
+  </data>
+  <data name="uncertainty_box.PlaceholderText" xml:space="preserve">
+    <value>Uncertainty</value>
   </data>
   <data name="url_textblock.Text" xml:space="preserve">
     <value>URL</value>

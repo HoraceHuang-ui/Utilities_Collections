@@ -121,20 +121,23 @@ namespace Utilities_Fix
                 contentFrame.Navigate(typeof(utilities_pages.cmd));
             else if (args.SelectedItem == text_comparator)
                 contentFrame.Navigate(typeof(utilities_pages.textDiff));
+            else if (args.SelectedItem == PhysCalc)
+                contentFrame.Navigate (typeof(utilities_pages.physcalc));
         }
 
         const int HOME = 0;
         const int FREECALC = 1;
         const int DETCALC = 2;
         const int PPICALC = 3;
-        const int NUMRAND = 4;
-        const int BINGWP = 5;
-        const int DOMAIN = 6;
-        const int IPREQUEST = 7;
-        const int NUMREGION = 8;
-        const int BVAV = 9;
-        const int TEXTCOMP = 10;
-        const int CMD = 11;
+        const int PHYSCALC = 4;
+        const int NUMRAND = 5;
+        const int BINGWP = 6;
+        const int DOMAIN = 7;
+        const int IPREQUEST = 8;
+        const int NUMREGION = 9;
+        const int BVAV = 10;
+        const int TEXTCOMP = 11;
+        const int CMD = 12;
 
         public class SearchItem
         {
@@ -158,16 +161,17 @@ namespace Utilities_Fix
             new SearchItem(1, "Free Calculator", "自由计算器", new string[]{"zyjsq", "freecalc"}),
             new SearchItem(2, "Determinant Calculator", "行列式计算器", new string[] {"hlsjsq", "detcalc"}),
             new SearchItem(3, "Pixel Density Calculator", "像素密度计算器", new string[]{"xsmdjsq", "ppicalculator", "ppicalc", "ppijsq"}),
-            new SearchItem(4, "Number Randomizer", "随机数生成器", new string[]{"sjsscq"}),
+            new SearchItem(4, "Physics Experiment Calculator", "物理实验计算器", new string[]{"physexcalc", "wlsyjsq"}),
+            new SearchItem(5, "Number Randomizer", "随机数生成器", new string[]{"sjsscq"}),
 
-            new SearchItem(5, "Bing Daily Wallpapers", "必应每日壁纸", new string[]{"bymrbz"}),
-            new SearchItem(6, "Domain Analyzer", "域名解析", new string[]{"ymjx"}),
-            new SearchItem(7, "IP Request", "IP地址查询", new string[]{"ipdzcx", "iprequest"}),
-            new SearchItem(8, "Number Region", "号码归属地", new string[]{"hmgsd"}),
+            new SearchItem(6, "Bing Daily Wallpapers", "必应每日壁纸", new string[]{"bymrbz"}),
+            new SearchItem(7, "Domain Analyzer", "域名解析", new string[]{"ymjx"}),
+            new SearchItem(8, "IP Request", "IP地址查询", new string[]{"ipdzcx", "iprequest"}),
+            new SearchItem(9, "Number Region", "号码归属地", new string[]{"hmgsd"}),
 
-            new SearchItem(9, "BV / av Converter", "BV / av 号转换", new string[]{"bvavhzhq", "avbvhzhq", "bvavzhq", "avbvzhq", "bvavconverter", "avbvconverter"}),
-            new SearchItem(10, "Text Comparator", "文字比较", new string[]{"wzbj", "wenzibijiao"}),
-            new SearchItem(11, "Command Prompt", "命令提示符", new string[]{"cmd", "mltsf"}),
+            new SearchItem(10, "BV / av Converter", "BV / av 号转换", new string[]{"bvavhzhq", "avbvhzhq", "bvavzhq", "avbvzhq", "bvavconverter", "avbvconverter"}),
+            new SearchItem(12, "Text Comparator", "文字比较", new string[]{"wzbj", "wenzibijiao"}),
+            new SearchItem(13, "Command Prompt", "命令提示符", new string[]{"cmd", "mltsf"}),
         };
 
         private void nav_view_search_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -237,6 +241,7 @@ namespace Utilities_Fix
                 case FREECALC: contentFrame.Navigate(typeof(utilities_pages.freecalc)); nvView.SelectedItem = calc; break;
                 case DETCALC: contentFrame.Navigate(typeof(utilities_pages.determinant)); nvView.SelectedItem = detcalc; break;
                 case PPICALC: contentFrame.Navigate(typeof(utilities_pages.PPI_Calc)); nvView.SelectedItem = PPICalc; break;
+                case PHYSCALC: contentFrame.Navigate(typeof(utilities_pages.physcalc)); break;
                 case NUMRAND: contentFrame.Navigate(typeof(utilities_pages.Randomizer)); nvView.SelectedItem = num_rand; break;
                 case BINGWP: contentFrame.Navigate(typeof(utilities_pages.bing_wp)); nvView.SelectedItem = bing_wp; break;
                 case DOMAIN: contentFrame.Navigate(typeof(utilities_pages.IP)); nvView.SelectedItem = ip_url; break;

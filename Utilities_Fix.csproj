@@ -157,6 +157,9 @@
     <Compile Include="utilities_pages\number_region.xaml.cs">
       <DependentUpon>number_region.xaml</DependentUpon>
     </Compile>
+    <Compile Include="utilities_pages\physcalc.xaml.cs">
+      <DependentUpon>physcalc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="utilities_pages\PPI_Calc.xaml.cs">
       <DependentUpon>PPI_Calc.xaml</DependentUpon>
     </Compile>
@@ -272,6 +275,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="utilities_pages\number_region.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="utilities_pages\physcalc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

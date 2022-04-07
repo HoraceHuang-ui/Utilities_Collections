@@ -104,6 +104,29 @@
                         FontFamily="segoe ui variable display" Content="show_func_btn"/>
                 <TextBlock FontSize="15"/>
 
+                <TextBlock x:Uid="settings_subt_physex" FontFamily="segoe ui variable display"
+                           FontSize="35" Margin="0,20,0,0" Text="Phys. Ex. Calculator"/>
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <CheckBox x:Uid="keep_integers" x:Name="keep_integers_checkbox" Checked="keep_integers_checkbox_Checked" Unchecked="keep_integers_checkbox_Unchecked" Content="Keep Integers"/>
+                    <Button FontFamily="segoe fluent icons" Content="" Background="{ThemeResource SystemControlTransparentBrush}" 
+                    Style="{ThemeResource TextBlockButtonStyle}" Margin="-10,3,0,0">
+                        <Button.Flyout>
+                            <Flyout Placement="Right">
+                                <ScrollViewer MaxWidth="400">
+                                    <TextBlock x:Uid="keep_integers_tip" FontSize="15" Text="Keeps the integer part as you submit datas."
+                                       FontFamily="segoe ui variable display" TextWrapping="WrapWholeWords"/>
+                                </ScrollViewer>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                </StackPanel>
+                <ToggleSwitch x:Uid="auto_rounding" x:Name="rounding_switch" Toggled="rounding_switch_Toggled" Margin="0,15,0,0"
+                              FontFamily="segoe ui variable display" Header="Auto Rounding"/>
+                <Slider x:Uid="physex_accuracy" x:Name="physex_decimal_slider" Loaded="physex_decimal_slider_Loaded" ValueChanged="physex_decimal_slider_ValueChanged" 
+                        Value="5" Width="300" Minimum="0" Maximum="15" StepFrequency="1" TickFrequency="2" 
+                        TickPlacement="Outside" HorizontalAlignment="Left" Margin="0,15,0,0"
+                        FontFamily="segoe ui variable display" Header="Decimal Accuracy"/>
+
                 <TextBlock x:Name="settings_subt_domain" x:Uid="settings_subt_domain" FontFamily="segoe ui variable display"
                            FontSize="35" Margin="0,20,0,0" Text="settings_subt_domain"/>
                 <StackPanel Orientation="Horizontal">

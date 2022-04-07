@@ -28,6 +28,11 @@
                         <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem x:Name="PhysCalc" x:Uid="PhysEx_Calc" FontFamily="segoe ui variable display">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="segoe fluent icons" Glyph=""/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItem Icon="Shuffle" x:Name="num_rand" x:Uid="num_rand"
                                     FontFamily="segoe ui variable display"/>
                 <NavigationViewItemHeader x:Uid="navViewHeader_network" Content="Network"/>
