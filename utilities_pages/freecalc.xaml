@@ -113,11 +113,12 @@
 
         <Button x:Name="help" Height="50" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"
                 Background="#00000000" FontSize="28" Margin="10,10,0,0" Click="help_Click" Content="?"/>
-        <controls:InfoBar x:Name="calc_error" x:Uid="calc_error" Message="Please check spelling / syntax / DIV0 / expression length." VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,150,0,0" Severity="Error"></controls:InfoBar>
+        <controls:InfoBar x:Name="calc_error" x:Uid="calc_error" Message="Please check spelling / syntax / DIV0 / expression length." VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,175,0,0" Severity="Error" Width="600"></controls:InfoBar>
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,100">
             <Grid.RowDefinitions>
                 <RowDefinition Height="10*"/>
-                <RowDefinition Height="*" MaxHeight="100"/>
+                <RowDefinition Height="1*" MaxHeight="100"/>
+                <RowDefinition Height="1*" MaxHeight="100"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Margin="0,0,0,20">
                 <TextBlock FontFamily="segoe ui variable display" HorizontalAlignment="Center" 
@@ -141,6 +142,16 @@
                     <Vector3Transition/>
                 </AutoSuggestBox.TranslationTransition>
             </AutoSuggestBox>
+            <StackPanel x:Name="mBar" Orientation="Horizontal" Grid.Row="2" Margin="0,5,0,0">
+                <Button x:Name="mPlus" Content="M+" FontFamily="segoe ui variable display" Width="50" Click="mPlus_Click"/>
+                <Button x:Name="mMinus" Content="M-" FontFamily="segoe ui variable display" Width="50" Margin="5,0,0,0" Click="mMinus_Click"/>
+                <Button x:Name="mc" Content="MC" FontFamily="segoe ui variable display" Width="50" Margin="5,0,15,0" Click="mc_Click"/>
+                <TextBlock x:Name="mValue" Text="Mem = 0" VerticalAlignment="Center" MinWidth="325" TextAlignment="Right" FontFamily="consolas" FontSize="20" IsTextSelectionEnabled="True"/>
+                <Button x:Name="mCopy" Content="Copy" FontFamily="segoe ui variable display" Width="84" Margin="15,0,0,0" Click="mCopy_Click"/>
+                <StackPanel.TranslationTransition>
+                    <Vector3Transition/>
+                </StackPanel.TranslationTransition>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>
