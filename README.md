@@ -142,3 +142,5 @@
 > 呃呃呃，还要我告诉你代码结构怎么样的吗？~~我写的代码乱得像一座屎山我自己都不想看~~ 这我需要好好组织一下语言了
 - To be continued...
 - 我以后 ~~闲的没事干~~ 时间允许的话会写点的
+## 感谢看完！
+- [一键回到顶部](https://github.com/HoraceHuang-ui/Utilities_Collections)
