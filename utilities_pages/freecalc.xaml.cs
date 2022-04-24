@@ -28,6 +28,7 @@ namespace Utilities_Fix.utilities_pages
     public sealed partial class freecalc : Page
     {
         int decimal_accuracy = 5;
+        double mem = 0;
         SettingsData settings = new SettingsData();
 
         ContentDialog funclist = new ContentDialog
@@ -109,7 +110,7 @@ namespace Utilities_Fix.utilities_pages
         }
         private bool IsConst(string eq, int i)
         {
-            return "EP".Contains(eq.Substring(i, 1));
+            return "EPM".Contains(eq.Substring(i, 1));
         }
         private bool IsSpecialFunc(string eq, int i)
         {
@@ -144,6 +145,10 @@ namespace Utilities_Fix.utilities_pages
                 else if (eq[i] == 'P')
                 {
                     s2.Push("P");
+                }
+                else if (eq[i] == 'M')
+                {
+                    s2.Push("M");
                 }
                 // Functions
                 else if (IsFunc(eq, i))
@@ -200,7 +205,7 @@ namespace Utilities_Fix.utilities_pages
             return s2;
         }
 
-        private string calc(string eq)
+        private double calc(string eq)
         {
             // Transformation
             Stack s = TransformToRPN(eq);
@@ -242,6 +247,7 @@ namespace Utilities_Fix.utilities_pages
                     {
                         case "E": s.Push(Math.E); break;
                         case "P": s.Push(Math.PI); break;
+                        case "M": s.Push(mem); break;
                     }
                 }
                 // Functions
@@ -284,7 +290,7 @@ namespace Utilities_Fix.utilities_pages
                 }
             }
             double ret = Math.Round(double.Parse(s.Pop().ToString()), decimal_accuracy);
-            return ret.ToString();
+            return ret;
         }
         public freecalc()
         {
@@ -329,8 +335,9 @@ namespace Utilities_Fix.utilities_pages
                         i--;
                     }
                 }
-                res_form.Text = calc(s);
+                res_form.Text = calc(s).ToString();
                 eq_form.Translation = new Vector3(-100, 0, 0);
+                mBar.Translation = new Vector3(-100, 0, 0);
                 res_form.Visibility = Visibility.Visible;
                 res_form.Opacity = 1;
                 resVisible = true;
@@ -348,6 +355,7 @@ namespace Utilities_Fix.utilities_pages
             res_form.Text = "";
             res_form.Opacity = 0;
             eq_form.Translation = new Vector3(0, 0, 0);
+            mBar.Translation = new Vector3(0, 0, 0);
             resVisible = false;
             if (tipMode == 9)
             {
@@ -402,6 +410,7 @@ namespace Utilities_Fix.utilities_pages
             {
                 res_form.Opacity = 0;
                 eq_form.Translation = new Vector3(0, 0, 0);
+                mBar.Translation = new Vector3(0, 0, 0);
                 resVisible = false;
             }
         }
@@ -446,18 +455,90 @@ namespace Utilities_Fix.utilities_pages
 
         private void tip16_congrats_Closed(Microsoft.UI.Xaml.Controls.TeachingTip sender, Microsoft.UI.Xaml.Controls.TeachingTipClosedEventArgs args)
         {
-            eq_form.Text = "\0";
+            eq_form.Text = String.Empty;
             tipMode = 0;
         }
         private void tip2_basicCalc_CloseButtonClick(Microsoft.UI.Xaml.Controls.TeachingTip sender, object args)
         {
-            eq_form.Text = "\0";
+            eq_form.Text = String.Empty;
             tipMode = 0;
         }
 
         private void tip1_Closed(Microsoft.UI.Xaml.Controls.TeachingTip sender, Microsoft.UI.Xaml.Controls.TeachingTipClosedEventArgs args)
         {
             tipMode = 0;
+        }
+
+        private void mPlus_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (resVisible)
+                    mem += double.Parse(res_form.Text);
+                else
+                {
+                    string s = eq_form.Text;
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        if (s[i] == ' ')
+                        {
+                            s = s.Remove(i, 1);
+                            i--;
+                        }
+                    }
+                    mem += calc(eq_form.Text);
+                    calc_error.IsOpen = false;
+                }
+                eq_form.Text = string.Empty;
+                mValue.Text = "Mem = " + mem.ToString();
+            }
+            catch
+            {
+                calc_error.IsOpen = true;
+            }
+        }
+
+        private void mMinus_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (resVisible)
+                    mem -= double.Parse(res_form.Text);
+                else
+                {
+                    string s = eq_form.Text;
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        if (s[i] == ' ')
+                        {
+                            s = s.Remove(i, 1);
+                            i--;
+                        }
+                    }
+                    mem -= calc(eq_form.Text);
+                    calc_error.IsOpen = false;
+                }
+                eq_form.Text = string.Empty;
+                mValue.Text = "Mem = " + mem.ToString();
+            }
+            catch
+            {
+                calc_error.IsOpen = true;
+            }
+        }
+
+        private void mc_Click(object sender, RoutedEventArgs e)
+        {
+            mem = 0;
+            mValue.Text = "Mem = 0";
+        }
+
+        private void mCopy_Click(object sender, RoutedEventArgs e)
+        {
+            mValue.Text = mValue.Text.Substring(6);
+            mValue.SelectAll();
+            mValue.CopySelectionToClipboard();
+            mValue.Text = "Mem = " + mValue.Text;
         }
     }
 }

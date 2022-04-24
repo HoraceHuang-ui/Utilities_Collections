@@ -45,6 +45,8 @@
                 <NavigationViewItem Icon="Phone" x:Name="number_region"
                      x:Uid="number_region" FontFamily="segoe ui variable display"/>
                 <NavigationViewItemHeader x:Uid="navViewHeader_misc" Content="Misc"/>
+                <NavigationViewItem Icon="Calendar" Content="Days Matter"
+                                    FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Icon="Video" x:Name="avbv" x:Uid="avbv"
                      FontFamily="segoe ui variable display"/>
                 <NavigationViewItem Content="Text Comparator" x:Name="text_comparator"

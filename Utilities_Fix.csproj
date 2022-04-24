@@ -142,6 +142,9 @@
     <Compile Include="utilities_pages\cmd.xaml.cs">
       <DependentUpon>cmd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="utilities_pages\daysMatter.xaml.cs">
+      <DependentUpon>daysMatter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="utilities_pages\determinant.xaml.cs">
       <DependentUpon>determinant.xaml</DependentUpon>
     </Compile>
@@ -255,6 +258,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="utilities_pages\cmd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="utilities_pages\daysMatter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
