@@ -1,3 +1,4 @@
+[View in English](./README_English.md)
 # Utilities_Collections
 小工具大杂烩 by HoraceHYY A.K.A. `MSFT_SuperFan`
 # 目录
@@ -23,7 +24,7 @@
 - [代码说明](#代码说明)
 ## 开发说明
 - 平台：`通用 Windows (UWP)`
-- 目标系统版本：`Windows 11 (10.0 Build 22000`
+- 目标系统版本：`Windows 11 (10.0 Build 22000)`
 - 最低系统版本：`Windows 10 1809 (10.0 Build 17763)`
 - 开发环境：`Visual Studio 2019 Community`
 - 语言：前端 `XAML`  后端 `C#`
