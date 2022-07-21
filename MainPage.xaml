@@ -14,7 +14,8 @@
                         SelectionChanged="nvView_SelectionChanged">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="Home" x:Name="utilities_home" x:Uid="utilities_home"
-                     FontFamily="segoe ui variable display"/>
+                     FontFamily="segoe ui variable display">
+                </NavigationViewItem>
                 <NavigationViewItemHeader x:Uid="navViewHeader_math" Content="Math"/>
                 <NavigationViewItem Icon="Calculator" x:Name="calc" x:Uid="calc"
                      FontFamily="segoe ui variable display"/>

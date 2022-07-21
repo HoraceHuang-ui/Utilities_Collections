@@ -71,21 +71,21 @@ namespace Utilities_Fix.utilities_pages
             {
                 uncertainty += Math.Pow(v - average, 2);
             }
-            uncertainty /= datas.Count() - 1;
+            uncertainty /= (datas.Count()*(datas.Count() - 1));
             uncertainty = Math.Sqrt(uncertainty);
 
             int auto_accuracy = DetectDecimalAccuracy();
 
             average_box.Text = (settings.language_eng ? "Average = " : "平均值：") + 
-                Math.Round(average, settings.auto_rounding ? auto_accuracy : settings.physex_accuration)
+                Math.Round(average, settings.auto_rounding ? auto_accuracy : settings.physex_accuracy)
                 .ToString();
 
             uncertainty_box.Text = (settings.language_eng ? "Uncertainty = " : "不确定度：") + 
-                Math.Round(uncertainty, settings.auto_rounding ? auto_accuracy : settings.physex_accuration)
+                Math.Round(uncertainty, settings.auto_rounding ? auto_accuracy : settings.physex_accuracy)
                 .ToString();
             
             relative_uncertainty_box.Text = (settings.language_eng ? "Relative uncertainty = " : "相对不确定度：") + 
-                Math.Round(uncertainty / average * 100, settings.auto_rounding ? auto_accuracy : settings.physex_accuration)
+                Math.Round(uncertainty / average * 100, settings.auto_rounding ? auto_accuracy : settings.physex_accuracy)
                 .ToString() + " %";
 
             data_trace.ItemsSource = new List<string>(strings);

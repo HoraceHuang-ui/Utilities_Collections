@@ -98,6 +98,27 @@
                 <controls:FontIconSource FontFamily="Segoe MDL2 Assets" Glyph=""/>
             </controls:TeachingTip.IconSource>
         </controls:TeachingTip>
+        <controls:TeachingTip
+            x:Name="tip10_mBar" Target="{x:Bind mBar}" PreferredPlacement="Left"
+            PlacementMargin="0,0,20,0"
+            Title="Memory Operations" 
+            Subtitle="FreeCalc supports memory operations to enhance your experience."
+            ActionButtonContent="Example"
+            ActionButtonClick="tip10_mBar_ActionButtonClick">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Times New Roman" FontStyle="Italic" Glyph="M"/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip
+            x:Name="tip11_MPlus" Target="{x:Bind mPlus}"
+            PlacementMargin="0,20,0,0"
+            Title="Memory Operations" 
+            Subtitle="Press M+/M- to add/subtract the current result to/from the memory. MC resets mempry value to 0."
+            CloseButtonClick="tip2_basicCalc_CloseButtonClick">
+            <controls:TeachingTip.IconSource>
+                <controls:FontIconSource FontFamily="Times New Roman" FontStyle="Italic" Glyph="M"/>
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
         <controls:TeachingTip 
             x:Name="tip16_congrats" x:Uid="tip16"
             PreferredPlacement="Center"

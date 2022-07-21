@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="au" xml:space="preserve">
+    <value />
+  </data>
+  <data name="auto_rounding.Header" xml:space="preserve">
+    <value />
+  </data>
+  <data name="avbv.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="avbv_text.Text" xml:space="preserve">
+    <value />
+    <comment>avbv</comment>
+  </data>
+  <data name="average_box.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="bing_wp.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="calc.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="calc_error.Message" xml:space="preserve">
+    <value />
+  </data>
+  <data name="caution_flyout_text.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="change_size.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmd.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdInput.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdOutput.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmd_title.Text" xml:space="preserve">
+    <value />
+    <comment>cmd</comment>
+  </data>
+  <data name="cn" xml:space="preserve">
+    <value />
+    <comment>Regions</comment>
+  </data>
+  <data name="cnt_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cnt_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="custom_apikey_switch.Header" xml:space="preserve">
+    <value />
+  </data>
+  <data name="custom_apikey_switch.OffContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="custom_apikey_switch.OnContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="custom_mkt_switch.Header" xml:space="preserve">
+    <value />
+  </data>
+  <data name="data_input.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="de" xml:space="preserve">
+    <value />
+  </data>
+  <data name="decimal_slider.Header" xml:space="preserve">
+    <value />
+  </data>
+  <data name="degree_switch.Header" xml:space="preserve">
+    <value />
+  </data>
+  <data name="degree_switch.OffContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="degree_switch.OnContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="detcalc.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="detcalc_title_text.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="display_theme_text.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edit_settingsVal_hypertext.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="english_switch.Header" xml:space="preserve">
+    <value />
+  </data>
+  <data name="eq_form.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error100" xml:space="preserve">
+    <value />
+    <comment>到时候再填坑</comment>
+  </data>
+  <data name="error110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error120" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error130" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error140" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error150" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error160" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error170" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error230" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error240" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error250" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error260" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error270" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error280" xml:space="preserve">
+    <value />
+  </data>
+  <data name="error290" xml:space="preserve">
+    <value />
+  </data>
+  <data name="func_const_list.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="func_const_list.PrimaryButtonText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="func_const_list.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="height.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="info_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="info_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_request.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_request_result.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_request_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_request_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_request_title_text.Text" xml:space="preserve">
+    <value />
+    <comment>ip_request</comment>
+  </data>
+  <data name="ip_res_error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_res_success" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_url.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ip_url_title_text.Text" xml:space="preserve">
+    <value />
+    <comment>ip_url</comment>
+  </data>
+  <data name="jp" xml:space="preserve">
+    <value />
+  </data>
+  <data name="keep_integers.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="keep_integers_tip.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="max_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="max_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="min_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="min_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mkt_au.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mkt_cn.Text" xml:space="preserve">
+    <value />
+    <comment>Regions</comment>
+  </data>
+  <data name="mkt_de.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mkt_jp.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mkt_nz.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mkt_uk.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mkt_us.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="navViewHeader_math.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="navViewHeader_misc.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="navViewHeader_network.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="no_dup.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="number_region.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="number_title_text.Text" xml:space="preserve">
+    <value />
+    <comment>number region</comment>
+  </data>
+  <data name="num_rand.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="num_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="num_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="nz" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panemode_ddb_text.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panemode_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pane_left.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pane_top.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="physExCalc_title.Text" xml:space="preserve">
+    <value />
+    <comment>PhysEx Calc</comment>
+  </data>
+  <data name="physex_accuracy.Header" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PhysEx_Calc.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PPICalc_title.Text" xml:space="preserve">
+    <value />
+    <comment>ppi_calc</comment>
+  </data>
+  <data name="PPI_Calc.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ppi_res.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="quick_edit_box.Text" xml:space="preserve">
+    <value />
+    <comment>等搞完其他的再弄</comment>
+  </data>
+  <data name="randomizer_title.Text" xml:space="preserve">
+    <value />
+    <comment>randomizer</comment>
+  </data>
+  <data name="randomize_button.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rand_res_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rand_res_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rb_dark.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rb_default.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rb_light.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="refresh_wallpaper.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="relative_uncertainty_box.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reset_all_btn.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reset_confirm.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reset_confirm.PrimaryButtonText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reset_confirm.SecondaryButtonText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reset_confirm.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="restart_for_effect_text_1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="result.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="res_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="save_image.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="settings.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="settings_subt_bing.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="settings_subt_domain.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="settings_subt_freecalc.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="settings_subt_general.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="settings_subt_physex.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="settings_title_text.Text" xml:space="preserve">
+    <value />
+    <comment>settings</comment>
+  </data>
+  <data name="show_func_btn.Content" xml:space="preserve">
+    <value />
+  </data>
+  <data name="size.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="text1.Text" xml:space="preserve">
+    <value />
+    <comment>utilities_Home</comment>
+  </data>
+  <data name="text2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tianapi_error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tianapi_loading" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tianapi_phone_argError" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip1.ActionButtonContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip1.CloseButtonContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip1.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip1.Title" xml:space="preserve">
+    <value />
+    <comment>freecalc</comment>
+  </data>
+  <data name="tip16.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip16.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip2.ActionButtonContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip2.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip2.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip3.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip3.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip4.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip4.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip5.ActionButtonContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip5.CloseButtonContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip5.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip5.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip6.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip6.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip8.ActionButtonContent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip8.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip8.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip9.Subtitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tip9.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toppane" xml:space="preserve">
+    <value />
+  </data>
+  <data name="uk" xml:space="preserve">
+    <value />
+  </data>
+  <data name="uncertainty_box.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="url_textblock.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="url_textbox.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="us" xml:space="preserve">
+    <value />
+  </data>
+  <data name="utilities_home.Content" xml:space="preserve">
+    <value />
+    <comment>HomePage</comment>
+  </data>
+  <data name="wallpaper_failed.Message" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wallpaper_loading.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="welcome_again_btn.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="width.PlaceholderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wp_res_text.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wp_title_text.Text" xml:space="preserve">
+    <value />
+    <comment>bing_wp</comment>
+  </data>
+</root>
