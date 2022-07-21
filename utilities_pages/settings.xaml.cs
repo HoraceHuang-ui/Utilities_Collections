@@ -124,10 +124,10 @@ namespace Utilities_Fix.utilities_pages
                 panemode_ddb_icon.Glyph = "";
             }
             degree_switch.IsOn = preferences.degree;
-            decimal_slider.Value = preferences.decimal_accuration;
+            decimal_slider.Value = preferences.decimal_accuracy;
             keep_integers_checkbox.IsChecked = preferences.keep_integers;
             rounding_switch.IsOn = preferences.auto_rounding;
-            physex_decimal_slider.Value = preferences.physex_accuration;
+            physex_decimal_slider.Value = preferences.physex_accuracy;
             if (preferences.custom_apikey_switch)
             {
                 custom_apikey_switch.IsOn = true;
@@ -209,7 +209,7 @@ namespace Utilities_Fix.utilities_pages
         {
             if (done)
             {
-                preferences.decimal_accuration = (int)decimal_slider.Value;
+                preferences.decimal_accuracy = (int)decimal_slider.Value;
                 await preferences.RefreshLocalFileAsync();
             }
         }
@@ -411,7 +411,7 @@ namespace Utilities_Fix.utilities_pages
         {
             if (done)
             {
-                preferences.physex_accuration = (int)physex_decimal_slider.Value;
+                preferences.physex_accuracy = (int)physex_decimal_slider.Value;
                 await preferences.RefreshLocalFileAsync();
             }
         }

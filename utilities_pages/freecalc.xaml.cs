@@ -1,35 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Xaml.Navigation;
-using System.Threading.Tasks;
 using System.Collections;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
 namespace Utilities_Fix.utilities_pages
 {
-    /// <summary>
-    /// 可用于自身或导航至 Frame 内部的空白页。
-    /// </summary>
     public sealed partial class freecalc : Page
     {
         int decimal_accuracy = 5;
         double mem = 0;
         SettingsData settings = new SettingsData();
+        bool resVisible = false;
+        int tipMode = 0;
+        bool deg = false;
 
         ContentDialog funclist = new ContentDialog
         {
@@ -68,10 +57,6 @@ namespace Utilities_Fix.utilities_pages
             funclist.PrimaryButtonText = "Got it";
         }
 
-        bool resVisible = false;
-        int tipMode = 0;
-        bool deg = false;
-
         /// <param name="eq">Full equation</param>
         /// <param name="i">Start index</param>
         private bool IsFunc(string eq, int i)
@@ -79,9 +64,7 @@ namespace Utilities_Fix.utilities_pages
             string[] funcs = { "sqr", "sin", "cos", "tan", "cot", "abs", "cei", "flo" };
             if (i >= eq.Length) return false;
             if (eq.Substring(i).Length < 3) return false;
-            eq = eq.Substring(i, 3);
-            if (funcs.Contains(eq)) return true;
-            else return false;
+            return funcs.Contains(eq.Substring(i, 3));
         }
         private int PriorTo(char tk1, char tk2)
         {
@@ -97,6 +80,7 @@ namespace Utilities_Fix.utilities_pages
             };
             if (!priority.ContainsKey(tk1) || !priority.ContainsKey(tk2))
                 return -2;
+
             if (priority[tk1] > priority[tk2])
                 return 1;
             else if (priority[tk1] < priority[tk2])
@@ -110,16 +94,18 @@ namespace Utilities_Fix.utilities_pages
         }
         private bool IsConst(string eq, int i)
         {
-            return "EPM".Contains(eq.Substring(i, 1));
+            return "EPM".Contains(eq[i]);
         }
         private bool IsSpecialFunc(string eq, int i)
         {
             string[] funcs = { "log" };
             if (i >= eq.Length) return false;
             if (eq.Substring(i).Length < 3) return false;
-            eq = eq.Substring(i, 3);
-            if (funcs.Contains(eq)) return true;
-            else return false;
+            return funcs.Contains(eq.Substring(i, 3));
+        }
+        private bool IsNum(string eq, int i)
+        {
+            return eq[i] <= '9' && eq[i] >= '0';
         }
         private Stack TransformToRPN(string eq)
         {
@@ -128,27 +114,18 @@ namespace Utilities_Fix.utilities_pages
             for (int i = 0; i < eq.Length; i++)
             {
                 // Numbers
-                if ((eq[i] <= '9' && eq[i] >= '0') ||
-                    (eq[i] == '-' && (i == 0 || !(eq[i - 1] <= '9' && eq[i - 1] >= '0' || eq[i - 1] == ')'))))
+                if (IsNum(eq, i) ||
+                    (eq[i] == '-' && (i == 0 || !(IsNum(eq, i) || eq[i - 1] == ')'))))
                 {
                     int j;
-                    for (j = i + 1; j < eq.Length && (eq[j] <= '9' && eq[j] >= '0' || eq[j] == '.'); j++) ;
+                    for (j = i + 1; j < eq.Length && (IsNum(eq, i) || eq[j] == '.'); j++) ;
                     j--;
                     s2.Push(eq.Substring(i, j - i + 1));
                     i = j;
                 }
                 // Constants
-                else if (eq[i] == 'E')
-                {
-                    s2.Push("E");
-                }
-                else if (eq[i] == 'P')
-                {
-                    s2.Push("P");
-                }
-                else if (eq[i] == 'M')
-                {
-                    s2.Push("M");
+                else if (IsConst(eq, i)) {
+                    s2.Push(eq[i].ToString());
                 }
                 // Functions
                 else if (IsFunc(eq, i))
@@ -221,7 +198,7 @@ namespace Utilities_Fix.utilities_pages
             foreach (string token in tokens)
             {
                 // Numbers
-                if (token[0] <= '9' && token[0] >= '0' || token[0] == '-' && token.Length > 1)
+                if (IsNum(token, 0) || token[0] == '-' && token.Length > 1)
                 {
                     s.Push(double.Parse(token));
                 }
@@ -289,8 +266,7 @@ namespace Utilities_Fix.utilities_pages
                     }
                 }
             }
-            double ret = Math.Round(double.Parse(s.Pop().ToString()), decimal_accuracy);
-            return ret;
+            return Math.Round(double.Parse(s.Pop().ToString()), decimal_accuracy);
         }
         public freecalc()
         {
@@ -378,7 +354,7 @@ namespace Utilities_Fix.utilities_pages
 
             if (settings.language_eng) allEng();
             if (settings.degree) deg = true;
-            decimal_accuracy = settings.decimal_accuration;
+            decimal_accuracy = settings.decimal_accuracy;
         }
 
         private void eq_form_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -539,6 +515,11 @@ namespace Utilities_Fix.utilities_pages
             mValue.SelectAll();
             mValue.CopySelectionToClipboard();
             mValue.Text = "Mem = " + mValue.Text;
+        }
+
+        private void tip10_mBar_ActionButtonClick(Microsoft.UI.Xaml.Controls.TeachingTip sender, object args)
+        {
+
         }
     }
 }

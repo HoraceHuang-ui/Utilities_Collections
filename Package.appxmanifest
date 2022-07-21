@@ -9,7 +9,7 @@
   <Identity
     Name="com.horacehyy.utilities"
     Publisher="CN=HoraceHYY"
-    Version="2.6.1.0" />
+    Version="2.7.3.0" />
 
   <mp:PhoneIdentity PhoneProductId="a709fb19-659e-4c01-91e4-d7881fcedfde" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

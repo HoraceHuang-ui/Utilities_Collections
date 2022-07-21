@@ -19,12 +19,12 @@ namespace Utilities_Fix
 
         // freecalc
         public bool degree;
-        public int decimal_accuration;
+        public int decimal_accuracy;
 
         // physics ex calc
         public bool keep_integers;
         public bool auto_rounding;
-        public int physex_accuration;
+        public int physex_accuracy;
 
         // tianapi
         public bool custom_apikey_switch;
@@ -42,10 +42,10 @@ namespace Utilities_Fix
             pane_top = false;
             first_time_open = true;
             degree = false;
-            decimal_accuration = 5;
+            decimal_accuracy = 5;
             keep_integers = false;
             auto_rounding = false;
-            physex_accuration = 5;
+            physex_accuracy = 5;
             custom_apikey_switch = false;
             apikey = "a9c1ad156691364ebfe8b3f1ff4eb153";
             custom_mkt_switch = false ;
@@ -84,7 +84,7 @@ namespace Utilities_Fix
             language_eng = GetDataFrom(yaml, "language") == "true";
             pane_top = GetDataFrom(yaml, "pane_top") == "true";
             degree = GetDataFrom(yaml, "degree") == "true";
-            decimal_accuration = int.Parse(GetDataFrom(yaml, "decimal_accuration"));
+            decimal_accuracy = int.Parse(GetDataFrom(yaml, "decimal_accuracy"));
             custom_apikey_switch = GetDataFrom(yaml, "custom_apikey_switch") == "true";
             apikey = GetDataFrom(yaml, "apikey");
             custom_mkt_switch = GetDataFrom(yaml, "custom_mkt_switch") == "true";
@@ -111,7 +111,7 @@ namespace Utilities_Fix
                     "pane_top: false\n" +
                     "first_time_open: true\n" +
                     "degree: false\n" +
-                    "decimal_accuration: 5\n" +
+                    "decimal_accuracy: 5\n" +
                     "keep_integers: false\n" +
                     "auto_rounding: false\n" +
                     "physex_accuracy: 5\n" +
@@ -147,10 +147,10 @@ namespace Utilities_Fix
             pane_top = a.pane_top;
             first_time_open = a.first_time_open;
             degree = a.degree;
-            decimal_accuration = a.decimal_accuration;
+            decimal_accuracy = a.decimal_accuracy;
             keep_integers = a.keep_integers;
             auto_rounding = a.auto_rounding;
-            physex_accuration = a.physex_accuration;
+            physex_accuracy = a.physex_accuracy;
             custom_apikey_switch = a.custom_apikey_switch;
             apikey = a.apikey;
             custom_mkt_switch = a.custom_mkt_switch;
