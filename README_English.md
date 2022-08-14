@@ -1,6 +1,8 @@
 [查看中文版文档](./README.md)
 # Utilities_Collections
 Utilities Collections by HoraceHYY A.K.A `MSFT_SuperFan`
+
+Also check out [FreeCalc for Android](https://www.github.com/Horacehuang-ui/FreeCalc_Android) !
 # Contents
 - [Development Info](#development-info)
 - [Installtion Guides](#installation-guides)
