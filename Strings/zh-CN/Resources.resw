@@ -372,6 +372,9 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="mkt_us.Text" xml:space="preserve">
     <value>美国</value>
   </data>
+  <data name="mode_select_text.Text" xml:space="preserve">
+    <value>模式</value>
+  </data>
   <data name="navViewHeader_math.Content" xml:space="preserve">
     <value>数学</value>
   </data>
@@ -402,6 +405,12 @@ p  -  圆周率  -  3.1415926...</value>
   </data>
   <data name="nz" xml:space="preserve">
     <value>新西兰</value>
+  </data>
+  <data name="ovr_form_tip.Text" xml:space="preserve">
+    <value>打开后，每次计算后结果都会覆盖输入框中的式子。结果框将不再显示。</value>
+  </data>
+  <data name="ovr_switch.Header" xml:space="preserve">
+    <value>覆盖原式</value>
   </data>
   <data name="panemode_ddb_text.Text" xml:space="preserve">
     <value>左侧</value>
@@ -458,8 +467,14 @@ p  -  圆周率  -  3.1415926...</value>
   <data name="rb_default.Content" xml:space="preserve">
     <value>系统默认</value>
   </data>
+  <data name="rb_deg.Content" xml:space="preserve">
+    <value>角度制</value>
+  </data>
   <data name="rb_light.Content" xml:space="preserve">
     <value>亮色</value>
+  </data>
+  <data name="rb_rad.Content" xml:space="preserve">
+    <value>弧度制</value>
   </data>
   <data name="refresh_wallpaper.Content" xml:space="preserve">
     <value>刷新</value>

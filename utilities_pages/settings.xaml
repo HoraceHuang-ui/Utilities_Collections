@@ -17,7 +17,6 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
-
         <TextBlock x:Name="settings_title_text" x:Uid="settings_title_text" Grid.Row="0" Grid.Column="1" Margin="5,0,0,0" 
                    FontSize="30" VerticalAlignment="Center" FontWeight="Bold" FontFamily="segoe ui variable display" Text="settings_title_text"/>
         <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="5,0,0,15">
@@ -26,7 +25,7 @@
                     <TextBlock x:Name="settings_subt_general" x:Uid="settings_subt_general" 
                                FontFamily="segoe ui variable display" FontSize="35" Text="settings_subt_general"/>
                     <TextBlock x:Name="restart_for_effect_text_1" x:Uid="restart_for_effect_text_1" VerticalAlignment="Bottom"
-                               FontFamily="segoe ui variable display" FontSize="13" FontStyle="Italic" Margin="15,0,0,5" Text="restert_for_effect_text_1"/>
+                               FontFamily="segoe ui variable display" FontSize="13" FontStyle="Italic" Margin="15,0,0,5" Text="restart_for_effect_text_1"/>
                 </StackPanel>
                 <TextBlock x:Name="display_theme_text" x:Uid="display_theme_text" Margin="0,15,0,0" 
                            FontFamily="segoe ui variable display" Text="display_theme_text"/>
@@ -94,8 +93,28 @@
 
                 <TextBlock x:Name="settings_subt_freecalc" x:Uid="settings_subt_freecalc" 
                            FontFamily="segoe ui variable display" FontSize="35" Margin="0,20,0,0" Text="settings_subt_freecalc"/>
-                <ToggleSwitch x:Name="degree_switch" x:Uid="degree_switch" Toggled="degree_switch_Toggled" Margin="0,15,0,0"
-                              FontFamily="segoe ui variable display" Header="degree_switch"/>
+                <TextBlock x:Uid="mode_select_text" Margin="0,15,0,0" 
+                           FontFamily="segoe ui variable display" Text="mode_select_text"/>
+                <RadioButton GroupName="mode" x:Name="rb_deg" x:Uid="rb_deg" Checked="rb_deg_Checked" 
+                             Margin="0,5,0,0" FontFamily="segoe ui variable display" Content="rb_deg"/>
+                <RadioButton GroupName="mode" x:Name="rb_rad" x:Uid="rb_rad" Checked="rb_rad_Checked" 
+                             FontFamily="segoe ui variable display" Content="rb_rad"/>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleSwitch x:Name="ovr_switch" x:Uid="ovr_switch" Toggled="ovr_switch_Toggled" Margin="0,15,0,0"
+                              FontFamily="segoe ui variable display" Header="ovr_switch"/>
+                    <Button FontFamily="segoe fluent icons" Content="" Background="{ThemeResource SystemControlTransparentBrush}" 
+                    Style="{ThemeResource TextBlockButtonStyle}" Margin="-65,-28,0,0">
+                        <Button.Flyout>
+                            <Flyout Placement="Right">
+                                <ScrollViewer MaxWidth="400">
+                                    <TextBlock x:Uid="ovr_form_tip" FontSize="15" 
+                                       Text="When turned on, the expression in the form will be replaced by calculation result on every submit. The result form won't show."
+                                       FontFamily="segoe ui variable display" TextWrapping="WrapWholeWords"/>
+                                </ScrollViewer>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                </StackPanel>
                 <Slider x:Name="decimal_slider" x:Uid="decimal_slider" ValueChanged="decimal_slider_ValueChanged" 
                         Value="5" Width="300" Minimum="0" Maximum="15" StepFrequency="1" TickFrequency="2" 
                         TickPlacement="Outside" HorizontalAlignment="Left" Margin="0,15,0,0"
@@ -107,9 +126,9 @@
                 <TextBlock x:Uid="settings_subt_physex" FontFamily="segoe ui variable display"
                            FontSize="35" Margin="0,20,0,0" Text="Phys. Ex. Calculator"/>
                 <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
-                    <CheckBox x:Uid="keep_integers" x:Name="keep_integers_checkbox" Checked="keep_integers_checkbox_Checked" Unchecked="keep_integers_checkbox_Unchecked" Content="Keep Integers"/>
+                    <CheckBox x:Uid="keep_integers" x:Name="keep_integers_checkbox" Checked="keep_integers_checkbox_Checked" Unchecked="keep_integers_checkbox_Unchecked" Content="keep_integers_checkbox"/>
                     <Button FontFamily="segoe fluent icons" Content="" Background="{ThemeResource SystemControlTransparentBrush}" 
-                    Style="{ThemeResource TextBlockButtonStyle}" Margin="-10,3,0,0">
+                    Style="{ThemeResource TextBlockButtonStyle}" Margin="-5,2,0,0">
                         <Button.Flyout>
                             <Flyout Placement="Right">
                                 <ScrollViewer MaxWidth="400">

@@ -372,6 +372,9 @@ p  -  Pi  -  3.1415926...</value>
   <data name="mkt_us.Text" xml:space="preserve">
     <value>United States</value>
   </data>
+  <data name="mode_select_text.Text" xml:space="preserve">
+    <value>Mode</value>
+  </data>
   <data name="navViewHeader_math.Content" xml:space="preserve">
     <value>Math</value>
   </data>
@@ -402,6 +405,12 @@ p  -  Pi  -  3.1415926...</value>
   </data>
   <data name="nz" xml:space="preserve">
     <value>New Zealand</value>
+  </data>
+  <data name="ovr_form_tip.Text" xml:space="preserve">
+    <value>When turned on, the expression in the form will be replaced by calculation result on every submit. The result form won't show.</value>
+  </data>
+  <data name="ovr_switch.Header" xml:space="preserve">
+    <value>Override Form</value>
   </data>
   <data name="panemode_ddb_text.Text" xml:space="preserve">
     <value>Left</value>
@@ -458,8 +467,14 @@ p  -  Pi  -  3.1415926...</value>
   <data name="rb_default.Content" xml:space="preserve">
     <value>Default</value>
   </data>
+  <data name="rb_deg.Content" xml:space="preserve">
+    <value>DEG</value>
+  </data>
   <data name="rb_light.Content" xml:space="preserve">
     <value>Light</value>
+  </data>
+  <data name="rb_rad.Content" xml:space="preserve">
+    <value>RAD</value>
   </data>
   <data name="refresh_wallpaper.Content" xml:space="preserve">
     <value>Refresh</value>
