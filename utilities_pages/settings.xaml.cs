@@ -59,14 +59,10 @@ namespace Utilities_Fix.utilities_pages
         ContentDialog welcome = new ContentDialog()
         {
             Title = "本次更新内容：",
-            Content = "欢迎使用 hyy 小工具大杂烩 V2.7.0！\n\n" +
-                "加入 PPI 计算器，大果粒无处遁形！\n\n" +
-                "上一版本 V2.6.0 更新内容：\n" +
-                "修复了大量闪退问题，程序运行更稳定\n" +
-                "必应每日壁纸会显示加载中，反馈更直观\n" +
-                "更新后现可同步上一版本设置项\n" +
-                "采用 Windows 11 风格图标，好康！\n" +
-                "自由计算器代码完全重写，运算效率更高限制更少！",
+            Content = "欢迎使用 hyy 小工具大杂烩 V2.8.0！\n\n" +
+                "可选择在计算结果显示后覆盖原式。\n\n" +
+                "上一版本 V2.7.0 更新内容：\n" +
+                "加入 PPI 计算器，大果粒无处遁形！",
             PrimaryButtonText = "芜湖起飞！!",
             DefaultButton = ContentDialogButton.Primary
         };
@@ -102,19 +98,15 @@ namespace Utilities_Fix.utilities_pages
                 func_const_list.PrimaryButtonText = "OK";
 
                 reset_confirm.Title = "Are you sure?";
-                reset_confirm.Content = "All your se/ttings will be reset to default. Restart the app to take effect.";
+                reset_confirm.Content = "All your settings will be reset to default. Restart the app to take effect.";
                 reset_confirm.PrimaryButtonText = "OK";
                 reset_confirm.SecondaryButtonText = "Cancel";
 
                 welcome.Title = "What's New:";
-                welcome.Content = "Welcome to Utilities by Hyy V2.7.0！\n\n" +
-                "Added a PPI Calculator and sense the sharpness of your screen!\n\n" +
-                "What was new in the previous version V2.6.0:\n" +
-                "Fixed lots of force close problems, making the app more stable\n" +
-                "Bing Daily Wallpaper now displays \"Loading...\"\n" +
-                "Your settings from the previous version is now synced\n" +
-                "Added a Windows 11 styled icon!\n" +
-                "Enjoy a more consistent experience with the brand new FreeCalc!";
+                welcome.Content = "Welcome to Utilities by Hyy V2.8.0！\n\n" +
+                "Added an option to override the original expression with the result after calculation.\n\n" +
+                "What was new in the previous version V2.7.0:\n" +
+                "Added a PPI Calculator and sense the sharpness of your screen!";
                 welcome.PrimaryButtonText = "Woo-Hoo!!";
             }
             if (preferences.pane_top)
@@ -123,7 +115,10 @@ namespace Utilities_Fix.utilities_pages
                 panemode_ddb_text.Text = resourceLoader.GetString("toppane");
                 panemode_ddb_icon.Glyph = "";
             }
-            degree_switch.IsOn = preferences.degree;
+            ovr_switch.IsOn = preferences.ovr_form;
+            if (preferences.degree)
+                rb_deg.IsChecked = true;
+            else rb_rad.IsChecked = true;
             decimal_slider.Value = preferences.decimal_accuracy;
             keep_integers_checkbox.IsChecked = preferences.keep_integers;
             rounding_switch.IsOn = preferences.auto_rounding;
@@ -196,14 +191,6 @@ namespace Utilities_Fix.utilities_pages
                 await preferences.RefreshLocalFileAsync();
             }
         }
-        private async void degree_switch_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (done)
-            {
-                preferences.degree = !preferences.degree;
-                await preferences.RefreshLocalFileAsync();
-            }
-        }
 
         private async void decimal_slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
@@ -230,22 +217,6 @@ namespace Utilities_Fix.utilities_pages
                 await preferences.RefreshLocalFileAsync();
             }
         }
-
-        //private void edit_settingsVal_hypertext_Click(object sender, RoutedEventArgs e)
-        //{
-        //    quick_edit_box.Visibility = Visibility.Visible;
-        //    quick_edit_box.Text = settingsVal;
-        //}
-
-        //private async void quick_edit_box_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
-        //{
-        //    var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
-        //    StorageFolder storageFolder = Windows.Storage.KnownFolders.DocumentsLibrary;
-        //    StorageFile File = await storageFolder.GetFileAsync("utilities\\datav2_1_0.txt");
-        //    settingsVal = quick_edit_box.Text;
-        //    quick_edit_box.Text = resourceLoader.GetString("quick_edit_box");
-        //    await FileIO.WriteTextAsync(File, settingsVal);
-        //}
 
         private async void welcome_again_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -438,5 +409,31 @@ namespace Utilities_Fix.utilities_pages
             }
         }
 
+        private async void rb_deg_Checked(object sender, RoutedEventArgs e)
+        {
+            if (done)
+            {
+                preferences.degree = true;
+                await preferences.RefreshLocalFileAsync();
+            }
+        }
+
+        private async void rb_rad_Checked(object sender, RoutedEventArgs e)
+        {
+            if (done)
+            {
+                preferences.degree = false;
+                await preferences.RefreshLocalFileAsync();
+            }
+        }
+
+        private async void ovr_switch_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (done)
+            {
+                preferences.ovr_form = ovr_switch.IsOn;
+                await preferences.RefreshLocalFileAsync();
+            }
+        }
     }
 }

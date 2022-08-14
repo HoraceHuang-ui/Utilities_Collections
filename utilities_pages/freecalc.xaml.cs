@@ -118,7 +118,7 @@ namespace Utilities_Fix.utilities_pages
                     (eq[i] == '-' && (i == 0 || !(IsNum(eq, i) || eq[i - 1] == ')'))))
                 {
                     int j;
-                    for (j = i + 1; j < eq.Length && (IsNum(eq, i) || eq[j] == '.'); j++) ;
+                    for (j = i + 1; j < eq.Length && (IsNum(eq, j) || eq[j] == '.'); j++) ;
                     j--;
                     s2.Push(eq.Substring(i, j - i + 1));
                     i = j;
@@ -312,10 +312,17 @@ namespace Utilities_Fix.utilities_pages
                     }
                 }
                 res_form.Text = calc(s).ToString();
-                eq_form.Translation = new Vector3(-100, 0, 0);
-                mBar.Translation = new Vector3(-100, 0, 0);
-                res_form.Visibility = Visibility.Visible;
-                res_form.Opacity = 1;
+                if (settings.ovr_form)
+                {
+                    eq_form.Text = res_form.Text;
+                }
+                else
+                {
+                    eq_form.Translation = new Vector3(-100, 0, 0);
+                    mBar.Translation = new Vector3(-100, 0, 0);
+                    res_form.Visibility = Visibility.Visible;
+                    res_form.Opacity = 1;
+                }
                 resVisible = true;
                 calc_error.IsOpen = false;
             }

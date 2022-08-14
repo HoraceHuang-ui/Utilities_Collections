@@ -19,6 +19,7 @@ namespace Utilities_Fix
 
         // freecalc
         public bool degree;
+        public bool ovr_form;
         public int decimal_accuracy;
 
         // physics ex calc
@@ -42,6 +43,7 @@ namespace Utilities_Fix
             pane_top = false;
             first_time_open = true;
             degree = false;
+            ovr_form = false;
             decimal_accuracy = 5;
             keep_integers = false;
             auto_rounding = false;
@@ -99,7 +101,7 @@ namespace Utilities_Fix
         {
             var deserializer = new DeserializerBuilder().WithNamingConvention(UnderscoredNamingConvention.Instance).Build();
             StorageFolder folder = KnownFolders.DocumentsLibrary;
-            StorageFile file = await folder.CreateFileAsync("utilities\\datav2_7_0.txt", CreationCollisionOption.OpenIfExists);
+            StorageFile file = await folder.CreateFileAsync("utilities\\datav2_8_0.txt", CreationCollisionOption.OpenIfExists);
 
             string yaml_data = await FileIO.ReadTextAsync(file);
             SettingsData sd = deserializer.Deserialize<SettingsData>(yaml_data);
@@ -111,6 +113,7 @@ namespace Utilities_Fix
                     "pane_top: false\n" +
                     "first_time_open: true\n" +
                     "degree: false\n" +
+                    "ovr_form: false\n" +
                     "decimal_accuracy: 5\n" +
                     "keep_integers: false\n" +
                     "auto_rounding: false\n" +
@@ -125,14 +128,11 @@ namespace Utilities_Fix
                 CopyDataFrom(sd);
                 try
                 {
-                    StorageFile prevFile = await folder.GetFileAsync("utilities\\datav1_0_0.txt");
+                    StorageFile prevFile = await folder.GetFileAsync("utilities\\datav2_7_0.txt");
                     SyncPreviousSettings(prevFile);
                     await RefreshLocalFileAsync();
                 }
-                catch
-                {
-                    
-                }
+                catch {}
             }
             else
             {
@@ -147,6 +147,7 @@ namespace Utilities_Fix
             pane_top = a.pane_top;
             first_time_open = a.first_time_open;
             degree = a.degree;
+            ovr_form = a.ovr_form;
             decimal_accuracy = a.decimal_accuracy;
             keep_integers = a.keep_integers;
             auto_rounding = a.auto_rounding;
@@ -164,7 +165,7 @@ namespace Utilities_Fix
         public async Task RefreshLocalFileAsync()
         {
             StorageFolder folder = KnownFolders.DocumentsLibrary;
-            StorageFile file = await folder.GetFileAsync("utilities\\datav2_7_0.txt");
+            StorageFile file = await folder.GetFileAsync("utilities\\datav2_8_0.txt");
             var serializer = new SerializerBuilder().WithNamingConvention(UnderscoredNamingConvention.Instance).Build();
             string s = serializer.Serialize(this);
             await FileIO.WriteTextAsync(file, s);
