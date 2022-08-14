@@ -115,7 +115,7 @@ namespace Utilities_Fix.utilities_pages
             {
                 // Numbers
                 if (IsNum(eq, i) ||
-                    (eq[i] == '-' && (i == 0 || !(IsNum(eq, i) || eq[i - 1] == ')'))))
+                    (eq[i] == '-' && (i == 0 || !(IsNum(eq, i-1) || eq[i - 1] == ')'))))
                 {
                     int j;
                     for (j = i + 1; j < eq.Length && (IsNum(eq, j) || eq[j] == '.'); j++) ;
