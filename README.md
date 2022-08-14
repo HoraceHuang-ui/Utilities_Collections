@@ -1,6 +1,8 @@
 [View in English](./README_English.md)
 # Utilities_Collections
 小工具大杂烩 by HoraceHYY A.K.A. `MSFT_SuperFan`
+
+要不要顺便来看看 [自由计算器安卓版](https://www.github.com/HoraceHuang-ui/FreeCalc_Android) 呀？
 # 目录
 - [开发说明](#开发说明)
 - [安装说明](#安装说明)
