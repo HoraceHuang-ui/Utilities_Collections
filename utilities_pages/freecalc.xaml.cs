@@ -234,12 +234,12 @@ namespace Utilities_Fix.utilities_pages
                     switch (token)
                     {
                         case "sqr": s.Push(Math.Sqrt(num)); break;
-                        case "tan": s.Push(deg ? Math.Tan(num) : Math.Tan(num / 180 * Math.PI)); break;
-                        case "sin": s.Push(deg ? Math.Sin(num) : Math.Sin(num / 180 * Math.PI)); break;
+                        case "tan": s.Push(!deg ? Math.Tan(num) : Math.Tan(num / 180 * Math.PI)); break;
+                        case "sin": s.Push(!deg ? Math.Sin(num) : Math.Sin(num / 180 * Math.PI)); break;
                         case "cot":
-                            s.Push(deg ? (Math.Cos(num) / Math.Sin(num)) :
+                            s.Push(!deg ? (Math.Cos(num) / Math.Sin(num)) :
                                 (Math.Cos(num / 180 * Math.PI) / Math.Sin(num / 180 * Math.PI))); break;
-                        case "cos": s.Push(deg ? Math.Cos(num) : Math.Cos(num / 180 * Math.PI)); break;
+                        case "cos": s.Push(!deg ? Math.Cos(num) : Math.Cos(num / 180 * Math.PI)); break;
                         case "abs": s.Push(num > 0 ? num : -num); break;
                         case "cei":
                             if ((int)num == num) s.Push(num);
