@@ -87,7 +87,7 @@ namespace Utilities_Fix.utilities_pages
             {
                 if (no_dup.IsChecked == true)
                 {
-                    int[] rand = GenerateUniqueRandom(min, max, cnt);
+                    int[] rand = GenerateUniqueRandom(min, max+1, cnt);
                     Array.Sort(rand);
                     foreach (int num in rand)
                     {
@@ -96,7 +96,7 @@ namespace Utilities_Fix.utilities_pages
                 } 
                 else
                 {
-                    int[] rand = GenerateRandom(min, max, cnt);
+                    int[] rand = GenerateRandom(min, max+1, cnt);
                     Array.Sort(rand);
                     foreach (int num in rand)
                     {
